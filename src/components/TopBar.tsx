@@ -35,8 +35,8 @@ const TopBar = () => {
   const TimeBox = ({ value, label }: { value: string; label: string }) => (
     <div className="flex flex-col items-center">
       <span
-        className="font-body font-bold text-[14px] text-white px-2 py-0.5"
-        style={{ background: "rgba(255,255,255,0.1)", borderRadius: "4px", minWidth: "32px", textAlign: "center" }}
+        className="font-body font-bold text-[14px] text-white px-2 py-0.5 rounded text-center"
+        style={{ background: "rgba(255,255,255,0.1)", minWidth: "32px" }}
       >
         {value}
       </span>
@@ -45,46 +45,61 @@ const TopBar = () => {
   );
 
   return (
-    <div
-      className="fixed top-0 left-0 right-0 z-[100] flex items-center justify-center md:justify-between px-4 md:px-8 bg-roxo-profundo"
-      style={{ height: "44px" }}
-    >
-      {/* Urgency text */}
-      <p className="hidden md:block font-body font-bold text-[12px] text-white tracking-wide uppercase">
-        PRIMEIRAS 24H COM R$500 DE DESCONTO
-      </p>
-      <p className="md:hidden font-body font-bold text-[11px] text-white tracking-wide uppercase">
-        R$500 OFF · PRIMEIRAS 24H
-      </p>
+    <div className="fixed top-0 left-0 right-0 z-[100] bg-roxo-profundo h-[40px] md:h-[44px] flex items-center px-4 md:px-8">
+      {/* Desktop: 3 columns */}
+      <div className="hidden md:flex items-center justify-between w-full">
+        {/* Left: Logo simplificada */}
+        <div className="flex-shrink-0" style={{ width: "80px" }}>
+          <span className="font-headline font-bold text-[18px] text-white tracking-wide">DᎧMA</span>
+        </div>
 
-      {/* Countdown */}
-      <div className="hidden md:flex items-center gap-1 mx-4">
-        <span className="font-body text-[11px] text-texto-cinza mr-2 uppercase">Acaba em</span>
-        <TimeBox value={pad(timeLeft.days)} label="DIAS" />
-        <span className="text-white/40 text-[12px] mx-0.5">:</span>
-        <TimeBox value={pad(timeLeft.hours)} label="HRS" />
-        <span className="text-white/40 text-[12px] mx-0.5">:</span>
-        <TimeBox value={pad(timeLeft.mins)} label="MINS" />
-        <span className="text-white/40 text-[12px] mx-0.5">:</span>
-        <TimeBox value={pad(timeLeft.secs)} label="SEGS" />
+        {/* Center: Text + Countdown */}
+        <div className="flex items-center gap-4">
+          <p className="font-body font-bold text-[12px] text-white tracking-wide uppercase">
+            PRIMEIRAS 24H COM R$500 DE DESCONTO
+          </p>
+          <div className="flex items-center gap-1">
+            <span className="font-body text-[11px] text-texto-cinza mr-1 uppercase">Acaba em</span>
+            <TimeBox value={pad(timeLeft.days)} label="DIAS" />
+            <span className="text-white/40 text-[12px] mx-0.5">:</span>
+            <TimeBox value={pad(timeLeft.hours)} label="HRS" />
+            <span className="text-white/40 text-[12px] mx-0.5">:</span>
+            <TimeBox value={pad(timeLeft.mins)} label="MINS" />
+            <span className="text-white/40 text-[12px] mx-0.5">:</span>
+            <TimeBox value={pad(timeLeft.secs)} label="SEGS" />
+          </div>
+        </div>
+
+        {/* Right: CTA */}
+        <a
+          href="#cta"
+          className="flex-shrink-0 inline-flex items-center font-body font-bold text-[12px] text-white uppercase bg-dourado px-4 py-1.5 rounded-md transition-all duration-150 hover:brightness-90"
+        >
+          Garantir Desconto →
+        </a>
       </div>
 
-      {/* Mobile countdown (compact) */}
-      <div className="flex md:hidden items-center gap-1 ml-3">
-        <TimeBox value={pad(timeLeft.hours)} label="HRS" />
-        <span className="text-white/40 text-[10px]">:</span>
-        <TimeBox value={pad(timeLeft.mins)} label="MIN" />
-        <span className="text-white/40 text-[10px]">:</span>
-        <TimeBox value={pad(timeLeft.secs)} label="SEG" />
+      {/* Mobile: text + countdown left, button right */}
+      <div className="flex md:hidden items-center justify-between w-full">
+        <div className="flex items-center gap-2">
+          <p className="font-body font-bold text-[11px] text-white tracking-wide uppercase">
+            R$500 OFF · 24H
+          </p>
+          <div className="flex items-center gap-1">
+            <TimeBox value={pad(timeLeft.hours)} label="HRS" />
+            <span className="text-white/40 text-[10px]">:</span>
+            <TimeBox value={pad(timeLeft.mins)} label="MIN" />
+            <span className="text-white/40 text-[10px]">:</span>
+            <TimeBox value={pad(timeLeft.secs)} label="SEG" />
+          </div>
+        </div>
+        <a
+          href="#cta"
+          className="inline-flex items-center font-body font-bold text-[10px] text-white uppercase bg-dourado px-3 py-1 rounded-md transition-all duration-150 hover:brightness-90"
+        >
+          Desconto →
+        </a>
       </div>
-
-      {/* CTA button */}
-      <a
-        href="#cta"
-        className="hidden md:inline-flex items-center font-body font-bold text-[12px] text-white uppercase transition-all duration-150 hover:brightness-90 bg-dourado px-4 py-1.5 rounded-md"
-      >
-        Garantir Desconto →
-      </a>
     </div>
   );
 };
