@@ -41,7 +41,7 @@ const SectionPassos = () => {
             style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)" }}
           >
             <div className="bg-sand rounded-[8px] px-8 py-4">
-              <h2 className="font-headline font-bold text-[18px] md:text-[22px] text-plum-dark uppercase text-center">
+              <h2 className="font-display font-bold text-[18px] md:text-[22px] text-plum-dark uppercase text-center">
                 Seus Próximos Passos Dentro da Formação
               </h2>
             </div>

@@ -50,7 +50,7 @@ const SectionGarantia = () => {
                   className="rounded-full bg-sand flex flex-col items-center justify-center"
                   style={{ width: 200, height: 200, border: "4px solid #2A1530" }}
                 >
-                  <span className="font-headline font-bold text-[72px] text-plum-dark leading-none">7</span>
+                  <span className="font-display font-bold text-[72px] text-plum-dark leading-none">7</span>
                   <span className="font-body font-semibold text-[16px] text-plum-dark uppercase -mt-1">DIAS</span>
                 </div>
               </div>
@@ -58,7 +58,7 @@ const SectionGarantia = () => {
 
             <div>
               <SectionLabel text="SUA SEGURANÇA" />
-              <h2 className="font-headline font-bold text-[22px] md:text-[28px] text-plum-dark mb-2">
+              <h2 className="font-display font-bold text-[22px] md:text-[28px] text-plum-dark mb-2">
                 7 dias de garantia. Sem burocracia.
               </h2>
               <HeadlineUnderline center={false} />

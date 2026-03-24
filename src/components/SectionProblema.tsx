@@ -73,7 +73,7 @@ const SectionProblema = () => {
               </p>
 
               <h2
-                className="text-center font-headline font-bold text-[28px] md:text-[40px] leading-tight text-coral-dark mb-2 transition-all duration-[800ms] ease-out"
+                className="text-center font-display font-bold text-[28px] md:text-[40px] leading-tight text-coral-dark mb-2 transition-all duration-[800ms] ease-out"
                 style={{
                   clipPath: headline.visible ? "inset(0 0 0% 0)" : "inset(0 0 100% 0)",
                 }}
@@ -173,7 +173,7 @@ const SectionProblema = () => {
 
             <div ref={calma.ref} style={{ marginTop: 32 }}>
               <h2
-                className="text-center font-headline font-bold text-[40px] md:text-[56px] text-sand mb-4 transition-all duration-[800ms] ease-out"
+                className="text-center font-display font-bold text-[40px] md:text-[56px] text-sand mb-4 transition-all duration-[800ms] ease-out"
                 style={{
                   opacity: calma.visible ? 1 : 0,
                   transform: calma.visible ? "scale(1)" : "scale(0.8)",

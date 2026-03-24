@@ -8,7 +8,7 @@ const SectionWhatsapp = () => (
     />
     <div className="bg-neutral-50 py-section-mobile md:py-section-desktop">
       <div className="mx-auto px-5 md:px-10 text-center" style={{ maxWidth: 600 }}>
-        <h2 className="font-headline font-bold text-[28px] text-plum-dark">
+        <h2 className="font-display font-bold text-[28px] text-plum-dark">
           Ficou com alguma dúvida?
         </h2>
         <p className="font-body text-[16px] text-neutral-800 mt-3 leading-relaxed">

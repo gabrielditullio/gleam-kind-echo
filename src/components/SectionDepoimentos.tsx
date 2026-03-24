@@ -45,7 +45,7 @@ const SectionDepoimentos = () => {
           <div className="text-center mb-10">
             <SectionLabel text="RESULTADOS REAIS" />
             <h2
-              className="font-headline font-bold text-[28px] md:text-[36px] text-plum-dark transition-all duration-500 ease-out"
+              className="font-display font-bold text-[28px] md:text-[36px] text-plum-dark transition-all duration-500 ease-out"
               style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(15px)" }}
             >
               600+ cavalos. E contando.
@@ -76,7 +76,7 @@ const SectionDepoimentos = () => {
               >
                 {/* Decorative quote */}
                 <span
-                  className="absolute font-headline text-[48px] text-sand leading-none select-none"
+                  className="absolute font-display text-[48px] text-sand leading-none select-none"
                   style={{ top: 12, left: 16, opacity: 0.6 }}
                 >
                   "
