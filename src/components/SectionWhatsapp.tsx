@@ -4,7 +4,7 @@ const SectionWhatsapp = () => (
   <section>
     <div
       className="h-[150px] pointer-events-none"
-      style={{ background: "linear-gradient(to bottom, hsl(var(--plum-dark)), hsl(var(--neutral-50)))" }}
+      style={{ background: "linear-gradient(to bottom, #2A1530, #FAF8F6)" }}
     />
     <div className="bg-neutral-50 py-section-mobile md:py-section-desktop">
       <div className="mx-auto px-5 md:px-10 text-center" style={{ maxWidth: 600 }}>

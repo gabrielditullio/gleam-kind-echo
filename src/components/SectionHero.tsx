@@ -69,7 +69,7 @@ const SectionHero = () => {
                     {c.icon === "x" ? (
                       <XCircle size={16} className="text-coral-dark flex-shrink-0" />
                     ) : (
-                      <CheckCircle size={16} className="text-sage-default flex-shrink-0" />
+                      <CheckCircle size={16} className="text-sage flex-shrink-0" />
                     )}
                     <span className="font-body text-[14px] text-white">{c.text}</span>
                   </div>
@@ -80,7 +80,7 @@ const SectionHero = () => {
             <div {...anim(1000, 400, "fade-scale")} style={{ ...anim(1000, 400, "fade-scale").style, marginTop: 32 }}>
               <button
                 onClick={openCheckout}
-                className="group relative inline-flex items-center justify-center gap-2 bg-coral-default text-white font-body font-semibold text-[15px] uppercase tracking-[0.05em] px-7 py-3.5 rounded-[8px] transition-all duration-150 hover:bg-coral-dark w-full md:w-auto overflow-hidden cursor-pointer"
+                className="group relative inline-flex items-center justify-center gap-2 bg-coral text-white font-body font-semibold text-[15px] uppercase tracking-[0.05em] px-7 py-3.5 rounded-[8px] transition-all duration-150 hover:bg-coral-dark w-full md:w-auto overflow-hidden cursor-pointer"
               >
                 <span
                   className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[600ms] ease-in-out pointer-events-none"

@@ -27,14 +27,14 @@ const SectionBio = () => {
             ref={ref}
             className="rounded-[12px] p-6 md:p-12 transition-all duration-[600ms] ease-out"
             style={{
-              border: "2px dashed hsl(var(--plum-light))",
+              border: "2px dashed #6B3A78",
               opacity: visible ? 1 : 0,
               transform: visible ? "translateY(0)" : "translateY(20px)",
             }}
           >
             <div className="flex flex-col md:flex-row gap-8 md:gap-10">
               <div className="w-full md:w-[40%] flex-shrink-0">
-                <div className="w-full rounded-[12px] overflow-hidden" style={{ aspectRatio: "3/4", border: "3px solid hsl(var(--sand-default))" }}>
+                <div className="w-full rounded-[12px] overflow-hidden" style={{ aspectRatio: "3/4", border: "3px solid #C4A882" }}>
                   <img src={bioPhoto} alt="Dra. Paolla com cavalo" className="w-full h-full object-cover rounded-[12px]" />
                 </div>
               </div>
@@ -49,12 +49,12 @@ const SectionBio = () => {
                   Dra. Paolla
                 </h2>
                 <div
-                  className="h-[3px] bg-sand-default mt-3 mb-4 transition-all duration-500 ease-out"
+                  className="h-[3px] bg-sand mt-3 mb-4 transition-all duration-500 ease-out"
                   style={{ width: 60, transitionDelay: "360ms", opacity: visible ? 1 : 0 }}
                 />
 
                 <span
-                  className="inline-block font-body font-semibold text-[12px] text-plum-dark uppercase bg-sand-default rounded-full px-5 py-1.5 mb-6 transition-all duration-500 ease-out"
+                  className="inline-block font-body font-semibold text-[12px] text-plum-dark uppercase bg-sand rounded-full px-5 py-1.5 mb-6 transition-all duration-500 ease-out"
                   style={{ letterSpacing: "1px", transitionDelay: "440ms", opacity: visible ? 1 : 0 }}
                 >
                   Única especialista em doma comportamental do Brasil

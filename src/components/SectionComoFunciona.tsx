@@ -44,7 +44,7 @@ const SectionComoFunciona = () => {
     <section>
       <div
         className="h-[200px] pointer-events-none"
-        style={{ background: "linear-gradient(to bottom, hsl(var(--neutral-50)), hsl(var(--plum-dark)))" }}
+        style={{ background: "linear-gradient(to bottom, #FAF8F6, #2A1530)" }}
       />
 
       <div className="bg-plum-dark py-section-mobile md:py-section-desktop">
@@ -56,7 +56,7 @@ const SectionComoFunciona = () => {
             className="flex justify-center mb-4 transition-all duration-500 ease-out"
             style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)" }}
           >
-            <div className="bg-sand-default rounded-[8px] px-8 py-4">
+            <div className="bg-sand rounded-[8px] px-8 py-4">
               <h2 className="font-headline font-bold text-[18px] md:text-[22px] text-plum-dark uppercase text-center">
                 Como Funciona a Formação na Prática
               </h2>
@@ -80,7 +80,7 @@ const SectionComoFunciona = () => {
                 onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(196,168,130,0.5)"; e.currentTarget.style.boxShadow = "0 4px 16px rgba(42,21,48,0.12)"; }}
                 onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)"; e.currentTarget.style.boxShadow = "none"; }}
               >
-                <span className="inline-block font-body font-semibold text-[11px] px-3 py-1 rounded-full mb-4 bg-sand-default text-plum-dark">
+                <span className="inline-block font-body font-semibold text-[11px] px-3 py-1 rounded-full mb-4 bg-sand text-plum-dark">
                   Passo {i + 1}
                 </span>
                 <h3 className="font-body font-semibold text-[20px] text-white mb-3">{step.title}</h3>

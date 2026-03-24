@@ -31,7 +31,7 @@ const SectionGarantia = () => {
     <section>
       <div
         className="h-[200px] pointer-events-none"
-        style={{ background: "linear-gradient(to bottom, hsl(var(--plum-dark)), hsl(var(--neutral-50)))" }}
+        style={{ background: "linear-gradient(to bottom, #2A1530, #FAF8F6)" }}
       />
 
       <div className="bg-neutral-50 py-section-mobile md:py-section-desktop">
@@ -44,11 +44,11 @@ const SectionGarantia = () => {
               <div className="relative flex items-center justify-center">
                 <div
                   className="absolute rounded-full"
-                  style={{ width: 220, height: 220, border: "2px dashed hsl(var(--sand-default))" }}
+                  style={{ width: 220, height: 220, border: "2px dashed #C4A882" }}
                 />
                 <div
-                  className="rounded-full bg-sand-default flex flex-col items-center justify-center"
-                  style={{ width: 200, height: 200, border: "4px solid hsl(var(--plum-dark))" }}
+                  className="rounded-full bg-sand flex flex-col items-center justify-center"
+                  style={{ width: 200, height: 200, border: "4px solid #2A1530" }}
                 >
                   <span className="font-headline font-bold text-[72px] text-plum-dark leading-none">7</span>
                   <span className="font-body font-semibold text-[16px] text-plum-dark uppercase -mt-1">DIAS</span>
@@ -74,7 +74,7 @@ const SectionGarantia = () => {
                       transform: visible ? "translateX(0)" : "translateX(-10px)",
                     }}
                   >
-                    <CheckCircle size={18} className="text-sage-default flex-shrink-0" />
+                    <CheckCircle size={18} className="text-sage flex-shrink-0" />
                     <span className="font-body text-[16px] text-neutral-800">{c}</span>
                   </div>
                 ))}
@@ -92,7 +92,7 @@ const SectionGarantia = () => {
 
               <button
                 onClick={openCheckout}
-                className="group relative inline-flex items-center justify-center gap-2 bg-coral-default text-white font-body font-semibold text-[15px] uppercase tracking-[0.05em] px-7 py-3.5 rounded-[8px] transition-all duration-150 hover:bg-coral-dark mt-6 w-full md:w-auto overflow-hidden cursor-pointer"
+                className="group relative inline-flex items-center justify-center gap-2 bg-coral text-white font-body font-semibold text-[15px] uppercase tracking-[0.05em] px-7 py-3.5 rounded-[8px] transition-all duration-150 hover:bg-coral-dark mt-6 w-full md:w-auto overflow-hidden cursor-pointer"
               >
                 <span
                   className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[600ms] ease-in-out pointer-events-none"
