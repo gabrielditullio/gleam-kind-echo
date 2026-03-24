@@ -91,3 +91,15 @@
     animation-duration: 0.01ms !important;
   }
 }
+
+/* V2 variant: all CTA buttons become green */
+.green-cta-variant .bg-coral {
+  --tw-bg-opacity: 1;
+  background-color: rgb(74 140 92 / var(--tw-bg-opacity)) !important;
+}
+.green-cta-variant .hover\:bg-coral-dark:hover {
+  background-color: rgb(58 112 73) !important;
+}
+.green-cta-variant .bg-coral-dark {
+  background-color: rgb(58 112 73) !important;
+}
