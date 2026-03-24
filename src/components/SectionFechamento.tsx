@@ -3,6 +3,7 @@ import logoDoma from "@/assets/logo-doma.png";
 import { useCheckout } from "@/contexts/CheckoutContext";
 
 const SectionFechamento = () => {
+  const { openCheckout } = useCheckout();
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
