@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { XCircle, CheckCircle } from "lucide-react";
 import logoDoma from "@/assets/logo-doma.png";
+import heroPhoto from "@/assets/hero-paolla.jpg";
 
 const SectionHero = () => {
   const [loaded, setLoaded] = useState(false);
@@ -44,17 +45,8 @@ const SectionHero = () => {
             }}
             className={`${anim(0, 600, "fade").className} w-full md:w-[45%] flex-shrink-0 order-2 md:order-1`}
           >
-            <div
-              className="w-full flex items-center justify-center rounded-xl"
-              style={{
-                aspectRatio: "3/4",
-                background: "rgba(74,45,94,0.3)",
-                boxShadow: "inset 0 0 60px rgba(45,27,61,0.5)",
-              }}
-            >
-              <p className="font-body text-[14px] text-center px-8" style={{ color: "rgba(255,255,255,0.3)" }}>
-                FOTO HERO — Paolla ao lado de cavalo
-              </p>
+            <div className="w-full rounded-xl overflow-hidden" style={{ aspectRatio: "3/4" }}>
+              <img src={heroPhoto} alt="Dra. Paolla ao lado de cavalo" className="w-full h-full object-cover rounded-xl" />
             </div>
           </div>
 
@@ -95,7 +87,7 @@ const SectionHero = () => {
             <div {...anim(1000, 400, "fade-scale")} style={{ ...anim(1000, 400, "fade-scale").style, marginTop: 32 }}>
               <a
                 href="#cta"
-                className="group relative inline-flex items-center justify-center gap-2 bg-dourado text-white font-body font-bold text-[16px] uppercase px-10 py-4 rounded-[10px] transition-all duration-150 hover:brightness-90 w-full md:w-auto overflow-hidden"
+                className="group relative inline-flex items-center justify-center gap-2 bg-verde-cta text-white font-body font-bold text-[16px] uppercase px-10 py-4 rounded-[10px] transition-all duration-150 hover:brightness-90 w-full md:w-auto overflow-hidden"
               >
                 {/* Shiny hover effect */}
                 <span

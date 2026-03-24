@@ -36,7 +36,7 @@ const StickyCta = () => {
         <div className="flex items-center gap-4">
           <a
             href="#cta"
-            className="inline-flex items-center gap-2 font-body font-bold text-[14px] text-white uppercase bg-dourado px-6 py-2.5 rounded-lg transition-all duration-150 hover:brightness-90"
+            className="inline-flex items-center gap-2 font-body font-bold text-[14px] text-white uppercase bg-verde-cta px-6 py-2.5 rounded-lg transition-all duration-150 hover:brightness-90"
           >
             Quero minha vaga
             <span className="inline-block transition-transform duration-150 group-hover:translate-x-1">→</span>
@@ -54,7 +54,7 @@ const StickyCta = () => {
       <div className="flex md:hidden items-center px-4 py-3">
         <a
           href="#cta"
-          className="flex-1 flex items-center justify-center gap-2 font-body font-bold text-[14px] text-white uppercase bg-dourado py-3 rounded-lg transition-all duration-150 hover:brightness-90"
+          className="flex-1 flex items-center justify-center gap-2 font-body font-bold text-[14px] text-white uppercase bg-verde-cta py-3 rounded-lg transition-all duration-150 hover:brightness-90"
         >
           Quero minha vaga →
         </a>

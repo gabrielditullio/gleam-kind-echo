@@ -67,6 +67,7 @@ export default {
         "dourado": "hsl(var(--dourado))",
         "dourado-claro": "hsl(var(--dourado-claro))",
         "verde-musgo": "hsl(var(--verde-musgo))",
+        "verde-cta": "hsl(var(--verde-cta))",
         "vermelho-terroso": "hsl(var(--vermelho-terroso))",
         "texto-corpo": "hsl(var(--texto-corpo))",
         "texto-secundario": "hsl(var(--texto-secundario))",
