@@ -135,10 +135,10 @@ const SectionOferta = () => {
           </div>
 
           {/* CTA */}
-          <a
+          <button
             ref={btnRef}
-            href="#cta"
-            className="group relative flex items-center justify-center gap-2 bg-verde-cta text-white font-body font-bold text-[18px] uppercase py-[18px] rounded-[10px] transition-all duration-150 hover:brightness-90 w-full mt-6 overflow-hidden"
+            onClick={openCheckout}
+            className="group relative flex items-center justify-center gap-2 bg-verde-cta text-white font-body font-bold text-[18px] uppercase py-[18px] rounded-[10px] transition-all duration-150 hover:brightness-90 w-full mt-6 overflow-hidden cursor-pointer"
           >
             <span
               className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[600ms] ease-in-out pointer-events-none"
