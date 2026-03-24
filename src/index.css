@@ -2,7 +2,7 @@
   display: none !important;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Source+Sans+3:wght@400;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -10,41 +10,6 @@
 
 @layer base {
   :root {
-    /* — Cores Primárias — */
-    --plum-dark: 276 37% 13%;
-    --plum-default: 276 37% 22%;
-    --plum-light: 276 34% 35%;
-
-    /* — Secundárias — */
-    --sand-light: 34 30% 76%;
-    --sand-default: 30 30% 64%;
-    --sand-dark: 30 25% 49%;
-
-    /* — Acento (CTAs) — */
-    --coral-light: 350 60% 72%;
-    --coral-default: 348 52% 61%;
-    --coral-dark: 348 45% 49%;
-
-    /* — Suporte — */
-    --sage-light: 134 20% 63%;
-    --sage-default: 134 15% 49%;
-    --sage-dark: 134 17% 37%;
-
-    /* — Neutros Quentes — */
-    --neutral-50: 30 25% 97%;
-    --neutral-100: 28 18% 93%;
-    --neutral-200: 25 12% 84%;
-    --neutral-400: 25 8% 62%;
-    --neutral-600: 25 10% 33%;
-    --neutral-800: 25 10% 16%;
-    --neutral-950: 25 10% 9%;
-
-    /* — Semânticas — */
-    --success: 140 30% 42%;
-    --error: 0 50% 53%;
-    --warning: 40 60% 53%;
-    --info: 214 30% 50%;
-
     /* Shadcn mappings */
     --background: 30 25% 97%;
     --foreground: 25 10% 16%;
@@ -84,7 +49,7 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Source Sans 3', system-ui, sans-serif;
+    font-family: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif;
     font-size: 17px;
     line-height: 1.65;
   }
@@ -113,7 +78,7 @@
   }
 
   .font-body {
-    font-family: 'Source Sans 3', system-ui, sans-serif;
+    font-family: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif;
   }
 }
 
