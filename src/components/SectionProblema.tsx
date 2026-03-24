@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import { ArrowRight, ArrowDown, RotateCcw } from "lucide-react";
 import SectionLabel from "./SectionLabel";
 import HeadlineUnderline from "./HeadlineUnderline";
-import SectionOrnament from "./SectionOrnament";
+
 
 const cycleSteps = [
   "Não entende o cavalo",
