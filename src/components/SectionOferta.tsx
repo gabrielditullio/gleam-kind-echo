@@ -148,7 +148,7 @@ const SectionOferta = () => {
               Quero entrar na formação
               <span className="inline-block transition-transform duration-150 ease-in-out group-hover:translate-x-1">→</span>
             </span>
-          </a>
+          </button>
 
           {/* Payment icons */}
           <div className="flex items-center justify-center gap-4 mt-4">
