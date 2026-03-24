@@ -67,7 +67,7 @@ const SectionOferta = () => {
           className="text-center mb-8 transition-all duration-500 ease-out"
           style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(15px)" }}
         >
-          <img src={logoDoma} alt="Formação em Doma Comportamental" className="mx-auto mb-4 w-[180px] h-auto" />
+          <img src={logoDoma} alt="Formação em Doma Comportamental" className="mx-auto mb-4 w-[280px] h-auto" />
           <p className="font-body font-medium text-[16px] text-dourado-claro">
             Criado por quem já trabalhou 600+ cavalos.
           </p>
