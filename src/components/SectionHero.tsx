@@ -62,7 +62,7 @@ const SectionHero = () => {
           <div className="w-full md:w-[55%] order-1 md:order-2">
             {/* Logo placeholder */}
             <div {...anim(200, 400, "fade-down")}>
-              <img src={logoDoma} alt="Formação em Doma Comportamental" className="w-[160px] md:w-[200px] h-auto" />
+              <img src={logoDoma} alt="Formação em Doma Comportamental" className="w-[260px] md:w-[340px] h-auto" />
             </div>
 
             {/* Headline */}

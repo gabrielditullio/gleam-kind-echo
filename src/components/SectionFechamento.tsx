@@ -83,7 +83,7 @@ const SectionFechamento = () => {
 
           {/* Footer */}
           <div className="mt-20 pt-10" style={{ borderTop: "1px solid rgba(255,255,255,0.1)" }}>
-            <img src={logoDoma} alt="Formação em Doma Comportamental" className="mx-auto mb-4 w-[140px] h-auto" />
+            <img src={logoDoma} alt="Formação em Doma Comportamental" className="mx-auto mb-4 w-[220px] h-auto" />
             <p className="font-body text-[14px]" style={{ color: "rgba(255,255,255,0.6)" }}>
               Formação em Doma Comportamental · Dra. Paolla
             </p>
