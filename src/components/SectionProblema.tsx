@@ -62,7 +62,7 @@ const SectionProblema = () => {
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 860 }}>
           <div
             className="bg-white rounded-[12px] p-6 md:p-12 transition-all duration-300 ease-in-out hover:shadow-[0_4px_16px_rgba(42,21,48,0.12)]"
-            style={{ boxShadow: "0 2px 8px rgba(42,21,48,0.06)", border: "1px solid hsl(var(--neutral-200))", transition: "all 300ms ease-in-out" }}
+            style={{ boxShadow: "0 2px 8px rgba(42,21,48,0.06)", border: "1px solid #DDD7D0", transition: "all 300ms ease-in-out" }}
           >
             <div ref={headline.ref} className="text-center">
               <SectionLabel text="A VERDADE QUE NINGUÉM CONTA" />

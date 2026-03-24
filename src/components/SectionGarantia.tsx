@@ -31,7 +31,7 @@ const SectionGarantia = () => {
     <section>
       <div
         className="h-[200px] pointer-events-none"
-        style={{ background: "linear-gradient(to bottom, hsl(var(--plum-dark)), hsl(var(--neutral-50)))" }}
+        style={{ background: "linear-gradient(to bottom, #2A1530, #FAF8F6)" }}
       />
 
       <div className="bg-neutral-50 py-section-mobile md:py-section-desktop">
@@ -44,11 +44,11 @@ const SectionGarantia = () => {
               <div className="relative flex items-center justify-center">
                 <div
                   className="absolute rounded-full"
-                  style={{ width: 220, height: 220, border: "2px dashed hsl(var(--sand))" }}
+                  style={{ width: 220, height: 220, border: "2px dashed #C4A882" }}
                 />
                 <div
                   className="rounded-full bg-sand flex flex-col items-center justify-center"
-                  style={{ width: 200, height: 200, border: "4px solid hsl(var(--plum-dark))" }}
+                  style={{ width: 200, height: 200, border: "4px solid #2A1530" }}
                 >
                   <span className="font-headline font-bold text-[72px] text-plum-dark leading-none">7</span>
                   <span className="font-body font-semibold text-[16px] text-plum-dark uppercase -mt-1">DIAS</span>

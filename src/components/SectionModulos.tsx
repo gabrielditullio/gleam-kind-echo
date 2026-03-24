@@ -36,7 +36,7 @@ const SectionModulos = () => {
     <section>
       <div
         className="h-[200px] pointer-events-none"
-        style={{ background: "linear-gradient(to bottom, hsl(var(--plum-dark)), hsl(var(--neutral-50)))" }}
+        style={{ background: "linear-gradient(to bottom, #2A1530, #FAF8F6)" }}
       />
 
       <div className="bg-neutral-50 py-section-mobile md:py-section-desktop">
@@ -66,7 +66,7 @@ const SectionModulos = () => {
                   key={i}
                   className="bg-white rounded-[12px] overflow-hidden transition-all duration-300 ease-in-out"
                   style={{
-                    border: isOpen ? "1px solid hsl(var(--plum-light))" : "1px solid hsl(var(--neutral-200))",
+                    border: isOpen ? "1px solid #6B3A78" : "1px solid #DDD7D0",
                     boxShadow: "0 2px 8px rgba(42,21,48,0.06)",
                     transitionDelay: `${200 + i * 60}ms`,
                     opacity: visible ? 1 : 0,

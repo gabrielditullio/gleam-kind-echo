@@ -41,7 +41,7 @@ const SectionBadges = () => {
     <>
       <div
         className="h-[200px] pointer-events-none"
-        style={{ background: "linear-gradient(to bottom, hsl(var(--plum-dark)), hsl(var(--neutral-50)))" }}
+        style={{ background: "linear-gradient(to bottom, #2A1530, #FAF8F6)" }}
       />
 
       <section ref={ref} className="bg-neutral-50 py-section-mobile md:py-section-desktop">

@@ -120,7 +120,7 @@ const CheckoutPopup = ({ isOpen, onClose }: CheckoutPopupProps) => {
         className="relative w-[90vw] rounded-[12px] p-6 md:p-8 animate-in fade-in zoom-in-95 duration-300"
         style={{
           maxWidth: 480,
-          background: "hsl(var(--plum-dark))",
+          background: "#2A1530",
           border: "1px solid rgba(255,255,255,0.1)",
         }}
       >

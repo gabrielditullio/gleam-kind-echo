@@ -37,7 +37,7 @@ const SectionDepoimentos = () => {
     <section>
       <div
         className="h-[200px] pointer-events-none"
-        style={{ background: "linear-gradient(to bottom, hsl(var(--plum-dark)), hsl(var(--neutral-50)))" }}
+        style={{ background: "linear-gradient(to bottom, #2A1530, #FAF8F6)" }}
       />
 
       <div className="bg-neutral-50 py-section-mobile md:py-section-desktop">
@@ -65,14 +65,14 @@ const SectionDepoimentos = () => {
                 key={i}
                 className="relative bg-white rounded-[12px] p-6 pt-10 transition-all duration-300 ease-in-out hover:-translate-y-0.5"
                 style={{
-                  border: "1px solid hsl(var(--neutral-200))",
+                  border: "1px solid #DDD7D0",
                   boxShadow: "0 2px 8px rgba(42,21,48,0.06)",
                   transitionDelay: `${300 + i * 100}ms`,
                   opacity: visible ? 1 : 0,
                   transform: visible ? "translateY(0)" : "translateY(15px)",
                 }}
                 onMouseEnter={(e) => { e.currentTarget.style.boxShadow = "0 4px 16px rgba(42,21,48,0.12)"; e.currentTarget.style.borderColor = "rgba(196,168,130,0.5)"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "0 2px 8px rgba(42,21,48,0.06)"; e.currentTarget.style.borderColor = "hsl(var(--neutral-200))"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "0 2px 8px rgba(42,21,48,0.06)"; e.currentTarget.style.borderColor = "#DDD7D0"; }}
               >
                 {/* Decorative quote */}
                 <span

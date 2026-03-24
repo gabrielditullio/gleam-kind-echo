@@ -68,14 +68,14 @@ const SectionBonus = () => {
                   key={i}
                   className="bg-white rounded-[12px] p-6 transition-all duration-300 ease-in-out hover:-translate-y-0.5"
                   style={{
-                    border: "1px solid hsl(var(--neutral-200))",
+                    border: "1px solid #DDD7D0",
                     boxShadow: "0 2px 8px rgba(42,21,48,0.06)",
                     transitionDelay: `${200 + i * 100}ms`,
                     opacity: visible ? 1 : 0,
                     transform: visible ? undefined : "translateY(15px)",
                   }}
                   onMouseEnter={(e) => { e.currentTarget.style.boxShadow = "0 4px 16px rgba(42,21,48,0.12)"; e.currentTarget.style.borderColor = "rgba(196,168,130,0.5)"; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "0 2px 8px rgba(42,21,48,0.06)"; e.currentTarget.style.borderColor = "hsl(var(--neutral-200))"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "0 2px 8px rgba(42,21,48,0.06)"; e.currentTarget.style.borderColor = "#DDD7D0"; }}
                 >
                   <Icon size={32} className="text-plum mb-4" />
                   <h3 className="font-body font-semibold text-[18px] text-plum-dark mb-2">{b.title}</h3>

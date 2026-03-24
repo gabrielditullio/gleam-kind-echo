@@ -27,14 +27,14 @@ const SectionBio = () => {
             ref={ref}
             className="rounded-[12px] p-6 md:p-12 transition-all duration-[600ms] ease-out"
             style={{
-              border: "2px dashed hsl(var(--plum-light))",
+              border: "2px dashed #6B3A78",
               opacity: visible ? 1 : 0,
               transform: visible ? "translateY(0)" : "translateY(20px)",
             }}
           >
             <div className="flex flex-col md:flex-row gap-8 md:gap-10">
               <div className="w-full md:w-[40%] flex-shrink-0">
-                <div className="w-full rounded-[12px] overflow-hidden" style={{ aspectRatio: "3/4", border: "3px solid hsl(var(--sand))" }}>
+                <div className="w-full rounded-[12px] overflow-hidden" style={{ aspectRatio: "3/4", border: "3px solid #C4A882" }}>
                   <img src={bioPhoto} alt="Dra. Paolla com cavalo" className="w-full h-full object-cover rounded-[12px]" />
                 </div>
               </div>

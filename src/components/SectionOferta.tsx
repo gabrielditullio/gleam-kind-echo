@@ -42,7 +42,7 @@ const SectionOferta = () => {
   ];
 
   return (
-    <section id="cta" style={{ background: "linear-gradient(180deg, hsl(var(--plum-dark)) 0%, rgba(66,34,76,0.6) 100%)" }}>
+    <section id="cta" style={{ background: "linear-gradient(180deg, #2A1530 0%, rgba(66,34,76,0.6) 100%)" }}>
       <style>{`
         @keyframes micro-shake {
           0% { transform: translateX(0); }
@@ -55,7 +55,7 @@ const SectionOferta = () => {
       `}</style>
 
       {/* Gradient transition from ancoragem */}
-      <div className="h-[200px] pointer-events-none" style={{ background: "linear-gradient(to bottom, hsl(var(--plum-dark)), transparent)" }} />
+      <div className="h-[200px] pointer-events-none" style={{ background: "linear-gradient(to bottom, #2A1530, transparent)" }} />
 
       <div ref={ref} className="mx-auto px-5 md:px-10 pb-section-mobile md:pb-section-desktop text-center" style={{ maxWidth: 600 }}>
         <SectionLabel text="SEU INVESTIMENTO" dark />
