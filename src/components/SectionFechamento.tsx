@@ -54,7 +54,7 @@ const SectionFechamento = () => {
           </p>
 
           <p
-            className="font-body font-semibold text-[20px] text-neutral-50 mt-4 transition-all duration-500 ease-out"
+            className="font-display italic text-xl text-neutral-50 mt-4 transition-all duration-500 ease-out text-center"
             style={{ transitionDelay: "1200ms", opacity: visible ? 1 : 0 }}
           >
             Agora é sua vez.

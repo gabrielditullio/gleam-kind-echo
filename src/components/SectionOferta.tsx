@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import paymentIcons from "@/assets/payment-icons.png";
+import logoDoma from "@/assets/logo-doma.png";
 import { useCheckout } from "@/contexts/CheckoutContext";
 import SectionDivider from "./SectionDivider";
+import CornerOrnaments from "./CornerOrnaments";
 
 const SectionOferta = () => {
   const { openCheckout } = useCheckout();
@@ -34,7 +36,10 @@ const SectionOferta = () => {
   }, [visible, shaken]);
 
   return (
-    <section id="cta" className="bg-plum-dark">
+    <section id="cta" className="bg-plum-dark relative">
+      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-sand/[0.03] to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-sand/[0.03] to-transparent pointer-events-none" />
+      <CornerOrnaments />
       <style>{`
         @keyframes micro-shake {
           0% { transform: translateX(0); }
@@ -48,6 +53,10 @@ const SectionOferta = () => {
 
       <div ref={ref} className="mx-auto px-5 md:px-10 py-section-mobile md:py-section-desktop text-center" style={{ maxWidth: 600 }}>
 
+        {/* Logo placement */}
+        <div className="flex justify-center mb-8">
+          <img src={logoDoma} alt="Formação em Doma Comportamental" className="w-[160px] h-auto opacity-60" />
+        </div>
         <SectionDivider />
 
         {/* Price block */}
