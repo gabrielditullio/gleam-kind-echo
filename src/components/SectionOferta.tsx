@@ -169,9 +169,9 @@ const SectionOferta = () => {
             </span>
             <p className="font-body font-bold text-[16px] text-roxo-profundo mt-2">Já é meu aluno?</p>
             <p className="font-body text-[14px] text-texto-secundario">Você tem desconto especial.</p>
-            <a
-              href="#aluno"
-              className="flex items-center justify-center gap-2 font-body font-bold text-[14px] text-verde-musgo border-2 border-verde-musgo rounded-[10px] py-3 px-6 mt-3 w-full transition-all duration-150 hover:bg-verde-musgo hover:text-white"
+            <button
+              onClick={openCheckout}
+              className="flex items-center justify-center gap-2 font-body font-bold text-[14px] text-verde-musgo border-2 border-verde-musgo rounded-[10px] py-3 px-6 mt-3 w-full transition-all duration-150 hover:bg-verde-musgo hover:text-white cursor-pointer"
             >
               Garantir meu desconto de aluno
               <span className="inline-block transition-transform duration-150 group-hover:translate-x-1">→</span>
