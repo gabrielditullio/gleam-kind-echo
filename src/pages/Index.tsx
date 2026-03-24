@@ -2,6 +2,7 @@ import TopBar from "@/components/TopBar";
 import SectionHero from "@/components/SectionHero";
 import SectionBadges from "@/components/SectionBadges";
 import SectionProblema from "@/components/SectionProblema";
+import SectionComoFunciona from "@/components/SectionComoFunciona";
 
 const Index = () => {
   return (
@@ -11,6 +12,7 @@ const Index = () => {
         <SectionHero />
         <SectionBadges />
         <SectionProblema />
+        <SectionComoFunciona />
       </div>
     </div>
   );
