@@ -12,7 +12,11 @@ import SectionPassos from "@/components/SectionPassos";
 import SectionAncoragem from "@/components/SectionAncoragem";
 import SectionOferta from "@/components/SectionOferta";
 import SectionGarantia from "@/components/SectionGarantia";
+import SectionFaq from "@/components/SectionFaq";
+import SectionWhatsapp from "@/components/SectionWhatsapp";
+import SectionFechamento from "@/components/SectionFechamento";
 import StickyCta from "@/components/StickyCta";
+import GlobalFloats from "@/components/GlobalFloats";
 
 const Index = () => {
   return (
@@ -32,8 +36,12 @@ const Index = () => {
         <SectionAncoragem />
         <SectionOferta />
         <SectionGarantia />
+        <SectionFaq />
+        <SectionWhatsapp />
+        <SectionFechamento />
       </div>
       <StickyCta />
+      <GlobalFloats />
     </div>
   );
 };
