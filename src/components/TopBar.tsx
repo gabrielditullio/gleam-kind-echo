@@ -75,7 +75,7 @@ const TopBar = () => {
         <a
           href="#cta"
           onClick={scrollToCta}
-          className="flex-shrink-0 inline-flex items-center font-body font-bold text-[12px] text-white uppercase bg-dourado px-4 py-1.5 rounded-md transition-all duration-150 hover:brightness-90"
+          className="flex-shrink-0 inline-flex items-center font-body font-bold text-[12px] text-white uppercase bg-verde-cta px-4 py-1.5 rounded-md transition-all duration-150 hover:brightness-90"
         >
           Garantir Desconto →
         </a>
