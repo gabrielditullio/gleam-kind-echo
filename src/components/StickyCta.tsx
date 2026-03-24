@@ -27,7 +27,7 @@ const StickyCta = () => {
     >
       <div className="hidden md:flex items-center justify-between mx-auto px-8 h-[60px]" style={{ maxWidth: 1200 }}>
         <p className="font-body font-medium text-[15px] text-neutral-200">
-          Garantir minha vaga por R$997
+          Garantir minha vaga
         </p>
         <div className="flex items-center gap-4">
           <button

@@ -75,14 +75,14 @@ const SectionFechamento = () => {
                 style={{ background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%)" }}
               />
               <span className="relative z-10 flex items-center gap-2">
-                Garantir minha vaga por R$ 997
+                Quero entrar na formação
                 <span className="inline-block transition-transform duration-150 ease-in-out group-hover:translate-x-1">→</span>
               </span>
             </button>
           </div>
 
           <p className="font-body text-sm text-neutral-400 mt-3">
-            ou 12x de R$ 96,06 · Acesso imediato · Pagamento seguro
+            ou 12x de R$ 154,82 · Acesso imediato · Pagamento seguro
           </p>
 
           <div className="mt-20 pt-10" style={{ borderTop: "1px solid rgba(255,255,255,0.1)" }}>
