@@ -82,7 +82,7 @@ const SectionFechamento = () => {
           </div>
 
           <p className="font-body text-sm text-neutral-400 mt-3">
-            ou 12x de R$ 96,06 · Acesso imediato · Pagamento seguro
+            ou 12x de R$ 154,82 · Acesso imediato · Pagamento seguro
           </p>
 
           <div className="mt-20 pt-10" style={{ borderTop: "1px solid rgba(255,255,255,0.1)" }}>
