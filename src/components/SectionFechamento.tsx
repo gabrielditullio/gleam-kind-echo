@@ -43,7 +43,7 @@ const SectionFechamento = () => {
             className="font-body text-[17px] leading-[1.65] mt-8 transition-all duration-500 ease-out"
             style={{ color: "rgba(255,255,255,0.85)", transitionDelay: "800ms", opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)" }}
           >
-            Eu já trabalhei com mais de <strong className="text-white">600 cavalos</strong>. Eu criei a <strong className="text-white">única formação</strong> em doma comportamental do Brasil. E eu posso te dizer com convicção: quando você entende a ciência por trás do comportamento equino, tudo muda.
+            Eu já trabalhei com mais de <strong className="text-neutral-50">600 cavalos</strong>. Eu criei a <strong className="text-neutral-50">única formação</strong> em doma comportamental do Brasil. E eu posso te dizer com convicção: quando você entende a ciência por trás do comportamento equino, tudo muda.
           </p>
 
           <p
