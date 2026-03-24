@@ -28,7 +28,7 @@ const SectionProblema = () => {
     `transition-all duration-500 ease-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`;
 
   return (
-    <section className="bg-bege-claro py-section-mobile md:py-section-desktop">
+    <section className="bg-creme-roxo py-section-mobile md:py-section-desktop">
       <div ref={sectionRef} className="mx-auto px-5 md:px-10" style={{ maxWidth: "860px" }}>
         <div className="bg-off-white rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.06)] p-8 md:p-12">
 
@@ -56,8 +56,8 @@ const SectionProblema = () => {
             <p>Você já tentou de tudo.</p>
             <p>
               Já levou pra domador. Já pagou{" "}
-              <span className="font-bold text-terroso">R$3.000</span>,{" "}
-              <span className="font-bold text-terroso">R$5.000</span> em treinamento.
+              <span className="font-bold text-roxo-claro">R$3.000</span>,{" "}
+              <span className="font-bold text-roxo-claro">R$5.000</span> em treinamento.
               Já assistiu vídeo no YouTube. Já tentou replicar técnica de Instagram.
             </p>
             <p>Mas na hora de lidar com o cavalo de verdade… você trava.</p>
@@ -76,7 +76,7 @@ const SectionProblema = () => {
               {cycleSteps.map((step, i) => (
                 <div key={i} className="flex items-center gap-2">
                   <div
-                    className="bg-fundo-escuro-2 text-white font-body text-[13px] font-medium px-4 py-3 rounded-lg text-center min-w-[130px] transition-all duration-500 ease-out"
+                    className="bg-roxo-profundo text-white font-body text-[13px] font-medium px-4 py-3 rounded-lg text-center min-w-[130px] transition-all duration-500 ease-out"
                     style={{
                       transitionDelay: `${700 + i * 120}ms`,
                       opacity: visible ? 1 : 0,
@@ -86,7 +86,7 @@ const SectionProblema = () => {
                     {step}
                   </div>
                   {i < cycleSteps.length - 1 && (
-                    <ArrowRight size={16} className="text-bege-areia flex-shrink-0" />
+                    <ArrowRight size={16} className="text-roxo-claro/40 flex-shrink-0" />
                   )}
                 </div>
               ))}
@@ -106,7 +106,7 @@ const SectionProblema = () => {
               {cycleSteps.map((step, i) => (
                 <div key={i} className="flex flex-col items-center gap-3">
                   <div
-                    className="bg-fundo-escuro-2 text-white font-body text-[13px] font-medium px-5 py-3 rounded-lg text-center w-full max-w-[240px] transition-all duration-500 ease-out"
+                    className="bg-roxo-profundo text-white font-body text-[13px] font-medium px-5 py-3 rounded-lg text-center w-full max-w-[240px] transition-all duration-500 ease-out"
                     style={{
                       transitionDelay: `${700 + i * 120}ms`,
                       opacity: visible ? 1 : 0,
@@ -116,7 +116,7 @@ const SectionProblema = () => {
                     {step}
                   </div>
                   {i < cycleSteps.length - 1 && (
-                    <ArrowRight size={16} className="text-bege-areia rotate-90" />
+                    <ArrowRight size={16} className="text-roxo-claro/40 rotate-90" />
                   )}
                 </div>
               ))}
@@ -168,9 +168,9 @@ const SectionProblema = () => {
               O problema não é você. É que ninguém te ensinou a LER o cavalo.
             </p>
             <p>
-              <span className="font-bold text-terroso">77%</span> das pessoas que pesquisei têm medo de violência e trauma
-              na doma. <span className="font-bold text-terroso">64%</span> são iniciantes totais.{" "}
-              <span className="font-bold text-terroso">43%</span> dependem completamente de terceiros.
+              <span className="font-bold text-roxo-claro">77%</span> das pessoas que pesquisei têm medo de violência e trauma
+              na doma. <span className="font-bold text-roxo-claro">64%</span> são iniciantes totais.{" "}
+              <span className="font-bold text-roxo-claro">43%</span> dependem completamente de terceiros.
             </p>
             <p>
               Eu já estive exatamente onde você está. Eu já vi minha própria
@@ -187,7 +187,7 @@ const SectionProblema = () => {
 
           {/* Closing */}
           <p
-            className={`text-center font-body font-bold text-[18px] md:text-[20px] text-marrom-escuro mt-8 ${fade(1400)}`}
+            className={`text-center font-body font-bold text-[18px] md:text-[20px] text-roxo-profundo mt-8 ${fade(1400)}`}
             style={{ transitionDelay: "1400ms" }}
           >
             E é exatamente isso que eu vou te ensinar.

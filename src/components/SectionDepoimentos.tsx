@@ -37,20 +37,23 @@ const SectionDepoimentos = () => {
   return (
     <section>
       {/* Transition */}
-      <div style={{ height: 200, background: "linear-gradient(to bottom, hsl(var(--fundo-escuro)) 0%, hsl(var(--branco)) 100%)" }} />
+      <div
+        className="pointer-events-none"
+        style={{ height: 200, background: "linear-gradient(to bottom, hsl(var(--roxo-profundo)) 0%, hsl(var(--off-white)) 100%)" }}
+      />
 
-      <div className="bg-white py-section-mobile md:py-section-desktop">
+      <div className="bg-off-white py-section-mobile md:py-section-desktop">
         <div ref={ref} className="mx-auto px-5 md:px-10" style={{ maxWidth: 1080 }}>
           {/* Headline */}
           <div className="text-center mb-12">
             <h2
-              className="font-headline font-bold text-h2-mobile md:text-h2 text-marrom-escuro mb-2 transition-all duration-500 ease-out"
+              className="font-headline font-bold text-h2-mobile md:text-h2 text-roxo-profundo mb-2 transition-all duration-500 ease-out"
               style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(15px)" }}
             >
               O meu método funciona.
             </h2>
             <p
-              className="font-headline font-bold text-h3-mobile md:text-h3 text-terroso transition-all duration-500 ease-out"
+              className="font-headline font-bold text-h3-mobile md:text-h3 text-roxo-claro transition-all duration-500 ease-out"
               style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(15px)", transitionDelay: "200ms" }}
             >
               E quem já aplicou, prova.
@@ -62,9 +65,9 @@ const SectionDepoimentos = () => {
             {testimonials.map((t, i) => (
               <div
                 key={i}
-                className="bg-off-white rounded-xl p-6 transition-all duration-500 ease-out"
+                className="bg-white rounded-xl p-6 transition-all duration-500 ease-out"
                 style={{
-                  border: "1px solid #E8E0D4",
+                  border: "1px solid hsl(var(--roxo-claro) / 0.15)",
                   transitionDelay: `${300 + i * 100}ms`,
                   opacity: visible ? 1 : 0,
                   transform: visible ? "translateY(0)" : "translateY(15px)",
@@ -72,13 +75,13 @@ const SectionDepoimentos = () => {
               >
                 {/* Avatar + name */}
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-bege-areia flex items-center justify-center">
-                    <span className="font-body font-bold text-[14px] text-terroso">
+                  <div className="w-12 h-12 rounded-full bg-creme-roxo flex items-center justify-center">
+                    <span className="font-body font-bold text-[14px] text-roxo-claro">
                       {t.name.charAt(0)}
                     </span>
                   </div>
                   <div>
-                    <p className="font-body font-medium text-[14px] text-marrom-escuro">{t.name}</p>
+                    <p className="font-body font-medium text-[14px] text-roxo-profundo">{t.name}</p>
                     <div className="flex gap-0.5">
                       {[...Array(5)].map((_, s) => (
                         <Star key={s} size={12} className="text-dourado fill-dourado" />
