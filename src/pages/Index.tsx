@@ -3,6 +3,8 @@ import SectionHero from "@/components/SectionHero";
 import SectionBadges from "@/components/SectionBadges";
 import SectionProblema from "@/components/SectionProblema";
 import SectionComoFunciona from "@/components/SectionComoFunciona";
+import SectionDepoimentos from "@/components/SectionDepoimentos";
+import SectionParaQuem from "@/components/SectionParaQuem";
 
 const Index = () => {
   return (
@@ -13,6 +15,8 @@ const Index = () => {
         <SectionBadges />
         <SectionProblema />
         <SectionComoFunciona />
+        <SectionDepoimentos />
+        <SectionParaQuem />
       </div>
     </div>
   );

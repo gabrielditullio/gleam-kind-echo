@@ -27,57 +27,60 @@ const SectionParaQuem = () => {
 
   return (
     <section>
-      {/* Transition */}
       <div
-        className="pointer-events-none"
-        style={{ height: 200, background: "linear-gradient(to bottom, hsl(var(--off-white)) 0%, hsl(var(--burgundy)) 100%)" }}
+        className="h-[200px] pointer-events-none"
+        style={{ background: "linear-gradient(to bottom, hsl(var(--off-white)), hsl(var(--roxo-profundo)))" }}
       />
 
-      <div className="bg-burgundy py-section-mobile md:py-section-desktop">
+      <div className="bg-roxo-profundo py-section-mobile md:py-section-desktop">
         <div ref={ref} className="mx-auto px-5 md:px-10" style={{ maxWidth: 860 }}>
           {/* Headline */}
           <h2
-            className="font-headline font-bold text-h2-mobile md:text-[32px] text-white text-center mb-10 transition-all duration-500 ease-out"
+            className="font-headline font-bold text-[24px] md:text-[32px] text-white text-center mb-8 transition-all duration-500 ease-out"
             style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(15px)" }}
           >
             Essa formação foi feita pra você que:
           </h2>
 
           {/* Checks grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 mb-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mx-auto" style={{ maxWidth: 800 }}>
             {profiles.map((p, i) => (
               <div
                 key={i}
                 className="flex items-start gap-3 transition-all duration-500 ease-out"
                 style={{
-                  transitionDelay: `${200 + i * 100}ms`,
+                  transitionDelay: `${200 + i * 80}ms`,
                   opacity: visible ? 1 : 0,
-                  transform: visible ? "translateX(0)" : "translateX(-15px)",
+                  transform: visible ? "translateX(0)" : "translateX(-10px)",
                 }}
               >
                 <CheckCircle size={20} className="text-verde-musgo flex-shrink-0 mt-0.5" />
-                <span className="font-body text-[16px] text-white/85">{p}</span>
+                <span className="font-body text-[16px] text-white">{p}</span>
               </div>
             ))}
           </div>
 
           {/* Separator */}
-          <div className="border-t mb-10" style={{ borderColor: "rgba(255,255,255,0.1)" }} />
+          <div className="flex justify-center" style={{ marginTop: 40 }}>
+            <div className="w-full" style={{ maxWidth: 400, height: 1, background: "rgba(255,255,255,0.15)" }} />
+          </div>
 
-          {/* Beginner message */}
+          {/* Beginner block */}
           <div
-            className="text-center mb-10 transition-all duration-500 ease-out"
+            className="text-center transition-all duration-500 ease-out"
             style={{
-              transitionDelay: "900ms",
+              marginTop: 40,
               opacity: visible ? 1 : 0,
               transform: visible ? "translateY(0)" : "translateY(15px)",
+              transitionDelay: "900ms",
             }}
           >
-            <p className="font-body font-bold text-[20px] text-dourado-claro mb-4">
-              NUNCA DOMOU UM CAVALO NA VIDA? DEIXA COMIGO.
+            <p className="font-body font-bold text-[20px] text-white">
+              NUNCA DOMOU UM CAVALO NA VIDA?{" "}
+              <span className="text-dourado-claro">DEIXA COMIGO.</span>
             </p>
-            <p className="font-body text-[16px] max-w-text mx-auto text-white/75">
-              64% dos meus alunos são iniciantes totais. A formação foi construída
+            <p className="font-body text-[16px] mx-auto mt-4 leading-relaxed" style={{ color: "rgba(255,255,255,0.8)", maxWidth: 600 }}>
+              <span className="font-bold text-dourado-claro">64%</span> dos meus alunos são iniciantes totais. A formação foi construída
               pra qualquer pessoa que ame cavalos — com método, com ciência
               e com linguagem acessível.
             </p>
@@ -87,17 +90,24 @@ const SectionParaQuem = () => {
           <div
             className="flex justify-center transition-all duration-500 ease-out"
             style={{
-              transitionDelay: "1100ms",
+              marginTop: 32,
               opacity: visible ? 1 : 0,
               transform: visible ? "scale(1)" : "scale(0.95)",
+              transitionDelay: "1100ms",
             }}
           >
             <a
               href="#cta"
-              className="group inline-flex items-center justify-center gap-2 bg-dourado hover:brightness-90 text-white font-body font-bold text-[16px] uppercase px-10 py-4 rounded-[10px] transition-all duration-150 w-full md:w-auto"
+              className="group relative inline-flex items-center justify-center gap-2 bg-dourado text-white font-body font-bold text-[16px] uppercase px-10 py-4 rounded-[10px] transition-all duration-150 hover:brightness-90 w-full md:w-auto overflow-hidden"
             >
-              É pra mim! Quero entrar
-              <span className="inline-block transition-transform duration-150 group-hover:translate-x-1">→</span>
+              <span
+                className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[600ms] ease-in-out pointer-events-none"
+                style={{ background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%)" }}
+              />
+              <span className="relative z-10 flex items-center gap-2">
+                É pra mim! Quero entrar
+                <span className="inline-block transition-transform duration-150 ease-in-out group-hover:translate-x-1">→</span>
+              </span>
             </a>
           </div>
         </div>
