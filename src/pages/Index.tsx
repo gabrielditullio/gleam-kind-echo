@@ -11,6 +11,8 @@ import SectionBio from "@/components/SectionBio";
 import SectionPassos from "@/components/SectionPassos";
 import SectionAncoragem from "@/components/SectionAncoragem";
 import SectionOferta from "@/components/SectionOferta";
+import SectionGarantia from "@/components/SectionGarantia";
+import StickyCta from "@/components/StickyCta";
 
 const Index = () => {
   return (
@@ -29,7 +31,9 @@ const Index = () => {
         <SectionPassos />
         <SectionAncoragem />
         <SectionOferta />
+        <SectionGarantia />
       </div>
+      <StickyCta />
     </div>
   );
 };
