@@ -54,10 +54,12 @@ const SectionOferta = () => {
       <div ref={ref} className="mx-auto px-5 md:px-10 py-section-mobile md:py-section-desktop text-center" style={{ maxWidth: 600 }}>
 
         {/* Logo placement */}
-        <div className="flex justify-center mb-8">
-          <img src={logoDoma} alt="Formação em Doma Comportamental" className="w-[280px] md:w-[350px] h-auto opacity-60" />
+        <div className="flex justify-center mb-3 md:mb-4">
+          <img src={logoDoma} alt="Formação em Doma Comportamental" className="w-[300px] md:w-[350px] h-auto opacity-60" />
         </div>
-        <SectionDivider />
+        <div className="-my-5 md:-my-6">
+          <SectionDivider />
+        </div>
 
         {/* Price block */}
         <div
