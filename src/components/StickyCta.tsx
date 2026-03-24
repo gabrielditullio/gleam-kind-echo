@@ -30,7 +30,7 @@ const StickyCta = () => {
       }}
     >
       <div className="hidden md:flex items-center justify-between mx-auto px-8 h-[60px]" style={{ maxWidth: 1200 }}>
-        <p className="font-body font-medium text-[15px]" style={{ color: "#CCC" }}>
+        <p className="font-body font-medium text-[15px]" style={{ color: "#DDD7D0" }}>
           Garantir minha vaga por R$997
         </p>
         <div className="flex items-center gap-4">

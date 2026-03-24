@@ -30,7 +30,7 @@ const GlobalFloats = () => {
         <a
           href="#whatsapp"
           className="fixed z-[9997] right-5 bottom-20 w-14 h-14 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-105"
-          style={{ background: "#25D366", boxShadow: "0 4px 12px rgba(0,0,0,0.15)" }}
+          style={{ background: "#25D366", boxShadow: "0 4px 12px rgba(42,21,48,0.15)" }}
         >
           <MessageCircle size={28} className="text-white" />
         </a>

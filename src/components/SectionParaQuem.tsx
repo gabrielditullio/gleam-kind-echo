@@ -42,7 +42,7 @@ const SectionParaQuem = () => {
             <SectionLabel text="ESSA FORMAÇÃO É PRA VOCÊ?" dark />
           </div>
           <h2
-            className="font-headline font-bold text-[24px] md:text-[32px] text-white text-center mb-2 transition-all duration-500 ease-out"
+            className="font-headline font-bold text-[24px] md:text-[32px] text-neutral-50 text-center mb-2 transition-all duration-500 ease-out"
             style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(15px)" }}
           >
             Essa formação foi feita pra você que:
@@ -63,7 +63,7 @@ const SectionParaQuem = () => {
                 }}
               >
                 <CheckCircle size={20} className="text-sage flex-shrink-0 mt-0.5" />
-                <span className="font-body text-[16px] text-white">{p}</span>
+                <span className="font-body text-[16px] text-neutral-200">{p}</span>
               </div>
             ))}
           </div>
@@ -81,7 +81,7 @@ const SectionParaQuem = () => {
               transitionDelay: "900ms",
             }}
           >
-            <p className="font-body font-semibold text-[20px] text-white">
+            <p className="font-body font-semibold text-[20px] text-neutral-50">
               NUNCA DOMOU UM CAVALO NA VIDA?{" "}
               <span className="text-sand-light">DEIXA COMIGO.</span>
             </p>

@@ -37,7 +37,7 @@ const TopBar = () => {
   const TimeBox = ({ value, label }: { value: string; label: string }) => (
     <div className="flex flex-col items-center">
       <span
-        className="font-body font-semibold text-[14px] text-white px-2 py-1 rounded text-center"
+        className="font-body font-semibold text-[14px] text-neutral-50 px-2 py-1 rounded text-center"
         style={{ background: "rgba(255,255,255,0.1)", minWidth: "36px" }}
       >
         {value}
@@ -49,7 +49,7 @@ const TopBar = () => {
   return (
     <div className="fixed top-0 left-0 right-0 z-[9999] bg-plum-dark flex items-center px-4 md:px-8 h-[40px] md:h-[44px]">
       <div className="hidden md:flex items-center justify-between w-full">
-        <p className="font-body font-semibold text-[13px] text-white tracking-wide uppercase flex-shrink-0">
+        <p className="font-body font-semibold text-[13px] text-neutral-50 tracking-wide uppercase flex-shrink-0">
           PRIMEIRAS 24H COM R$500 DE DESCONTO
         </p>
         <div className="flex items-center gap-1.5">
@@ -72,7 +72,7 @@ const TopBar = () => {
 
       <div className="flex md:hidden items-center justify-between w-full">
         <div className="flex items-center gap-2">
-          <p className="font-body font-semibold text-[11px] text-white tracking-wide uppercase">
+          <p className="font-body font-semibold text-[11px] text-neutral-50 tracking-wide uppercase">
             R$500 OFF · 24H
           </p>
           <div className="flex items-center gap-1">

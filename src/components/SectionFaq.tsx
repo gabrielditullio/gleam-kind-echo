@@ -41,7 +41,7 @@ const SectionFaq = () => {
             <SectionLabel text="DÚVIDAS FREQUENTES" dark />
           </div>
           <h2
-            className="font-headline font-bold text-[24px] md:text-[32px] text-white text-center mb-2 transition-all duration-500 ease-out"
+            className="font-headline font-bold text-[24px] md:text-[32px] text-neutral-50 text-center mb-2 transition-all duration-500 ease-out"
             style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(15px)" }}
           >
             Dúvidas Frequentes
@@ -68,10 +68,10 @@ const SectionFaq = () => {
                     onClick={() => setOpenIndex(isOpen ? -1 : i)}
                     className="w-full flex items-center justify-between gap-3 px-6 py-5 text-left cursor-pointer"
                   >
-                    <span className="font-body font-semibold text-[16px] text-white">{faq.q}</span>
+                    <span className="font-body font-semibold text-[16px] text-neutral-50">{faq.q}</span>
                     <ChevronDown
                       size={20}
-                      className="text-white flex-shrink-0 transition-transform duration-300"
+                      className="text-neutral-50 flex-shrink-0 transition-transform duration-300"
                       style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }}
                     />
                   </button>
@@ -79,7 +79,7 @@ const SectionFaq = () => {
                     className="overflow-hidden transition-all duration-300 ease-out"
                     style={{ maxHeight: isOpen ? "200px" : "0px", opacity: isOpen ? 1 : 0 }}
                   >
-                    <p className="px-6 pb-5 font-body text-[15px] leading-[1.65]" style={{ color: "#CCC" }}>
+                    <p className="px-6 pb-5 font-body text-[15px] leading-[1.65]" style={{ color: "#DDD7D0" }}>
                       {faq.a}
                     </p>
                   </div>

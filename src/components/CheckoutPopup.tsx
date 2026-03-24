@@ -113,7 +113,7 @@ const CheckoutPopup = ({ isOpen, onClose }: CheckoutPopupProps) => {
   return (
     <div
       className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
-      style={{ background: "rgba(0,0,0,0.6)" }}
+      style={{ background: "rgba(42,21,48,0.6)" }}
       onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
     >
       <div
@@ -131,7 +131,7 @@ const CheckoutPopup = ({ isOpen, onClose }: CheckoutPopupProps) => {
           <X size={20} />
         </button>
 
-        <h3 className="font-headline font-bold text-[22px] md:text-[26px] text-white text-center mb-1">
+        <h3 className="font-headline font-bold text-[22px] md:text-[26px] text-neutral-50 text-center mb-1">
           Complete seus dados para garantir sua vaga
         </h3>
         <p className="font-body text-[14px] text-neutral-400 text-center mb-6">

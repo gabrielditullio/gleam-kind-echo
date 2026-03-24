@@ -128,7 +128,7 @@ const SectionOferta = () => {
             transitionDelay: "400ms",
           }}
         >
-          <span className="inline-block font-body font-semibold text-[12px] text-white bg-sage rounded-full px-3 py-1">
+          <span className="inline-block font-body font-semibold text-[12px] text-neutral-50 bg-sage rounded-full px-3 py-1">
             🎓 ALUNO
           </span>
           <p className="font-body font-semibold text-[16px] text-neutral-50 mt-2">Já é meu aluno?</p>

@@ -27,13 +27,13 @@ const SectionFechamento = () => {
       <div className="bg-plum-dark py-section-mobile md:py-section-desktop">
         <div ref={ref} className="mx-auto px-5 md:px-10 text-center" style={{ maxWidth: 700 }}>
           <h2
-            className="font-headline font-bold text-[28px] md:text-[36px] text-white leading-snug transition-all duration-[800ms] ease-out"
+            className="font-headline font-bold text-[28px] md:text-[36px] text-neutral-50 leading-snug transition-all duration-[800ms] ease-out"
             style={{ clipPath: visible ? "inset(0 0 0% 0)" : "inset(0 0 100% 0)" }}
           >
             Seu cavalo não precisa de mais um treinador.
           </h2>
           <h2
-            className="font-headline font-bold text-[28px] md:text-[36px] text-white leading-snug mt-2 transition-all duration-[800ms] ease-out"
+            className="font-headline font-bold text-[28px] md:text-[36px] text-neutral-50 leading-snug mt-2 transition-all duration-[800ms] ease-out"
             style={{ clipPath: visible ? "inset(0 0 0% 0)" : "inset(0 0 100% 0)", transitionDelay: "400ms" }}
           >
             Ele precisa de você sabendo o que faz.
@@ -43,7 +43,7 @@ const SectionFechamento = () => {
             className="font-body text-[17px] leading-[1.65] mt-8 transition-all duration-500 ease-out"
             style={{ color: "rgba(255,255,255,0.85)", transitionDelay: "800ms", opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)" }}
           >
-            Eu já trabalhei com mais de <strong className="text-white">600 cavalos</strong>. Eu criei a <strong className="text-white">única formação</strong> em doma comportamental do Brasil. E eu posso te dizer com convicção: quando você entende a ciência por trás do comportamento equino, tudo muda.
+            Eu já trabalhei com mais de <strong className="text-neutral-50">600 cavalos</strong>. Eu criei a <strong className="text-neutral-50">única formação</strong> em doma comportamental do Brasil. E eu posso te dizer com convicção: quando você entende a ciência por trás do comportamento equino, tudo muda.
           </p>
 
           <p
@@ -54,7 +54,7 @@ const SectionFechamento = () => {
           </p>
 
           <p
-            className="font-body font-semibold text-[20px] text-white mt-4 transition-all duration-500 ease-out"
+            className="font-body font-semibold text-[20px] text-neutral-50 mt-4 transition-all duration-500 ease-out"
             style={{ transitionDelay: "1200ms", opacity: visible ? 1 : 0 }}
           >
             Agora é sua vez.

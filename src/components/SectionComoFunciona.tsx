@@ -83,8 +83,8 @@ const SectionComoFunciona = () => {
                 <span className="inline-block font-body font-semibold text-[11px] px-3 py-1 rounded-full mb-4 bg-sand text-plum-dark">
                   Passo {i + 1}
                 </span>
-                <h3 className="font-body font-semibold text-[20px] text-white mb-3">{step.title}</h3>
-                <p className="font-body text-[15px] leading-[1.65]" style={{ color: "#CCC" }}>
+                <h3 className="font-body font-semibold text-[20px] text-neutral-50 mb-3">{step.title}</h3>
+                <p className="font-body text-[15px] leading-[1.65]" style={{ color: "#DDD7D0" }}>
                   {step.text}
                 </p>
                 {step.italic && (
