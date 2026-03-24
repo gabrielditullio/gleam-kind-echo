@@ -5,6 +5,7 @@ import SectionProblema from "@/components/SectionProblema";
 import SectionComoFunciona from "@/components/SectionComoFunciona";
 import SectionDepoimentos from "@/components/SectionDepoimentos";
 import SectionParaQuem from "@/components/SectionParaQuem";
+import SectionModulos from "@/components/SectionModulos";
 
 const Index = () => {
   return (
@@ -17,6 +18,7 @@ const Index = () => {
         <SectionComoFunciona />
         <SectionDepoimentos />
         <SectionParaQuem />
+        <SectionModulos />
       </div>
     </div>
   );
