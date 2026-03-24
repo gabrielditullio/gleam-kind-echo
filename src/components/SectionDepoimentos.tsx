@@ -105,17 +105,6 @@ const SectionDepoimentos = () => {
             </a>
           </p>
 
-          {/* Social proof placeholder */}
-          <div className="relative max-w-2xl mx-auto mt-8 p-1 rounded-xl border border-sand-dark/15 bg-plum-dark/30">
-            <div className="aspect-video rounded-lg bg-plum/40 flex items-center justify-center">
-              <div className="text-center px-8">
-                <p className="font-body text-sm text-neutral-400">PLACEHOLDER — IMAGEM DE CONTEXTO</p>
-                <p className="font-body text-xs text-neutral-400/60 mt-2">
-                  Sugestão: grid com prints de resultados reais (antes/depois de cavalos, depoimentos em vídeo, capturas de WhatsApp de alunos).
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
