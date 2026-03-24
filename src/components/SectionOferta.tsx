@@ -175,7 +175,7 @@ const SectionOferta = () => {
             >
               Garantir meu desconto de aluno
               <span className="inline-block transition-transform duration-150 group-hover:translate-x-1">→</span>
-            </a>
+            </button>
           </div>
         </div>
       </div>
