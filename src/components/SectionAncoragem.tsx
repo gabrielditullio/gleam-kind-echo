@@ -31,7 +31,7 @@ const SectionAncoragem = () => {
         <SectionLabel text="SEU INVESTIMENTO" dark />
 
         <h2
-          className="font-headline font-bold text-[28px] md:text-[36px] text-neutral-50 leading-[1.2] mb-2 transition-all duration-[600ms] ease-out"
+          className="font-display font-bold text-[28px] md:text-[36px] text-neutral-50 leading-[1.2] mb-2 transition-all duration-[600ms] ease-out"
           style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)" }}
         >
           Quanto Vale Tudo Isso?
@@ -89,7 +89,7 @@ const SectionAncoragem = () => {
             }}
           >
             <span className="font-body font-semibold text-[16px] text-neutral-50">Total percebido</span>
-            <span className="font-headline font-bold text-[24px] text-coral line-through">R$ 2.058</span>
+            <span className="font-display font-bold text-[24px] text-coral line-through">R$ 2.058</span>
           </div>
           <p
             className="text-center font-body font-semibold text-[12px] uppercase tracking-[0.1em] text-sand mt-3 transition-all duration-500 ease-out"

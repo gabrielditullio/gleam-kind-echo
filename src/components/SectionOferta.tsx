@@ -73,7 +73,7 @@ const SectionOferta = () => {
 
           <p className="mt-2">
             <span className="font-body font-semibold text-[28px] text-neutral-50 align-top leading-none">R$</span>
-            <span className="font-headline font-bold text-[80px] text-neutral-50 leading-none">83</span>
+            <span className="font-display font-bold text-[80px] text-neutral-50 leading-none">83</span>
             <span className="font-body font-semibold text-[28px] text-neutral-50 align-super leading-none">,08</span>
           </p>
 

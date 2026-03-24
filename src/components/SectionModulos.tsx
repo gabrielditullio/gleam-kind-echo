@@ -44,7 +44,7 @@ const SectionModulos = () => {
           <div className="text-center mb-12">
             <SectionLabel text="O QUE VOCÊ VAI APRENDER" />
             <h2
-              className="font-headline font-bold text-[22px] md:text-[28px] text-plum-dark mx-auto leading-snug transition-all duration-500 ease-out"
+              className="font-display font-bold text-[22px] md:text-[28px] text-plum-dark mx-auto leading-snug transition-all duration-500 ease-out"
               style={{ maxWidth: 680, opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(15px)" }}
             >
               Eu preparei cada módulo pensando no que EU gostaria de ter aprendido quando comecei.

@@ -42,7 +42,7 @@ const SectionParaQuem = () => {
             <SectionLabel text="ESSA FORMAÇÃO É PRA VOCÊ?" dark />
           </div>
           <h2
-            className="font-headline font-bold text-[24px] md:text-[32px] text-neutral-50 text-center mb-2 transition-all duration-500 ease-out"
+            className="font-display font-bold text-[24px] md:text-[32px] text-neutral-50 text-center mb-2 transition-all duration-500 ease-out"
             style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(15px)" }}
           >
             Essa formação foi feita pra você que:

@@ -43,7 +43,7 @@ const SectionBio = () => {
                 <SectionLabel text="QUEM VAI TE ENSINAR" />
 
                 <h2
-                  className="font-headline font-bold text-[32px] text-plum-dark transition-all duration-500 ease-out"
+                  className="font-display font-bold text-[32px] text-plum-dark transition-all duration-500 ease-out"
                   style={{ transitionDelay: "280ms", opacity: visible ? 1 : 0 }}
                 >
                   Dra. Paolla

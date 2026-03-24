@@ -69,7 +69,7 @@ const SectionBadges = () => {
           </div>
 
           <div {...anim(700, 500, "fade-scale-sm")} className={`${anim(700, 500, "fade-scale-sm").className} mx-auto bg-sand rounded-[8px]`} style={{ ...anim(700, 500, "fade-scale-sm").style, maxWidth: 800, padding: "16px 32px", marginTop: 32 }}>
-            <p className="font-headline font-bold text-[18px] md:text-[22px] uppercase text-plum-dark" style={{ letterSpacing: "1px" }}>
+            <p className="font-display font-bold text-[18px] md:text-[22px] uppercase text-plum-dark" style={{ letterSpacing: "1px" }}>
               A única formação em doma comportamental do Brasil baseada em ciência, não em achismo.
             </p>
           </div>
