@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import logoDoma from "@/assets/logo-doma.png";
+import { useCheckout } from "@/contexts/CheckoutContext";
 
 function AnimatedPrice({ visible }: { visible: boolean }) {
   const [count, setCount] = useState(0);
@@ -19,8 +20,9 @@ function AnimatedPrice({ visible }: { visible: boolean }) {
 }
 
 const SectionOferta = () => {
+  const { openCheckout } = useCheckout();
   const ref = useRef<HTMLDivElement>(null);
-  const btnRef = useRef<HTMLAnchorElement>(null);
+  const btnRef = useRef<HTMLButtonElement>(null);
   const [visible, setVisible] = useState(false);
   const [shaken, setShaken] = useState(false);
 
@@ -133,10 +135,10 @@ const SectionOferta = () => {
           </div>
 
           {/* CTA */}
-          <a
+          <button
             ref={btnRef}
-            href="#cta"
-            className="group relative flex items-center justify-center gap-2 bg-verde-cta text-white font-body font-bold text-[18px] uppercase py-[18px] rounded-[10px] transition-all duration-150 hover:brightness-90 w-full mt-6 overflow-hidden"
+            onClick={openCheckout}
+            className="group relative flex items-center justify-center gap-2 bg-verde-cta text-white font-body font-bold text-[18px] uppercase py-[18px] rounded-[10px] transition-all duration-150 hover:brightness-90 w-full mt-6 overflow-hidden cursor-pointer"
           >
             <span
               className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[600ms] ease-in-out pointer-events-none"
@@ -146,7 +148,7 @@ const SectionOferta = () => {
               Quero entrar na formação
               <span className="inline-block transition-transform duration-150 ease-in-out group-hover:translate-x-1">→</span>
             </span>
-          </a>
+          </button>
 
           {/* Payment icons */}
           <div className="flex items-center justify-center gap-4 mt-4">
@@ -167,13 +169,13 @@ const SectionOferta = () => {
             </span>
             <p className="font-body font-bold text-[16px] text-roxo-profundo mt-2">Já é meu aluno?</p>
             <p className="font-body text-[14px] text-texto-secundario">Você tem desconto especial.</p>
-            <a
-              href="#aluno"
-              className="flex items-center justify-center gap-2 font-body font-bold text-[14px] text-verde-musgo border-2 border-verde-musgo rounded-[10px] py-3 px-6 mt-3 w-full transition-all duration-150 hover:bg-verde-musgo hover:text-white"
+            <button
+              onClick={openCheckout}
+              className="flex items-center justify-center gap-2 font-body font-bold text-[14px] text-verde-musgo border-2 border-verde-musgo rounded-[10px] py-3 px-6 mt-3 w-full transition-all duration-150 hover:bg-verde-musgo hover:text-white cursor-pointer"
             >
               Garantir meu desconto de aluno
               <span className="inline-block transition-transform duration-150 group-hover:translate-x-1">→</span>
-            </a>
+            </button>
           </div>
         </div>
       </div>

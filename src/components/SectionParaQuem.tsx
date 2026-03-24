@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { CheckCircle } from "lucide-react";
+import { useCheckout } from "@/contexts/CheckoutContext";
 
 const profiles = [
   "Tem cavalo e sente medo do que fazem com ele",
@@ -11,6 +12,7 @@ const profiles = [
 ];
 
 const SectionParaQuem = () => {
+  const { openCheckout } = useCheckout();
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -96,9 +98,9 @@ const SectionParaQuem = () => {
               transitionDelay: "1100ms",
             }}
           >
-            <a
-              href="#cta"
-              className="group relative inline-flex items-center justify-center gap-2 bg-verde-cta text-white font-body font-bold text-[16px] uppercase px-10 py-4 rounded-[10px] transition-all duration-150 hover:brightness-90 w-full md:w-auto overflow-hidden"
+            <button
+              onClick={openCheckout}
+              className="group relative inline-flex items-center justify-center gap-2 bg-verde-cta text-white font-body font-bold text-[16px] uppercase px-10 py-4 rounded-[10px] transition-all duration-150 hover:brightness-90 w-full md:w-auto overflow-hidden cursor-pointer"
             >
               <span
                 className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[600ms] ease-in-out pointer-events-none"
@@ -108,7 +110,7 @@ const SectionParaQuem = () => {
                 É pra mim! Quero entrar
                 <span className="inline-block transition-transform duration-150 ease-in-out group-hover:translate-x-1">→</span>
               </span>
-            </a>
+            </button>
           </div>
         </div>
       </div>

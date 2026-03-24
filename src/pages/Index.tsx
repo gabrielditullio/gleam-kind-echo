@@ -17,8 +17,12 @@ import SectionWhatsapp from "@/components/SectionWhatsapp";
 import SectionFechamento from "@/components/SectionFechamento";
 import StickyCta from "@/components/StickyCta";
 import GlobalFloats from "@/components/GlobalFloats";
+import CheckoutPopup from "@/components/CheckoutPopup";
+import { CheckoutProvider, useCheckout } from "@/contexts/CheckoutContext";
 
-const Index = () => {
+const IndexContent = () => {
+  const { isOpen, closeCheckout } = useCheckout();
+
   return (
     <div className="font-body text-texto-corpo">
       <TopBar />
@@ -42,8 +46,15 @@ const Index = () => {
       </div>
       <StickyCta />
       <GlobalFloats />
+      <CheckoutPopup isOpen={isOpen} onClose={closeCheckout} />
     </div>
   );
 };
+
+const Index = () => (
+  <CheckoutProvider>
+    <IndexContent />
+  </CheckoutProvider>
+);
 
 export default Index;

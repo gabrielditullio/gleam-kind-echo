@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { useCheckout } from "@/contexts/CheckoutContext";
 
 const TopBar = () => {
+  const { openCheckout } = useCheckout();
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 23, mins: 59, secs: 59 });
 
   useEffect(() => {
@@ -44,22 +46,12 @@ const TopBar = () => {
     </div>
   );
 
-  const scrollToCta = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const el = document.getElementById("cta");
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <div className="fixed top-0 left-0 right-0 z-[9999] bg-roxo-profundo flex items-center px-4 md:px-8 h-[40px] md:h-[44px]">
-      {/* Desktop: 3 columns */}
       <div className="hidden md:flex items-center justify-between w-full">
-        {/* Left: text */}
         <p className="font-body font-bold text-[13px] text-white tracking-wide uppercase flex-shrink-0">
           PRIMEIRAS 24H COM R$500 DE DESCONTO
         </p>
-
-        {/* Center: Countdown */}
         <div className="flex items-center gap-1.5">
           <span className="font-body text-[10px] text-texto-cinza mr-1 uppercase">Acaba em...</span>
           <TimeBox value={pad(timeLeft.days)} label="DIAS" />
@@ -70,18 +62,14 @@ const TopBar = () => {
           <span className="text-white/40 text-[12px]">:</span>
           <TimeBox value={pad(timeLeft.secs)} label="SEGS" />
         </div>
-
-        {/* Right: CTA */}
-        <a
-          href="#cta"
-          onClick={scrollToCta}
-          className="flex-shrink-0 inline-flex items-center font-body font-bold text-[12px] text-white uppercase bg-verde-cta px-4 py-1.5 rounded-md transition-all duration-150 hover:brightness-90"
+        <button
+          onClick={openCheckout}
+          className="flex-shrink-0 inline-flex items-center font-body font-bold text-[12px] text-white uppercase bg-verde-cta px-4 py-1.5 rounded-md transition-all duration-150 hover:brightness-90 cursor-pointer"
         >
           Garantir Desconto →
-        </a>
+        </button>
       </div>
 
-      {/* Mobile */}
       <div className="flex md:hidden items-center justify-between w-full">
         <div className="flex items-center gap-2">
           <p className="font-body font-bold text-[11px] text-white tracking-wide uppercase">
@@ -95,13 +83,12 @@ const TopBar = () => {
             <TimeBox value={pad(timeLeft.secs)} label="SEG" />
           </div>
         </div>
-        <a
-          href="#cta"
-          onClick={scrollToCta}
-          className="inline-flex items-center font-body font-bold text-[10px] text-white uppercase bg-verde-cta px-3 py-1 rounded-md transition-all duration-150 hover:brightness-90"
+        <button
+          onClick={openCheckout}
+          className="inline-flex items-center font-body font-bold text-[10px] text-white uppercase bg-verde-cta px-3 py-1 rounded-md transition-all duration-150 hover:brightness-90 cursor-pointer"
         >
           Desconto →
-        </a>
+        </button>
       </div>
     </div>
   );

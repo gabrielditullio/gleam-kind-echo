@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import { XCircle, CheckCircle } from "lucide-react";
 import logoDoma from "@/assets/logo-doma.png";
 import heroPhoto from "@/assets/hero-paolla.jpg";
+import { useCheckout } from "@/contexts/CheckoutContext";
 
 const SectionHero = () => {
+  const { openCheckout } = useCheckout();
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -85,9 +87,9 @@ const SectionHero = () => {
 
             {/* CTA Button */}
             <div {...anim(1000, 400, "fade-scale")} style={{ ...anim(1000, 400, "fade-scale").style, marginTop: 32 }}>
-              <a
-                href="#cta"
-                className="group relative inline-flex items-center justify-center gap-2 bg-verde-cta text-white font-body font-bold text-[16px] uppercase px-10 py-4 rounded-[10px] transition-all duration-150 hover:brightness-90 w-full md:w-auto overflow-hidden"
+              <button
+                onClick={openCheckout}
+                className="group relative inline-flex items-center justify-center gap-2 bg-verde-cta text-white font-body font-bold text-[16px] uppercase px-10 py-4 rounded-[10px] transition-all duration-150 hover:brightness-90 w-full md:w-auto overflow-hidden cursor-pointer"
               >
                 {/* Shiny hover effect */}
                 <span
@@ -100,7 +102,7 @@ const SectionHero = () => {
                   Quero proteger meu cavalo
                   <span className="inline-block transition-transform duration-150 ease-in-out group-hover:translate-x-1">→</span>
                 </span>
-              </a>
+              </button>
             </div>
 
             {/* Payment icons */}
