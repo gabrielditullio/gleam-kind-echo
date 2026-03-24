@@ -3,11 +3,11 @@ import SectionLabel from "./SectionLabel";
 import HeadlineUnderline from "./HeadlineUnderline";
 
 const items = [
-  { name: "Formação completa: 10 módulos temáticos", value: "R$ 997", strike: true },
-  { name: "Cases reais em tempo real", value: "R$ 497", strike: true },
-  { name: "Encontros ao vivo mensais com a Dra. Paolla", value: "R$ 497", strike: true },
-  { name: "E-book de Embocaduras e Bitless", value: "R$ 67", strike: true },
-  { name: "Comunidade exclusiva de alunos", value: "Inestimável", strike: false },
+  { name: "Formação completa: 10 módulos temáticos", value: "R$ 2.997" },
+  { name: "Cases reais documentados em tempo real", value: "R$ 1.497" },
+  { name: "12 encontros ao vivo com Dra. Paolla", value: "R$ 2.400" },
+  { name: "Comunidade exclusiva de alunos (12 meses)", value: "R$ 997" },
+  { name: "E-book de Embocaduras e Bitless", value: "R$ 67" },
 ];
 
 const SectionAncoragem = () => {
@@ -38,65 +38,53 @@ const SectionAncoragem = () => {
         </h2>
         <HeadlineUnderline />
 
-        {/* Value table */}
+        {/* Value stack table */}
         <div
           className="mt-10 text-left transition-all duration-[600ms] ease-out"
           style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)", transitionDelay: "200ms" }}
         >
           {/* Header */}
-          <div className="flex items-center justify-between pb-3" style={{ borderBottom: "1px solid rgba(221,215,208,0.2)" }}>
-            <span className="font-body font-semibold text-[12px] uppercase tracking-[0.1em] text-neutral-400">Item</span>
-            <span className="font-body font-semibold text-[12px] uppercase tracking-[0.1em] text-neutral-400">Valor</span>
+          <div className="flex items-center justify-between pb-3 border-b border-white/10">
+            <span className="font-body text-xs uppercase tracking-[0.1em] text-neutral-400">Item</span>
+            <span className="font-body text-xs uppercase tracking-[0.1em] text-neutral-400">Valor</span>
           </div>
 
           {/* Rows */}
           {items.map((item, i) => (
             <div
               key={i}
-              className="flex items-center justify-between py-4 transition-all duration-500 ease-out"
+              className="flex items-center justify-between py-4 border-b border-white/[0.05] transition-all duration-500 ease-out"
               style={{
-                borderBottom: "1px solid rgba(255,255,255,0.08)",
                 transitionDelay: `${300 + i * 100}ms`,
                 opacity: visible ? 1 : 0,
                 transform: visible ? "translateX(0)" : "translateX(-10px)",
               }}
             >
               <div className="flex items-center gap-3">
-                <span className="font-body text-[14px] text-neutral-400">
-                  {String(i + 1).padStart(2, "0")}.
+                <span className="font-body text-sm text-sand/50">
+                  {String(i + 1).padStart(2, "0")}
                 </span>
-                <span className="font-body text-[16px] text-neutral-50">{item.name}</span>
+                <span className="font-body text-base text-neutral-50">{item.name}</span>
               </div>
-              {item.strike ? (
-                <span className="font-body text-[16px] text-coral line-through flex-shrink-0 ml-4">
-                  {item.value}
-                </span>
-              ) : (
-                <span className="font-body font-semibold text-[16px] text-sand flex-shrink-0 ml-4">
-                  {item.value}
-                </span>
-              )}
+              <span className="font-body text-base text-coral line-through flex-shrink-0 ml-4">
+                {item.value}
+              </span>
             </div>
           ))}
 
           {/* Total */}
           <div
-            className="flex items-center justify-between mt-6 pt-4 transition-all duration-500 ease-out"
-            style={{
-              borderTop: "1px solid rgba(221,215,208,0.2)",
-              transitionDelay: "800ms",
-              opacity: visible ? 1 : 0,
-            }}
+            className="flex items-center justify-between mt-4 pt-4 border-t border-sand/30 transition-all duration-500 ease-out"
+            style={{ transitionDelay: "800ms", opacity: visible ? 1 : 0 }}
           >
-            <span className="font-body font-semibold text-[16px] text-neutral-50">Total percebido</span>
-            <span className="font-display font-bold text-[24px] text-coral line-through">R$ 2.058</span>
+            <span className="font-body font-semibold text-base text-sand">Total percebido</span>
+            <div className="text-right">
+              <span className="font-display font-bold text-xl text-sand line-through">R$ 7.958</span>
+              <p className="font-body font-semibold text-xs uppercase tracking-[0.1em] text-coral mt-1">
+                Tudo incluso na formação
+              </p>
+            </div>
           </div>
-          <p
-            className="text-center font-body font-semibold text-[12px] uppercase tracking-[0.1em] text-sand mt-3 transition-all duration-500 ease-out"
-            style={{ transitionDelay: "900ms", opacity: visible ? 1 : 0 }}
-          >
-            Incluso na formação
-          </p>
         </div>
       </div>
     </section>

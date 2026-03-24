@@ -1,9 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { Sparkles, Check } from "lucide-react";
 import paymentIcons from "@/assets/payment-icons.png";
 import { useCheckout } from "@/contexts/CheckoutContext";
-import SectionLabel from "./SectionLabel";
-import SectionOrnament from "./SectionOrnament";
+import SectionDivider from "./SectionDivider";
 
 const SectionOferta = () => {
   const { openCheckout } = useCheckout();
@@ -35,14 +33,8 @@ const SectionOferta = () => {
     return () => clearTimeout(t);
   }, [visible, shaken]);
 
-  const badges = [
-    "Acesso imediato",
-    "Pagamento seguro",
-    "12 meses de acesso",
-  ];
-
   return (
-    <section id="cta" style={{ background: "linear-gradient(180deg, #2A1530 0%, rgba(66,34,76,0.6) 100%)" }}>
+    <section id="cta" className="bg-plum-dark">
       <style>{`
         @keyframes micro-shake {
           0% { transform: translateX(0); }
@@ -54,62 +46,55 @@ const SectionOferta = () => {
         }
       `}</style>
 
-      {/* Gradient transition from ancoragem */}
-      <div className="h-[200px] pointer-events-none" style={{ background: "linear-gradient(to bottom, #2A1530, transparent)" }} />
+      <div ref={ref} className="mx-auto px-5 md:px-10 py-section-mobile md:py-section-desktop text-center" style={{ maxWidth: 600 }}>
 
-      <div ref={ref} className="mx-auto px-5 md:px-10 pb-section-mobile md:pb-section-desktop text-center" style={{ maxWidth: 600 }}>
-        <SectionLabel text="SEU INVESTIMENTO" dark />
-        <SectionOrnament />
+        <SectionDivider />
 
         {/* Price block */}
         <div
           className="transition-all duration-[600ms] ease-out"
           style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)" }}
         >
-          <p className="font-body text-[18px] text-coral line-through">De R$ 2.058</p>
-          <p className="font-body font-semibold text-[14px] uppercase tracking-[0.1em] text-neutral-400 mt-4">
+          <p className="font-body text-lg text-coral line-through">De R$ 1.497,00</p>
+
+          <p className="font-body font-semibold text-sm uppercase tracking-[0.1em] text-neutral-400 mt-4">
             Por apenas 12x de
           </p>
 
-          <p className="mt-2">
-            <span className="font-body font-semibold text-[28px] text-neutral-50 align-top leading-none">R$</span>
-            <span className="font-display font-bold text-[80px] text-neutral-50 leading-none">83</span>
-            <span className="font-body font-semibold text-[28px] text-neutral-50 align-super leading-none">,08</span>
-          </p>
+          <div className="flex items-start justify-center mt-2">
+            <span className="font-display text-3xl text-sand mt-3">R$</span>
+            <span className="font-display font-bold text-[80px] md:text-[96px] leading-none text-sand">96</span>
+            <span className="font-display text-3xl text-sand mt-3">,06</span>
+          </div>
 
-          <p className="font-body text-[16px] text-neutral-400 mt-2">ou R$ 997 à vista</p>
+          <p className="font-body text-sm text-neutral-400 mt-2">ou R$ 997 à vista no boleto ou PIX</p>
         </div>
 
-        <SectionOrnament />
+        <SectionDivider />
 
         {/* CTA Button */}
-        <div className="flex justify-center">
-          <button
-            ref={btnRef}
-            onClick={openCheckout}
-            className="group relative flex items-center justify-center gap-2 bg-coral text-white font-body font-semibold text-[15px] uppercase tracking-[0.05em] py-4 px-10 rounded-[8px] transition-all duration-150 hover:bg-coral-dark overflow-hidden cursor-pointer w-full"
-            style={{ maxWidth: 420 }}
-          >
-            <span
-              className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[600ms] ease-in-out pointer-events-none"
-              style={{ background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%)" }}
-            />
-            <span className="relative z-10 flex items-center gap-2">
-              <Sparkles size={16} />
-              Quero me inscrever agora
-              <span className="inline-block transition-transform duration-150 ease-in-out group-hover:translate-x-1">→</span>
-            </span>
-          </button>
-        </div>
+        <button
+          ref={btnRef}
+          onClick={openCheckout}
+          className="group relative w-full max-w-md mx-auto flex items-center justify-center gap-2 bg-coral text-white font-body font-semibold text-[15px] uppercase tracking-[0.05em] py-4 px-8 rounded-lg transition-all duration-150 hover:bg-coral-dark overflow-hidden cursor-pointer"
+        >
+          <span
+            className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[600ms] ease-in-out pointer-events-none"
+            style={{ background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%)" }}
+          />
+          <span className="relative z-10 flex items-center gap-2">
+            ✦ Quero me inscrever agora
+            <span className="inline-block transition-transform duration-150 ease-in-out group-hover:translate-x-1">→</span>
+          </span>
+        </button>
 
         {/* Trust badges */}
-        <div className="flex items-center justify-center gap-4 flex-wrap mt-3">
-          {badges.map((b) => (
-            <span key={b} className="flex items-center gap-1.5 font-body text-[13px] text-neutral-400">
-              <Check size={14} className="text-sage" />
-              {b}
-            </span>
-          ))}
+        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 mt-4">
+          <span className="text-neutral-400 text-sm flex items-center gap-1">⚡ Acesso imediato</span>
+          <span className="text-neutral-400 text-sm">·</span>
+          <span className="text-neutral-400 text-sm flex items-center gap-1">🔒 Pagamento seguro</span>
+          <span className="text-neutral-400 text-sm">·</span>
+          <span className="text-neutral-400 text-sm flex items-center gap-1">📅 12 meses de acesso</span>
         </div>
 
         {/* Payment icons */}
@@ -128,16 +113,15 @@ const SectionOferta = () => {
             transitionDelay: "400ms",
           }}
         >
-          <span className="inline-block font-body font-semibold text-[12px] text-neutral-50 bg-sage rounded-full px-3 py-1">
+          <span className="inline-block font-body font-semibold text-xs text-neutral-50 bg-sage rounded-full px-3 py-1">
             🎓 ALUNO
           </span>
-          <p className="font-body font-semibold text-[16px] text-neutral-50 mt-2">Já é meu aluno?</p>
-          <p className="font-body text-[14px] text-neutral-400">Você tem desconto especial.</p>
+          <p className="font-body font-semibold text-base text-neutral-50 mt-2">Já é meu aluno?</p>
+          <p className="font-body text-sm text-neutral-400">Você tem desconto especial.</p>
           <div className="flex justify-center mt-3">
             <button
               onClick={openCheckout}
-              className="group flex items-center justify-center gap-2 font-body font-semibold text-[14px] text-sage border-2 border-sage rounded-[8px] py-3 px-6 transition-all duration-150 hover:bg-sage hover:text-white cursor-pointer w-full"
-              style={{ maxWidth: 420 }}
+              className="group flex items-center justify-center gap-2 font-body font-semibold text-sm text-sage border-2 border-sage rounded-lg py-3 px-6 transition-all duration-150 hover:bg-sage hover:text-white cursor-pointer w-full max-w-md"
             >
               Garantir meu desconto de aluno
               <span className="inline-block transition-transform duration-150 group-hover:translate-x-1">→</span>
