@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { CheckCircle } from "lucide-react";
+import { useCheckout } from "@/contexts/CheckoutContext";
 
 const profiles = [
   "Tem cavalo e sente medo do que fazem com ele",
