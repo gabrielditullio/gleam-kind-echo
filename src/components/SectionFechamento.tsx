@@ -25,7 +25,7 @@ const SectionFechamento = () => {
         className="h-[200px] pointer-events-none"
         style={{ background: "linear-gradient(to bottom, #FAF8F6, #2A1530)" }}
       />
-      <div className="bg-plum-dark py-section-mobile md:py-section-desktop relative">
+      <div className="bg-plum-dark py-20 md:py-28 relative">
         <CornerOrnaments />
         <div ref={ref} className="mx-auto px-5 md:px-10 text-center" style={{ maxWidth: 700 }}>
           <h2
@@ -49,7 +49,7 @@ const SectionFechamento = () => {
           </p>
 
           <p
-            className="font-body font-semibold text-[22px] text-sand-light mt-6 transition-all duration-500 ease-out"
+            className="font-display font-semibold italic text-[22px] md:text-[28px] text-sand leading-relaxed mt-6 transition-all duration-500 ease-out"
             style={{ transitionDelay: "1000ms", opacity: visible ? 1 : 0 }}
           >
             Isso aqui não existe em nenhum outro lugar. Não existe plano B.
@@ -68,7 +68,7 @@ const SectionFechamento = () => {
           >
             <button
               onClick={openCheckout}
-              className="group relative inline-flex items-center justify-center gap-2 bg-coral text-white font-body font-semibold text-[15px] uppercase tracking-[0.05em] px-12 py-5 rounded-[8px] transition-all duration-150 hover:bg-coral-dark w-full md:w-auto overflow-hidden cursor-pointer"
+              className="group relative inline-flex items-center justify-center gap-2 bg-coral text-white font-body font-semibold text-[17px] uppercase tracking-[0.05em] px-12 py-5 rounded-lg transition-all duration-150 hover:bg-coral-dark w-full md:w-auto overflow-hidden cursor-pointer"
             >
               <span
                 className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[600ms] ease-in-out pointer-events-none"
@@ -81,8 +81,8 @@ const SectionFechamento = () => {
             </button>
           </div>
 
-          <p className="font-body text-[14px] text-neutral-400 mt-4">
-            Oferta válida somente nas primeiras 24 horas.
+          <p className="font-body text-sm text-neutral-400 mt-3">
+            ou 12x de R$ 96,06 · Acesso imediato · Pagamento seguro
           </p>
 
           <div className="mt-20 pt-10" style={{ borderTop: "1px solid rgba(255,255,255,0.1)" }}>
