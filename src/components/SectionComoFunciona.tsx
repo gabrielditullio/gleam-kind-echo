@@ -50,8 +50,8 @@ const SectionComoFunciona = () => {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-sand/[0.03] to-transparent pointer-events-none" />
         <div ref={ref} className="mx-auto px-5 md:px-10" style={{ maxWidth: 1200 }}>
           {/* Logo placement */}
-          <div className="flex justify-center mb-8">
-            <img src={logoDoma} alt="Formação em Doma Comportamental" className="w-[140px] h-auto opacity-50" />
+          <div className="flex justify-center mb-6">
+            <img src={logoDoma} alt="Formação em Doma Comportamental" className="w-[180px] md:w-[240px] h-auto opacity-60" />
           </div>
           <div className="text-center">
             <SectionLabel text="O MÉTODO NA PRÁTICA" dark />

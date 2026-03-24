@@ -52,7 +52,7 @@ const SectionHero = () => {
 
           <div className="w-full md:w-[55%] order-1 md:order-2">
             <div {...anim(200, 400, "fade-down")}>
-              <img src={logoDoma} alt="Formação em Doma Comportamental" className="w-[200px] md:w-[240px] h-auto" />
+              <img src={logoDoma} alt="Formação em Doma Comportamental" className="w-[220px] md:w-[260px] h-auto" />
             </div>
 
             <div {...anim(400, 600, "fade-up")} style={{ ...anim(400, 600, "fade-up").style, marginTop: 16 }}>
