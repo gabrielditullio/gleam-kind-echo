@@ -41,14 +41,17 @@ const SectionComoFunciona = () => {
   return (
     <section>
       {/* Transition gradient */}
-      <div style={{ height: 200, background: "linear-gradient(to bottom, hsl(var(--bege-claro)) 0%, hsl(var(--fundo-escuro)) 100%)" }} />
+      <div
+        className="pointer-events-none"
+        style={{ height: 200, background: "linear-gradient(to bottom, hsl(var(--creme-roxo)) 0%, hsl(var(--roxo-profundo)) 100%)" }}
+      />
 
-      <div className="bg-fundo-escuro py-section-mobile md:py-section-desktop">
+      <div className="bg-roxo-profundo py-section-mobile md:py-section-desktop">
         <div ref={ref} className="mx-auto px-5 md:px-10" style={{ maxWidth: 1200 }}>
           {/* Headline strip */}
           <div className="flex justify-center mb-12">
             <div className="bg-dourado rounded-lg px-8 py-4">
-              <h2 className="font-headline font-bold text-h3-mobile md:text-h3 text-marrom-escuro uppercase tracking-wide text-center">
+              <h2 className="font-headline font-bold text-h3-mobile md:text-h3 text-roxo-profundo uppercase tracking-wide text-center">
                 Como Funciona a Formação na Prática
               </h2>
             </div>
@@ -61,21 +64,20 @@ const SectionComoFunciona = () => {
                 key={i}
                 className="rounded-xl p-7 transition-all duration-500 ease-out"
                 style={{
-                  background: "rgba(255,255,255,0.05)",
-                  border: "1px solid rgba(255,255,255,0.1)",
+                  background: "hsl(var(--roxo-medio))",
+                  border: "1px solid hsl(var(--roxo-claro) / 0.3)",
                   transitionDelay: `${i * 150}ms`,
                   opacity: visible ? 1 : 0,
                   transform: visible ? "translateY(0)" : "translateY(20px)",
                 }}
               >
                 <span
-                  className="inline-block font-body font-bold text-[11px] px-3 py-1 rounded-full mb-4"
-                  style={{ background: "hsl(var(--dourado))", color: "hsl(var(--marrom-escuro))" }}
+                  className="inline-block font-body font-bold text-[11px] px-3 py-1 rounded-full mb-4 bg-dourado text-roxo-profundo"
                 >
                   Passo {i + 1}
                 </span>
                 <h3 className="font-body font-bold text-[20px] text-white mb-3">{step.title}</h3>
-                <p className="font-body text-[15px] leading-relaxed" style={{ color: "#CCC" }}>
+                <p className="font-body text-[15px] leading-relaxed text-white/75">
                   {step.text}
                 </p>
                 {step.italic && (

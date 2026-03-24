@@ -28,9 +28,12 @@ const SectionParaQuem = () => {
   return (
     <section>
       {/* Transition */}
-      <div style={{ height: 200, background: "linear-gradient(to bottom, hsl(var(--branco)) 0%, hsl(var(--fundo-escuro-2)) 100%)" }} />
+      <div
+        className="pointer-events-none"
+        style={{ height: 200, background: "linear-gradient(to bottom, hsl(var(--off-white)) 0%, hsl(var(--burgundy)) 100%)" }}
+      />
 
-      <div className="bg-fundo-escuro-2 py-section-mobile md:py-section-desktop">
+      <div className="bg-burgundy py-section-mobile md:py-section-desktop">
         <div ref={ref} className="mx-auto px-5 md:px-10" style={{ maxWidth: 860 }}>
           {/* Headline */}
           <h2
@@ -53,7 +56,7 @@ const SectionParaQuem = () => {
                 }}
               >
                 <CheckCircle size={20} className="text-verde-musgo flex-shrink-0 mt-0.5" />
-                <span className="font-body text-[16px]" style={{ color: "#E0D8CF" }}>{p}</span>
+                <span className="font-body text-[16px] text-white/85">{p}</span>
               </div>
             ))}
           </div>
@@ -73,7 +76,7 @@ const SectionParaQuem = () => {
             <p className="font-body font-bold text-[20px] text-dourado-claro mb-4">
               NUNCA DOMOU UM CAVALO NA VIDA? DEIXA COMIGO.
             </p>
-            <p className="font-body text-[16px] max-w-text mx-auto" style={{ color: "#CCC" }}>
+            <p className="font-body text-[16px] max-w-text mx-auto text-white/75">
               64% dos meus alunos são iniciantes totais. A formação foi construída
               pra qualquer pessoa que ame cavalos — com método, com ciência
               e com linguagem acessível.
@@ -91,8 +94,7 @@ const SectionParaQuem = () => {
           >
             <a
               href="#cta"
-              className="group inline-flex items-center justify-center gap-2 bg-dourado hover:brightness-90 text-white font-body font-bold text-[16px] uppercase px-10 py-4 transition-all duration-150 w-full md:w-auto"
-              style={{ borderRadius: 10 }}
+              className="group inline-flex items-center justify-center gap-2 bg-dourado hover:brightness-90 text-white font-body font-bold text-[16px] uppercase px-10 py-4 rounded-[10px] transition-all duration-150 w-full md:w-auto"
             >
               É pra mim! Quero entrar
               <span className="inline-block transition-transform duration-150 group-hover:translate-x-1">→</span>

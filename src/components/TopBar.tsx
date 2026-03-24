@@ -46,8 +46,8 @@ const TopBar = () => {
 
   return (
     <div
-      className="fixed top-0 left-0 right-0 z-[100] flex items-center justify-center md:justify-between px-4 md:px-8"
-      style={{ height: "44px", backgroundColor: "hsl(var(--marrom-escuro))" }}
+      className="fixed top-0 left-0 right-0 z-[100] flex items-center justify-center md:justify-between px-4 md:px-8 bg-roxo-profundo"
+      style={{ height: "44px" }}
     >
       {/* Urgency text */}
       <p className="hidden md:block font-body font-bold text-[12px] text-white tracking-wide uppercase">
@@ -81,12 +81,7 @@ const TopBar = () => {
       {/* CTA button */}
       <a
         href="#cta"
-        className="hidden md:inline-flex items-center font-body font-bold text-[12px] text-white uppercase transition-all duration-150 hover:brightness-90"
-        style={{
-          backgroundColor: "hsl(var(--dourado))",
-          padding: "6px 16px",
-          borderRadius: "6px",
-        }}
+        className="hidden md:inline-flex items-center font-body font-bold text-[12px] text-white uppercase transition-all duration-150 hover:brightness-90 bg-dourado px-4 py-1.5 rounded-md"
       >
         Garantir Desconto →
       </a>
