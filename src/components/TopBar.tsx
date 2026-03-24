@@ -35,8 +35,8 @@ const TopBar = () => {
   const TimeBox = ({ value, label }: { value: string; label: string }) => (
     <div className="flex flex-col items-center">
       <span
-        className="font-body font-bold text-[14px] text-white px-2 py-0.5 rounded text-center"
-        style={{ background: "rgba(255,255,255,0.1)", minWidth: "32px" }}
+        className="font-body font-bold text-[14px] text-white px-2 py-1 rounded text-center"
+        style={{ background: "rgba(255,255,255,0.1)", minWidth: "36px" }}
       >
         {value}
       </span>
@@ -44,42 +44,44 @@ const TopBar = () => {
     </div>
   );
 
+  const scrollToCta = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const el = document.getElementById("cta");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <div className="fixed top-0 left-0 right-0 z-[100] bg-roxo-profundo h-[40px] md:h-[44px] flex items-center px-4 md:px-8">
+    <div className="fixed top-0 left-0 right-0 z-[9999] bg-roxo-profundo flex items-center px-4 md:px-8 h-[40px] md:h-[44px]">
       {/* Desktop: 3 columns */}
       <div className="hidden md:flex items-center justify-between w-full">
-        {/* Left: Logo simplificada */}
-        <div className="flex-shrink-0" style={{ width: "80px" }}>
-          <span className="font-headline font-bold text-[18px] text-white tracking-wide">DᎧMA</span>
-        </div>
+        {/* Left: text */}
+        <p className="font-body font-bold text-[13px] text-white tracking-wide uppercase flex-shrink-0">
+          PRIMEIRAS 24H COM R$500 DE DESCONTO
+        </p>
 
-        {/* Center: Text + Countdown */}
-        <div className="flex items-center gap-4">
-          <p className="font-body font-bold text-[12px] text-white tracking-wide uppercase">
-            PRIMEIRAS 24H COM R$500 DE DESCONTO
-          </p>
-          <div className="flex items-center gap-1">
-            <span className="font-body text-[11px] text-texto-cinza mr-1 uppercase">Acaba em</span>
-            <TimeBox value={pad(timeLeft.days)} label="DIAS" />
-            <span className="text-white/40 text-[12px] mx-0.5">:</span>
-            <TimeBox value={pad(timeLeft.hours)} label="HRS" />
-            <span className="text-white/40 text-[12px] mx-0.5">:</span>
-            <TimeBox value={pad(timeLeft.mins)} label="MINS" />
-            <span className="text-white/40 text-[12px] mx-0.5">:</span>
-            <TimeBox value={pad(timeLeft.secs)} label="SEGS" />
-          </div>
+        {/* Center: Countdown */}
+        <div className="flex items-center gap-1.5">
+          <span className="font-body text-[10px] text-texto-cinza mr-1 uppercase">Acaba em...</span>
+          <TimeBox value={pad(timeLeft.days)} label="DIAS" />
+          <span className="text-white/40 text-[12px]">:</span>
+          <TimeBox value={pad(timeLeft.hours)} label="HRS" />
+          <span className="text-white/40 text-[12px]">:</span>
+          <TimeBox value={pad(timeLeft.mins)} label="MINS" />
+          <span className="text-white/40 text-[12px]">:</span>
+          <TimeBox value={pad(timeLeft.secs)} label="SEGS" />
         </div>
 
         {/* Right: CTA */}
         <a
           href="#cta"
+          onClick={scrollToCta}
           className="flex-shrink-0 inline-flex items-center font-body font-bold text-[12px] text-white uppercase bg-dourado px-4 py-1.5 rounded-md transition-all duration-150 hover:brightness-90"
         >
           Garantir Desconto →
         </a>
       </div>
 
-      {/* Mobile: text + countdown left, button right */}
+      {/* Mobile */}
       <div className="flex md:hidden items-center justify-between w-full">
         <div className="flex items-center gap-2">
           <p className="font-body font-bold text-[11px] text-white tracking-wide uppercase">
@@ -95,6 +97,7 @@ const TopBar = () => {
         </div>
         <a
           href="#cta"
+          onClick={scrollToCta}
           className="inline-flex items-center font-body font-bold text-[10px] text-white uppercase bg-dourado px-3 py-1 rounded-md transition-all duration-150 hover:brightness-90"
         >
           Desconto →
