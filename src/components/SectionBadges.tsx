@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
+import { Check } from "lucide-react";
 
-const badges = [
+const badgesNegativos = [
   "Não é curso tradicional",
   "Não é doma racional",
   "Não é achismo",
@@ -30,9 +31,9 @@ const SectionBadges = () => {
 
       <section ref={ref} className="bg-off-white py-section-mobile md:py-section-desktop">
         <div className="mx-auto px-5 md:px-10 text-center" style={{ maxWidth: "1000px" }}>
-          {/* 3 badges */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-            {badges.map((b, i) => (
+          {/* 3 badges negativos */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-3">
+            {badgesNegativos.map((b, i) => (
               <span
                 key={i}
                 className="inline-flex items-center gap-2 font-body font-bold text-[14px] text-white px-6 py-2.5 rounded-full bg-vermelho-terroso transition-all duration-[400ms] ease-out"
@@ -47,6 +48,21 @@ const SectionBadges = () => {
             ))}
           </div>
 
+          {/* Badge positivo dourado */}
+          <div
+            className="flex justify-center mb-8 transition-all duration-[400ms] ease-out"
+            style={{
+              opacity: visible ? 1 : 0,
+              transform: visible ? "scale(1)" : "scale(0.9)",
+              transitionDelay: "400ms",
+            }}
+          >
+            <span className="inline-flex items-center gap-2 font-body font-bold text-[14px] text-roxo-profundo px-6 py-2.5 rounded-full bg-dourado">
+              <Check size={16} className="text-roxo-profundo" />
+              600+ cavalos trabalhados com sucesso
+            </span>
+          </div>
+
           {/* Highlight strip */}
           <div
             className="mx-auto mb-8 bg-dourado rounded-lg transition-all duration-500 ease-out"
@@ -55,11 +71,12 @@ const SectionBadges = () => {
               padding: "16px 32px",
               opacity: visible ? 1 : 0,
               transform: visible ? "scale(1)" : "scale(0.97)",
-              transitionDelay: "400ms",
+              transitionDelay: "600ms",
             }}
           >
             <p className="font-headline font-bold text-[18px] md:text-[22px] uppercase tracking-[1px] text-roxo-profundo">
-              É a única formação em doma baseada em ciência do comportamento
+              A única formação em doma comportamental do Brasil
+              baseada em ciência, não em achismo.
             </p>
           </div>
 
@@ -70,7 +87,7 @@ const SectionBadges = () => {
               maxWidth: "640px",
               opacity: visible ? 1 : 0,
               transform: visible ? "translateY(0)" : "translateY(10px)",
-              transitionDelay: "600ms",
+              transitionDelay: "800ms",
             }}
           >
             Você vai aprender a ler o seu cavalo. Entender o que cada expressão
