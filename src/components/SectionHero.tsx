@@ -52,10 +52,10 @@ const SectionHero = () => {
 
           <div className="w-full md:w-[55%] order-1 md:order-2">
             <div {...anim(200, 400, "fade-down")}>
-              <img src={logoDoma} alt="Formação em Doma Comportamental" className="w-[260px] md:w-[340px] h-auto" />
+              <img src={logoDoma} alt="Formação em Doma Comportamental" className="w-[200px] md:w-[240px] h-auto" />
             </div>
 
-            <div {...anim(400, 600, "fade-up")} style={{ ...anim(400, 600, "fade-up").style, marginTop: 32 }}>
+            <div {...anim(400, 600, "fade-up")} style={{ ...anim(400, 600, "fade-up").style, marginTop: 16 }}>
               <h1 className="font-display font-bold text-[36px] md:text-[48px] leading-[1.2] md:leading-[1.15] text-neutral-50">
                 O método que já transformou{" "}
                 a vida de mais de{" "}
