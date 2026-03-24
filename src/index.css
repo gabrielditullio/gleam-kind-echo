@@ -2,7 +2,7 @@
   display: none !important;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -10,52 +10,70 @@
 
 @layer base {
   :root {
-    /* FDC Sales Page — Purple Design System */
-    --roxo-profundo: 276 37% 17%;
-    --roxo-medio: 276 35% 27%;
-    --roxo-claro: 276 34% 37%;
-    --burgundy: 330 53% 23%;
-    --branco: 0 0% 100%;
-    --off-white: 270 20% 96%;
-    --creme-roxo: 276 26% 92%;
-    --dourado: 43 50% 54%;
-    --dourado-claro: 45 60% 66%;
-    --verde-musgo: 94 36% 35%;
-    --verde-cta: 134 50% 42%;
-    --vermelho-terroso: 0 40% 39%;
-    --texto-corpo: 0 0% 18%;
-    --texto-secundario: 0 0% 33%;
-    --texto-cinza: 0 0% 60%;
+    /* — Cores Primárias — */
+    --plum-dark: 276 37% 13%;
+    --plum-default: 276 37% 22%;
+    --plum-light: 276 34% 35%;
+
+    /* — Secundárias — */
+    --sand-light: 34 30% 76%;
+    --sand-default: 30 30% 64%;
+    --sand-dark: 30 25% 49%;
+
+    /* — Acento (CTAs) — */
+    --coral-light: 350 60% 72%;
+    --coral-default: 348 52% 61%;
+    --coral-dark: 348 45% 49%;
+
+    /* — Suporte — */
+    --sage-light: 134 20% 63%;
+    --sage-default: 134 15% 49%;
+    --sage-dark: 134 17% 37%;
+
+    /* — Neutros Quentes — */
+    --neutral-50: 30 25% 97%;
+    --neutral-100: 28 18% 93%;
+    --neutral-200: 25 12% 84%;
+    --neutral-400: 25 8% 62%;
+    --neutral-600: 25 10% 33%;
+    --neutral-800: 25 10% 16%;
+    --neutral-950: 25 10% 9%;
+
+    /* — Semânticas — */
+    --success: 140 30% 42%;
+    --error: 0 50% 53%;
+    --warning: 40 60% 53%;
+    --info: 214 30% 50%;
 
     /* Shadcn mappings */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 18%;
-    --card: 270 20% 96%;
-    --card-foreground: 0 0% 18%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 18%;
-    --primary: 43 50% 54%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 276 26% 92%;
-    --secondary-foreground: 276 37% 17%;
-    --muted: 276 26% 92%;
-    --muted-foreground: 0 0% 33%;
-    --accent: 276 34% 37%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 40% 39%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 276 15% 80%;
-    --input: 276 15% 80%;
-    --ring: 43 50% 54%;
+    --background: 30 25% 97%;
+    --foreground: 25 10% 16%;
+    --card: 28 18% 93%;
+    --card-foreground: 25 10% 16%;
+    --popover: 30 25% 97%;
+    --popover-foreground: 25 10% 16%;
+    --primary: 30 30% 64%;
+    --primary-foreground: 30 25% 97%;
+    --secondary: 28 18% 93%;
+    --secondary-foreground: 276 37% 13%;
+    --muted: 28 18% 93%;
+    --muted-foreground: 25 10% 33%;
+    --accent: 276 34% 35%;
+    --accent-foreground: 30 25% 97%;
+    --destructive: 0 50% 53%;
+    --destructive-foreground: 30 25% 97%;
+    --border: 25 12% 84%;
+    --input: 25 12% 84%;
+    --ring: 30 30% 64%;
     --radius: 0rem;
-    --sidebar-background: 276 37% 17%;
-    --sidebar-foreground: 276 26% 92%;
-    --sidebar-primary: 43 50% 54%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 276 35% 27%;
-    --sidebar-accent-foreground: 276 26% 92%;
-    --sidebar-border: 276 35% 27%;
-    --sidebar-ring: 43 50% 54%;
+    --sidebar-background: 276 37% 13%;
+    --sidebar-foreground: 28 18% 93%;
+    --sidebar-primary: 30 30% 64%;
+    --sidebar-primary-foreground: 30 25% 97%;
+    --sidebar-accent: 276 37% 22%;
+    --sidebar-accent-foreground: 28 18% 93%;
+    --sidebar-border: 276 37% 22%;
+    --sidebar-ring: 30 30% 64%;
   }
 }
 
@@ -66,9 +84,9 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 18px;
-    line-height: 1.7;
+    font-family: 'Source Sans 3', system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
   }
 
   @media (max-width: 768px) {
@@ -78,8 +96,14 @@
     }
   }
 
-  h1, h2, h3 {
+  h1, h2 {
     font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+  }
+
+  h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600;
   }
 }
 
@@ -89,20 +113,13 @@
   }
 
   .font-body {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Source Sans 3', system-ui, sans-serif;
   }
 }
 
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .fade-in {
-    transition-duration: 0.01ms;
-    transform: none;
-  }
-  .stagger-1, .stagger-2, .stagger-3, .stagger-4 {
-    transition-delay: 0ms;
-  }
   * {
     transition-duration: 0.01ms !important;
     transition-delay: 0ms !important;
