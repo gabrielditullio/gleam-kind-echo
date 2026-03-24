@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import { X } from "lucide-react";
+import { useCheckout } from "@/contexts/CheckoutContext";
 
 const StickyCta = () => {
+  const { openCheckout } = useCheckout();
   const [show, setShow] = useState(false);
   const [dismissed, setDismissed] = useState(false);
 
   useEffect(() => {
     const target = document.getElementById("cta");
     if (!target) return;
-
     const obs = new IntersectionObserver(
       ([e]) => setShow(!e.isIntersecting),
       { threshold: 0 }
@@ -28,19 +29,18 @@ const StickyCta = () => {
         transform: show ? "translateY(0)" : "translateY(100%)",
       }}
     >
-      {/* Desktop */}
       <div className="hidden md:flex items-center justify-between mx-auto px-8 h-[60px]" style={{ maxWidth: 1200 }}>
         <p className="font-body font-medium text-[15px]" style={{ color: "#CCC" }}>
           Garantir minha vaga por R$997
         </p>
         <div className="flex items-center gap-4">
-          <a
-            href="#cta"
-            className="inline-flex items-center gap-2 font-body font-bold text-[14px] text-white uppercase bg-verde-cta px-6 py-2.5 rounded-lg transition-all duration-150 hover:brightness-90"
+          <button
+            onClick={openCheckout}
+            className="inline-flex items-center gap-2 font-body font-bold text-[14px] text-white uppercase bg-verde-cta px-6 py-2.5 rounded-lg transition-all duration-150 hover:brightness-90 cursor-pointer"
           >
             Quero minha vaga
             <span className="inline-block transition-transform duration-150 group-hover:translate-x-1">→</span>
-          </a>
+          </button>
           <button
             onClick={() => setDismissed(true)}
             className="text-texto-cinza hover:text-white transition-colors duration-150 cursor-pointer"
@@ -50,14 +50,13 @@ const StickyCta = () => {
         </div>
       </div>
 
-      {/* Mobile */}
       <div className="flex md:hidden items-center px-4 py-3">
-        <a
-          href="#cta"
-          className="flex-1 flex items-center justify-center gap-2 font-body font-bold text-[14px] text-white uppercase bg-verde-cta py-3 rounded-lg transition-all duration-150 hover:brightness-90"
+        <button
+          onClick={openCheckout}
+          className="flex-1 flex items-center justify-center gap-2 font-body font-bold text-[14px] text-white uppercase bg-verde-cta py-3 rounded-lg transition-all duration-150 hover:brightness-90 cursor-pointer"
         >
           Quero minha vaga →
-        </a>
+        </button>
         <button
           onClick={() => setDismissed(true)}
           className="ml-3 text-texto-cinza hover:text-white transition-colors duration-150 cursor-pointer"
