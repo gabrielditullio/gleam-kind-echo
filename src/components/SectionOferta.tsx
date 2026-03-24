@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import logoDoma from "@/assets/logo-doma.png";
 
 function AnimatedPrice({ visible }: { visible: boolean }) {
   const [count, setCount] = useState(0);
