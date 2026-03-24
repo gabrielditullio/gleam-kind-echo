@@ -55,7 +55,7 @@ const SectionOferta = () => {
 
         {/* Logo placement */}
         <div className="flex justify-center mb-8">
-          <img src={logoDoma} alt="Formação em Doma Comportamental" className="w-[160px] h-auto opacity-60" />
+          <img src={logoDoma} alt="Formação em Doma Comportamental" className="w-[280px] md:w-[350px] h-auto opacity-60" />
         </div>
         <SectionDivider />
 
