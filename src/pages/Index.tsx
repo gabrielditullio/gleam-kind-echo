@@ -24,7 +24,7 @@ const IndexContent = () => {
   const { isOpen, closeCheckout } = useCheckout();
 
   return (
-    <div className="font-body text-texto-corpo">
+    <div className="font-body text-neutral-800">
       <TopBar />
       <div className="pt-[40px] md:pt-[44px]">
         <SectionHero />

@@ -37,7 +37,6 @@ const SectionOferta = () => {
     return () => obs.disconnect();
   }, []);
 
-  // Micro-shake after 3s
   useEffect(() => {
     if (!visible || shaken) return;
     const t = setTimeout(() => {
@@ -51,7 +50,7 @@ const SectionOferta = () => {
   }, [visible, shaken]);
 
   return (
-    <section className="bg-roxo-profundo py-section-mobile md:py-section-desktop" id="cta">
+    <section className="bg-plum-dark py-section-mobile md:py-section-desktop" id="cta">
       <style>{`
         @keyframes micro-shake {
           0% { transform: translateX(0); }
@@ -64,35 +63,32 @@ const SectionOferta = () => {
       `}</style>
 
       <div ref={ref} className="mx-auto px-5 md:px-10" style={{ maxWidth: 600 }}>
-        {/* Above card */}
         <div
           className="text-center mb-8 transition-all duration-500 ease-out"
           style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(15px)" }}
         >
           <img src={logoDoma} alt="Formação em Doma Comportamental" className="mx-auto mb-4 w-[280px] h-auto" />
-          <p className="font-body font-medium text-[16px] text-dourado-claro">
+          <p className="font-body font-medium text-[16px] text-sand-light">
             Criado por quem já trabalhou 600+ cavalos.
           </p>
-          <p className="font-body font-medium text-[16px] text-dourado-claro">
+          <p className="font-body font-medium text-[16px] text-sand-light">
             Esse conhecimento não existe em nenhum outro lugar do Brasil.
           </p>
         </div>
 
-        {/* Offer card */}
         <div
-          className="relative bg-white rounded-[20px] p-8 md:p-10 mx-auto transition-all duration-[600ms] ease-out"
+          className="relative bg-white rounded-[12px] p-8 md:p-10 mx-auto transition-all duration-[600ms] ease-out"
           style={{
             maxWidth: 520,
-            border: "2px solid hsl(var(--dourado))",
-            boxShadow: "0 8px 40px rgba(45,27,61,0.25)",
+            border: "2px solid hsl(var(--sand-default))",
+            boxShadow: "0 8px 40px rgba(42,21,48,0.25)",
             opacity: visible ? 1 : 0,
             transform: visible ? "translateY(0) scale(1)" : "translateY(20px) scale(0.97)",
             transitionDelay: "200ms",
           }}
         >
-          {/* Discount badge */}
           <div
-            className="absolute flex flex-col items-center justify-center rounded-full bg-vermelho-terroso"
+            className="absolute flex flex-col items-center justify-center rounded-full bg-coral-dark"
             style={{
               width: 80, height: 80,
               top: -20, right: -20,
@@ -100,45 +96,43 @@ const SectionOferta = () => {
               boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
             }}
           >
-            <span className="font-body font-bold text-[18px] text-white leading-none">R$500</span>
-            <span className="font-body font-bold text-[10px] text-white uppercase">Desconto</span>
+            <span className="font-body font-semibold text-[18px] text-white leading-none">R$500</span>
+            <span className="font-body font-semibold text-[10px] text-white uppercase">Desconto</span>
           </div>
 
-          <h3 className="font-headline font-bold text-[24px] text-roxo-profundo text-center mb-4">
+          <h3 className="font-headline font-bold text-[24px] text-plum-dark text-center mb-4">
             Então, qual vai ser o seu investimento?
           </h3>
 
-          <p className="font-body text-[16px] text-texto-corpo text-center">
+          <p className="font-body text-[16px] text-neutral-800 text-center">
             Com tudo que está incluso — módulos completos, cases reais em tempo real, encontros ao vivo mensais, comunidade com minha participação — o valor justo seria, no mínimo, R$ 1.497.
           </p>
 
-          <p className="font-body font-medium text-[16px] text-texto-corpo text-center mt-2">
+          <p className="font-body font-medium text-[16px] text-neutral-800 text-center mt-2">
             Mas eu quero que o máximo de pessoas tenha acesso a esse conhecimento.
           </p>
 
-          <p className="font-body font-bold text-[16px] text-roxo-profundo text-center mt-6">
+          <p className="font-body font-semibold text-[16px] text-plum-dark text-center mt-6">
             Entrando hoje, você paga apenas...
           </p>
 
-          {/* Price block */}
           <div className="text-center mt-4">
-            <p className="font-body text-[18px] text-texto-cinza line-through">DE R$ 1.497</p>
-            <p className="font-body text-[14px] text-texto-cinza mt-1">POR</p>
+            <p className="font-body text-[18px] text-neutral-400 line-through">DE R$ 1.497</p>
+            <p className="font-body text-[14px] text-neutral-400 mt-1">POR</p>
             <p className="mt-1">
-              <span className="font-body font-bold text-[28px] text-roxo-profundo align-top leading-none">R$</span>
-              <span className="font-headline font-bold text-[64px] text-roxo-profundo leading-none">
+              <span className="font-body font-semibold text-[28px] text-plum-dark align-top leading-none">R$</span>
+              <span className="font-headline font-bold text-[64px] text-plum-dark leading-none">
                 <AnimatedPrice visible={visible} />
               </span>
             </p>
-            <p className="font-body text-[14px] text-texto-cinza mt-1">à vista no boleto ou PIX</p>
-            <p className="font-body font-bold text-[16px] text-roxo-profundo mt-1">ou 12x de R$ 96,06</p>
+            <p className="font-body text-[14px] text-neutral-400 mt-1">à vista no boleto ou PIX</p>
+            <p className="font-body font-semibold text-[16px] text-plum-dark mt-1">ou 12x de R$ 96,06</p>
           </div>
 
-          {/* CTA */}
           <button
             ref={btnRef}
             onClick={openCheckout}
-            className="group relative flex items-center justify-center gap-2 bg-verde-cta text-white font-body font-bold text-[18px] uppercase py-[18px] rounded-[10px] transition-all duration-150 hover:brightness-90 w-full mt-6 overflow-hidden cursor-pointer"
+            className="group relative flex items-center justify-center gap-2 bg-coral-default text-white font-body font-semibold text-[15px] uppercase tracking-[0.05em] py-[18px] rounded-[8px] transition-all duration-150 hover:bg-coral-dark w-full mt-6 overflow-hidden cursor-pointer"
           >
             <span
               className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[600ms] ease-in-out pointer-events-none"
@@ -150,28 +144,25 @@ const SectionOferta = () => {
             </span>
           </button>
 
-          {/* Payment icons */}
           <div className="flex items-center justify-center gap-4 mt-4">
-            {["Hotmart", "Mastercard", "Visa", "PayPal"].map((name) => (
+            {["Kiwify", "Mastercard", "Visa", "PayPal"].map((name) => (
               <span key={name} className="font-body text-[11px] uppercase tracking-wider" style={{ color: "rgba(0,0,0,0.3)" }}>
                 {name}
               </span>
             ))}
           </div>
 
-          {/* Separator */}
-          <div className="border-t mt-6 mb-6" style={{ borderColor: "hsl(var(--creme-roxo))" }} />
+          <div className="border-t mt-6 mb-6" style={{ borderColor: "hsl(var(--neutral-200))" }} />
 
-          {/* Student offer */}
           <div className="text-center">
-            <span className="inline-block font-body font-bold text-[12px] text-white bg-verde-musgo rounded-full px-3 py-1">
+            <span className="inline-block font-body font-semibold text-[12px] text-white bg-sage-default rounded-full px-3 py-1">
               🎓 ALUNO
             </span>
-            <p className="font-body font-bold text-[16px] text-roxo-profundo mt-2">Já é meu aluno?</p>
-            <p className="font-body text-[14px] text-texto-secundario">Você tem desconto especial.</p>
+            <p className="font-body font-semibold text-[16px] text-plum-dark mt-2">Já é meu aluno?</p>
+            <p className="font-body text-[14px] text-neutral-600">Você tem desconto especial.</p>
             <button
               onClick={openCheckout}
-              className="flex items-center justify-center gap-2 font-body font-bold text-[14px] text-verde-musgo border-2 border-verde-musgo rounded-[10px] py-3 px-6 mt-3 w-full transition-all duration-150 hover:bg-verde-musgo hover:text-white cursor-pointer"
+              className="flex items-center justify-center gap-2 font-body font-semibold text-[14px] text-sage-default border-2 border-sage-default rounded-[8px] py-3 px-6 mt-3 w-full transition-all duration-150 hover:bg-sage-default hover:text-white cursor-pointer"
             >
               Garantir meu desconto de aluno
               <span className="inline-block transition-transform duration-150 group-hover:translate-x-1">→</span>

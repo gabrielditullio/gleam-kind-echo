@@ -31,9 +31,9 @@ const SectionFaq = () => {
     <section>
       <div
         className="h-[200px] pointer-events-none"
-        style={{ background: "linear-gradient(to bottom, hsl(var(--off-white)), hsl(var(--burgundy)))" }}
+        style={{ background: "linear-gradient(to bottom, hsl(var(--neutral-50)), hsl(var(--plum-dark)))" }}
       />
-      <div className="bg-burgundy py-section-mobile md:py-section-desktop">
+      <div className="bg-plum-dark py-section-mobile md:py-section-desktop">
         <div ref={ref} className="mx-auto px-5 md:px-10" style={{ maxWidth: 800 }}>
           <h2
             className="font-headline font-bold text-[24px] md:text-[32px] text-white text-center mb-10 transition-all duration-500 ease-out"
@@ -48,7 +48,7 @@ const SectionFaq = () => {
               return (
                 <div
                   key={i}
-                  className="rounded-[10px] overflow-hidden transition-all duration-500 ease-out"
+                  className="rounded-[8px] overflow-hidden transition-all duration-500 ease-out"
                   style={{
                     background: "rgba(255,255,255,0.05)",
                     border: "1px solid rgba(255,255,255,0.08)",
@@ -61,7 +61,7 @@ const SectionFaq = () => {
                     onClick={() => setOpenIndex(isOpen ? -1 : i)}
                     className="w-full flex items-center justify-between gap-3 px-6 py-5 text-left cursor-pointer"
                   >
-                    <span className="font-body font-bold text-[16px] text-white">{faq.q}</span>
+                    <span className="font-body font-semibold text-[16px] text-white">{faq.q}</span>
                     <ChevronDown
                       size={20}
                       className="text-white flex-shrink-0 transition-transform duration-300"
@@ -72,7 +72,7 @@ const SectionFaq = () => {
                     className="overflow-hidden transition-all duration-300 ease-out"
                     style={{ maxHeight: isOpen ? "200px" : "0px", opacity: isOpen ? 1 : 0 }}
                   >
-                    <p className="px-6 pb-5 font-body text-[15px] leading-[1.7]" style={{ color: "#CCC" }}>
+                    <p className="px-6 pb-5 font-body text-[15px] leading-[1.65]" style={{ color: "#CCC" }}>
                       {faq.a}
                     </p>
                   </div>
