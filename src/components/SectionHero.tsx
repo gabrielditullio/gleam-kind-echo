@@ -45,17 +45,8 @@ const SectionHero = () => {
             }}
             className={`${anim(0, 600, "fade").className} w-full md:w-[45%] flex-shrink-0 order-2 md:order-1`}
           >
-            <div
-              className="w-full flex items-center justify-center rounded-xl"
-              style={{
-                aspectRatio: "3/4",
-                background: "rgba(74,45,94,0.3)",
-                boxShadow: "inset 0 0 60px rgba(45,27,61,0.5)",
-              }}
-            >
-              <p className="font-body text-[14px] text-center px-8" style={{ color: "rgba(255,255,255,0.3)" }}>
-                FOTO HERO — Paolla ao lado de cavalo
-              </p>
+            <div className="w-full rounded-xl overflow-hidden" style={{ aspectRatio: "3/4" }}>
+              <img src={heroPhoto} alt="Dra. Paolla ao lado de cavalo" className="w-full h-full object-cover rounded-xl" />
             </div>
           </div>
 

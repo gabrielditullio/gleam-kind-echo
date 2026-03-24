@@ -31,17 +31,8 @@ const SectionBio = () => {
           <div className="flex flex-col md:flex-row gap-8 md:gap-10">
             {/* Photo placeholder */}
             <div className="w-full md:w-[40%] flex-shrink-0">
-              <div
-                className="w-full flex items-center justify-center rounded-xl"
-                style={{
-                  aspectRatio: "3/4",
-                  background: "rgba(74,45,94,0.1)",
-                  border: "3px solid hsl(var(--dourado))",
-                }}
-              >
-                <p className="font-body text-[14px] text-texto-cinza text-center px-6">
-                  FOTO PAOLLA — close com cavalo
-                </p>
+              <div className="w-full rounded-xl overflow-hidden" style={{ aspectRatio: "3/4", border: "3px solid hsl(var(--dourado))" }}>
+                <img src={bioPhoto} alt="Dra. Paolla com cavalo" className="w-full h-full object-cover rounded-xl" />
               </div>
             </div>
 
