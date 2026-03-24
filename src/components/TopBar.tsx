@@ -98,7 +98,7 @@ const TopBar = () => {
         <a
           href="#cta"
           onClick={scrollToCta}
-          className="inline-flex items-center font-body font-bold text-[10px] text-white uppercase bg-dourado px-3 py-1 rounded-md transition-all duration-150 hover:brightness-90"
+          className="inline-flex items-center font-body font-bold text-[10px] text-white uppercase bg-verde-cta px-3 py-1 rounded-md transition-all duration-150 hover:brightness-90"
         >
           Desconto →
         </a>
