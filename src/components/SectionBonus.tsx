@@ -49,7 +49,7 @@ const SectionBonus = () => {
       <section className="bg-neutral-100 py-section-mobile md:py-section-desktop">
         <div ref={ref} className="mx-auto px-5 md:px-10" style={{ maxWidth: 1080 }}>
           <div className="text-center">
-            <SectionLabel text="BÔNUS INCLUSOS" />
+            <SectionLabel text="BÔNUS" />
           </div>
           <h2
             className="font-display font-bold text-[24px] md:text-[32px] text-plum-dark text-center mb-2 transition-all duration-500 ease-out"
