@@ -64,9 +64,9 @@ const SectionFechamento = () => {
             className="mt-8 transition-all duration-500 ease-out"
             style={{ transitionDelay: "1400ms", opacity: visible ? 1 : 0, transform: visible ? "scale(1)" : "scale(0.95)" }}
           >
-            <a
-              href="#cta"
-              className="group relative inline-flex items-center justify-center gap-2 bg-verde-cta text-white font-body font-bold text-[20px] uppercase px-12 py-5 rounded-[10px] transition-all duration-150 hover:brightness-90 w-full md:w-auto overflow-hidden"
+            <button
+              onClick={openCheckout}
+              className="group relative inline-flex items-center justify-center gap-2 bg-verde-cta text-white font-body font-bold text-[20px] uppercase px-12 py-5 rounded-[10px] transition-all duration-150 hover:brightness-90 w-full md:w-auto overflow-hidden cursor-pointer"
             >
               <span
                 className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[600ms] ease-in-out pointer-events-none"
