@@ -37,7 +37,8 @@ const SectionHero = () => {
   ];
 
   return (
-    <section className="bg-plum-dark">
+    <section className="bg-plum-dark relative">
+      <CornerOrnaments />
       <div className="mx-auto px-5 md:px-10 py-12 md:py-20" style={{ maxWidth: 1200 }}>
         <div className="flex flex-col md:flex-row items-center gap-10 md:gap-14">
           <div
