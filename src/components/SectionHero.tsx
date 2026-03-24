@@ -54,7 +54,7 @@ const SectionHero = () => {
             </div>
 
             <div {...anim(400, 600, "fade-up")} style={{ ...anim(400, 600, "fade-up").style, marginTop: 32 }}>
-              <h1 className="font-headline font-bold text-[36px] md:text-[48px] leading-[1.2] md:leading-[1.15] text-white">
+              <h1 className="font-headline font-bold text-[36px] md:text-[48px] leading-[1.2] md:leading-[1.15] text-neutral-50">
                 O método que já transformou{" "}
                 a vida de mais de{" "}
                 <span className="text-sand-light">600 cavalos</span>{" "}

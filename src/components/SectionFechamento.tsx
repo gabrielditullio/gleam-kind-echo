@@ -27,13 +27,13 @@ const SectionFechamento = () => {
       <div className="bg-plum-dark py-section-mobile md:py-section-desktop">
         <div ref={ref} className="mx-auto px-5 md:px-10 text-center" style={{ maxWidth: 700 }}>
           <h2
-            className="font-headline font-bold text-[28px] md:text-[36px] text-white leading-snug transition-all duration-[800ms] ease-out"
+            className="font-headline font-bold text-[28px] md:text-[36px] text-neutral-50 leading-snug transition-all duration-[800ms] ease-out"
             style={{ clipPath: visible ? "inset(0 0 0% 0)" : "inset(0 0 100% 0)" }}
           >
             Seu cavalo não precisa de mais um treinador.
           </h2>
           <h2
-            className="font-headline font-bold text-[28px] md:text-[36px] text-white leading-snug mt-2 transition-all duration-[800ms] ease-out"
+            className="font-headline font-bold text-[28px] md:text-[36px] text-neutral-50 leading-snug mt-2 transition-all duration-[800ms] ease-out"
             style={{ clipPath: visible ? "inset(0 0 0% 0)" : "inset(0 0 100% 0)", transitionDelay: "400ms" }}
           >
             Ele precisa de você sabendo o que faz.
