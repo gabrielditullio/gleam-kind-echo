@@ -101,10 +101,20 @@ const CheckoutPopup = ({ isOpen, onClose }: CheckoutPopupProps) => {
 
     // Redirect to Kiwify checkout
     const checkoutURL = new URL('https://pay.kiwify.com.br/M2zq3fO');
+
+    // Pré-preenche os campos do checkout da Kiwify
+    checkoutURL.searchParams.set('name', formData.nome);
+    checkoutURL.searchParams.set('email', formData.email);
+    checkoutURL.searchParams.set('phone', formData.telefone.replace(/\D/g, ''));
+
+    // Passa as UTMs para rastreamento
     Object.keys(utms).forEach(key => {
       checkoutURL.searchParams.set(key, utms[key]);
     });
-    window.top!.location.href = checkoutURL.toString();
+
+    setTimeout(() => {
+      window.top!.location.href = checkoutURL.toString();
+    }, 500);
   }
 
   return (
