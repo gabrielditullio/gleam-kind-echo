@@ -20,8 +20,9 @@ function AnimatedPrice({ visible }: { visible: boolean }) {
 }
 
 const SectionOferta = () => {
+  const { openCheckout } = useCheckout();
   const ref = useRef<HTMLDivElement>(null);
-  const btnRef = useRef<HTMLAnchorElement>(null);
+  const btnRef = useRef<HTMLButtonElement>(null);
   const [visible, setVisible] = useState(false);
   const [shaken, setShaken] = useState(false);
 
