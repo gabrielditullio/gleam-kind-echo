@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import bioPhoto from "@/assets/bio-paolla.jpg";
 
 const SectionBio = () => {
   const ref = useRef<HTMLDivElement>(null);
