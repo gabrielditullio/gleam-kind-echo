@@ -39,7 +39,7 @@ const SectionParaQuem = () => {
       <div className="bg-plum-dark py-section-mobile md:py-section-desktop">
         <div ref={ref} className="mx-auto px-5 md:px-10" style={{ maxWidth: 860 }}>
           <div className="text-center">
-            <SectionLabel text="ESSA FORMAÇÃO É PRA VOCÊ?" dark />
+            <SectionLabel text="PARA QUEM É" dark />
           </div>
           <h2
             className="font-display font-bold text-[24px] md:text-[32px] text-neutral-50 text-center mb-2 transition-all duration-500 ease-out"

@@ -1,15 +1,15 @@
 interface SectionLabelProps {
   text: string;
-  dark?: boolean; // true = on dark bg, false = on light bg
+  dark?: boolean;
 }
 
 const SectionLabel = ({ text, dark = false }: SectionLabelProps) => (
   <p
-    className={`font-body font-semibold text-[12px] uppercase tracking-[0.1em] mb-3 ${
+    className={`font-body font-semibold text-xs uppercase tracking-[0.1em] mb-4 text-center ${
       dark ? "text-sand" : "text-plum"
     }`}
   >
-    <span className="mr-1.5">◆</span>
+    <span className="mr-1.5">✦</span>
     {text}
   </p>
 );

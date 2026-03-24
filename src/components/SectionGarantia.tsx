@@ -57,7 +57,7 @@ const SectionGarantia = () => {
             </div>
 
             <div>
-              <SectionLabel text="SUA SEGURANÇA" />
+              <SectionLabel text="SUA GARANTIA" />
               <h2 className="font-display font-bold text-[22px] md:text-[28px] text-plum-dark mb-2">
                 7 dias de garantia. Sem burocracia.
               </h2>

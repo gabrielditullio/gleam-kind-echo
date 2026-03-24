@@ -65,7 +65,7 @@ const SectionProblema = () => {
             style={{ boxShadow: "0 2px 8px rgba(42,21,48,0.06)", border: "1px solid #DDD7D0", transition: "all 300ms ease-in-out" }}
           >
             <div ref={headline.ref} className="text-center">
-              <SectionLabel text="A VERDADE QUE NINGUÉM CONTA" />
+              <SectionLabel text="ANTES DE MAIS NADA" />
               <p {...fade(headline.visible, 0)}>
                 <span className="block text-center font-body text-[17px] text-neutral-800 mb-6">
                   Antes de mais nada, entenda uma coisa:

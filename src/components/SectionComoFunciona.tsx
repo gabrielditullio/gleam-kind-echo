@@ -50,7 +50,7 @@ const SectionComoFunciona = () => {
       <div className="bg-plum-dark py-section-mobile md:py-section-desktop">
         <div ref={ref} className="mx-auto px-5 md:px-10" style={{ maxWidth: 1200 }}>
           <div className="text-center">
-            <SectionLabel text="COMO FUNCIONA NA PRÁTICA" dark />
+            <SectionLabel text="O MÉTODO NA PRÁTICA" dark />
           </div>
           <div
             className="flex justify-center mb-4 transition-all duration-500 ease-out"

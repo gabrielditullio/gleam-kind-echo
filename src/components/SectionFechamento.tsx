@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import logoDoma from "@/assets/logo-doma.png";
 import { useCheckout } from "@/contexts/CheckoutContext";
+import CornerOrnaments from "./CornerOrnaments";
 
 const SectionFechamento = () => {
   const { openCheckout } = useCheckout();
@@ -24,7 +25,8 @@ const SectionFechamento = () => {
         className="h-[200px] pointer-events-none"
         style={{ background: "linear-gradient(to bottom, #FAF8F6, #2A1530)" }}
       />
-      <div className="bg-plum-dark py-section-mobile md:py-section-desktop">
+      <div className="bg-plum-dark py-section-mobile md:py-section-desktop relative">
+        <CornerOrnaments />
         <div ref={ref} className="mx-auto px-5 md:px-10 text-center" style={{ maxWidth: 700 }}>
           <h2
             className="font-display font-bold text-[28px] md:text-[36px] text-neutral-50 leading-snug transition-all duration-[800ms] ease-out"

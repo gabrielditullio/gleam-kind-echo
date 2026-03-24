@@ -4,6 +4,7 @@ import logoDoma from "@/assets/logo-doma.png";
 import heroPhoto from "@/assets/hero-paolla.jpg";
 import paymentIcons from "@/assets/payment-icons.png";
 import { useCheckout } from "@/contexts/CheckoutContext";
+import CornerOrnaments from "./CornerOrnaments";
 
 const SectionHero = () => {
   const { openCheckout } = useCheckout();
@@ -36,7 +37,8 @@ const SectionHero = () => {
   ];
 
   return (
-    <section className="bg-plum-dark">
+    <section className="bg-plum-dark relative">
+      <CornerOrnaments />
       <div className="mx-auto px-5 md:px-10 py-12 md:py-20" style={{ maxWidth: 1200 }}>
         <div className="flex flex-col md:flex-row items-center gap-10 md:gap-14">
           <div
