@@ -73,7 +73,7 @@
 }
 
 @layer utilities {
-  .font-headline {
+.font-display {
     font-family: 'Playfair Display', Georgia, serif;
   }
 
