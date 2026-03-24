@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { CheckCircle } from "lucide-react";
 import { useCheckout } from "@/contexts/CheckoutContext";
+import SectionLabel from "./SectionLabel";
+import HeadlineUnderline from "./HeadlineUnderline";
 
 const checks = [
   "Libere acesso a todos os módulos",
@@ -55,11 +57,13 @@ const SectionGarantia = () => {
             </div>
 
             <div>
-              <h2 className="font-headline font-bold text-[22px] md:text-[28px] text-plum-dark mb-5">
+              <SectionLabel text="SUA SEGURANÇA" />
+              <h2 className="font-headline font-bold text-[22px] md:text-[28px] text-plum-dark mb-2">
                 7 dias de garantia. Sem burocracia.
               </h2>
+              <HeadlineUnderline center={false} />
 
-              <div className="space-y-2 mb-4">
+              <div className="space-y-2 mb-4 mt-5">
                 {checks.map((c, i) => (
                   <div
                     key={i}

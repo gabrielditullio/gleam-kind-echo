@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import SectionLabel from "./SectionLabel";
+import HeadlineUnderline from "./HeadlineUnderline";
 
 const steps = [
   {
@@ -47,8 +49,11 @@ const SectionComoFunciona = () => {
 
       <div className="bg-plum-dark py-section-mobile md:py-section-desktop">
         <div ref={ref} className="mx-auto px-5 md:px-10" style={{ maxWidth: 1200 }}>
+          <div className="text-center">
+            <SectionLabel text="COMO FUNCIONA NA PRÁTICA" dark />
+          </div>
           <div
-            className="flex justify-center mb-12 transition-all duration-500 ease-out"
+            className="flex justify-center mb-4 transition-all duration-500 ease-out"
             style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)" }}
           >
             <div className="bg-sand-default rounded-[8px] px-8 py-4">
@@ -57,12 +62,14 @@ const SectionComoFunciona = () => {
               </h2>
             </div>
           </div>
+          <HeadlineUnderline />
+          <div style={{ marginBottom: 48 }} />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 max-w-cards mx-auto">
             {steps.map((step, i) => (
               <div
                 key={i}
-                className="rounded-[12px] p-7 transition-all duration-500 ease-out hover:-translate-y-1"
+                className="rounded-[12px] p-7 transition-all duration-300 ease-in-out hover:-translate-y-0.5"
                 style={{
                   background: "rgba(66,34,76,0.5)",
                   border: "1px solid rgba(255,255,255,0.1)",
@@ -70,8 +77,8 @@ const SectionComoFunciona = () => {
                   opacity: visible ? 1 : 0,
                   transform: visible ? undefined : "translateY(20px)",
                 }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.2)"; }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.1)"; }}
+                onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(196,168,130,0.5)"; e.currentTarget.style.boxShadow = "0 4px 16px rgba(42,21,48,0.12)"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)"; e.currentTarget.style.boxShadow = "none"; }}
               >
                 <span className="inline-block font-body font-semibold text-[11px] px-3 py-1 rounded-full mb-4 bg-sand-default text-plum-dark">
                   Passo {i + 1}

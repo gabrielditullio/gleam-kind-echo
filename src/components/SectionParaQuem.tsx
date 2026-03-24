@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { CheckCircle } from "lucide-react";
 import { useCheckout } from "@/contexts/CheckoutContext";
+import SectionLabel from "./SectionLabel";
+
 
 const profiles = [
   "Tem cavalo e sente medo do que fazem com ele",
@@ -36,12 +38,18 @@ const SectionParaQuem = () => {
 
       <div className="bg-plum-dark py-section-mobile md:py-section-desktop">
         <div ref={ref} className="mx-auto px-5 md:px-10" style={{ maxWidth: 860 }}>
+          <div className="text-center">
+            <SectionLabel text="ESSA FORMAÇÃO É PRA VOCÊ?" dark />
+          </div>
           <h2
-            className="font-headline font-bold text-[24px] md:text-[32px] text-white text-center mb-8 transition-all duration-500 ease-out"
+            className="font-headline font-bold text-[24px] md:text-[32px] text-white text-center mb-2 transition-all duration-500 ease-out"
             style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(15px)" }}
           >
             Essa formação foi feita pra você que:
           </h2>
+          <div className="flex justify-center mb-8">
+            <div className="h-[3px] bg-sand-default" style={{ width: 60 }} />
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mx-auto" style={{ maxWidth: 800 }}>
             {profiles.map((p, i) => (
