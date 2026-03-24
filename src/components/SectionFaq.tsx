@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown } from "lucide-react";
+import SectionLabel from "./SectionLabel";
+import HeadlineUnderline from "./HeadlineUnderline";
 
 const faqs = [
   { q: "Preciso ter experiência prévia com cavalos?", a: "Não. 64% do público são iniciantes totais. A linguagem é acessível e o passo a passo é real." },
@@ -35,12 +37,17 @@ const SectionFaq = () => {
       />
       <div className="bg-plum-dark py-section-mobile md:py-section-desktop">
         <div ref={ref} className="mx-auto px-5 md:px-10" style={{ maxWidth: 800 }}>
+          <div className="text-center">
+            <SectionLabel text="DÚVIDAS FREQUENTES" dark />
+          </div>
           <h2
-            className="font-headline font-bold text-[24px] md:text-[32px] text-white text-center mb-10 transition-all duration-500 ease-out"
+            className="font-headline font-bold text-[24px] md:text-[32px] text-white text-center mb-2 transition-all duration-500 ease-out"
             style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(15px)" }}
           >
             Dúvidas Frequentes
           </h2>
+          <HeadlineUnderline />
+          <div style={{ marginBottom: 40 }} />
 
           <div className="flex flex-col gap-3">
             {faqs.map((faq, i) => {
@@ -48,7 +55,7 @@ const SectionFaq = () => {
               return (
                 <div
                   key={i}
-                  className="rounded-[8px] overflow-hidden transition-all duration-500 ease-out"
+                  className="rounded-[8px] overflow-hidden transition-all duration-300 ease-in-out"
                   style={{
                     background: "rgba(255,255,255,0.05)",
                     border: "1px solid rgba(255,255,255,0.08)",

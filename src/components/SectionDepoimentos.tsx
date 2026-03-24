@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Star } from "lucide-react";
+import SectionLabel from "./SectionLabel";
+import HeadlineUnderline from "./HeadlineUnderline";
 
 const testimonials = [
   {
@@ -41,14 +43,16 @@ const SectionDepoimentos = () => {
       <div className="bg-neutral-50 py-section-mobile md:py-section-desktop">
         <div ref={ref} className="mx-auto px-5 md:px-10" style={{ maxWidth: 1080 }}>
           <div className="text-center mb-10">
+            <SectionLabel text="RESULTADOS REAIS" />
             <h2
               className="font-headline font-bold text-[28px] md:text-[36px] text-plum-dark transition-all duration-500 ease-out"
               style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(15px)" }}
             >
               600+ cavalos. E contando.
             </h2>
+            <HeadlineUnderline />
             <p
-              className="font-body text-[17px] text-neutral-600 mt-2 transition-all duration-500 ease-out"
+              className="font-body text-[17px] text-neutral-600 mt-4 transition-all duration-500 ease-out"
               style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(15px)", transitionDelay: "150ms" }}
             >
               Quem já aplicou, comprova.
@@ -59,7 +63,7 @@ const SectionDepoimentos = () => {
             {testimonials.map((t, i) => (
               <div
                 key={i}
-                className="bg-white rounded-[12px] p-6 transition-all duration-500 ease-out"
+                className="relative bg-white rounded-[12px] p-6 pt-10 transition-all duration-300 ease-in-out hover:-translate-y-0.5"
                 style={{
                   border: "1px solid hsl(var(--neutral-200))",
                   boxShadow: "0 2px 8px rgba(42,21,48,0.06)",
@@ -67,7 +71,17 @@ const SectionDepoimentos = () => {
                   opacity: visible ? 1 : 0,
                   transform: visible ? "translateY(0)" : "translateY(15px)",
                 }}
+                onMouseEnter={(e) => { e.currentTarget.style.boxShadow = "0 4px 16px rgba(42,21,48,0.12)"; e.currentTarget.style.borderColor = "rgba(196,168,130,0.5)"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "0 2px 8px rgba(42,21,48,0.06)"; e.currentTarget.style.borderColor = "hsl(var(--neutral-200))"; }}
               >
+                {/* Decorative quote */}
+                <span
+                  className="absolute font-headline text-[48px] text-sand-default leading-none select-none"
+                  style={{ top: 12, left: 16, opacity: 0.6 }}
+                >
+                  "
+                </span>
+
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-12 h-12 rounded-full bg-neutral-100 flex items-center justify-center flex-shrink-0">
                     <span className="font-body font-semibold text-[14px] text-plum-light">

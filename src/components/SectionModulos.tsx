@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown } from "lucide-react";
+import SectionLabel from "./SectionLabel";
+import HeadlineUnderline from "./HeadlineUnderline";
 
 const modulos = [
   { title: "Aproximação e Cabresteamento", text: "Primeiros contatos, construção de confiança, trabalho de angulação. O fundamento de tudo que vem depois." },
@@ -40,14 +42,16 @@ const SectionModulos = () => {
       <div className="bg-neutral-50 py-section-mobile md:py-section-desktop">
         <div ref={ref} className="mx-auto px-5 md:px-10" style={{ maxWidth: 860 }}>
           <div className="text-center mb-12">
+            <SectionLabel text="O QUE VOCÊ VAI APRENDER" />
             <h2
               className="font-headline font-bold text-[22px] md:text-[28px] text-plum-dark mx-auto leading-snug transition-all duration-500 ease-out"
               style={{ maxWidth: 680, opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(15px)" }}
             >
               Eu preparei cada módulo pensando no que EU gostaria de ter aprendido quando comecei.
             </h2>
+            <HeadlineUnderline />
             <p
-              className="font-body font-medium text-[17px] text-neutral-600 mt-2 transition-all duration-500 ease-out"
+              className="font-body font-medium text-[17px] text-neutral-600 mt-4 transition-all duration-500 ease-out"
               style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(15px)", transitionDelay: "150ms" }}
             >
               Do primeiro contato ao avançado.
@@ -60,7 +64,7 @@ const SectionModulos = () => {
               return (
                 <div
                   key={i}
-                  className="bg-white rounded-[12px] overflow-hidden transition-all duration-500 ease-out"
+                  className="bg-white rounded-[12px] overflow-hidden transition-all duration-300 ease-in-out"
                   style={{
                     border: isOpen ? "1px solid hsl(var(--plum-light))" : "1px solid hsl(var(--neutral-200))",
                     boxShadow: "0 2px 8px rgba(42,21,48,0.06)",

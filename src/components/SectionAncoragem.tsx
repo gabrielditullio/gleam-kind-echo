@@ -1,4 +1,7 @@
 import { useEffect, useRef, useState } from "react";
+import SectionLabel from "./SectionLabel";
+import HeadlineUnderline from "./HeadlineUnderline";
+import SectionOrnament from "./SectionOrnament";
 
 const SectionAncoragem = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -18,16 +21,18 @@ const SectionAncoragem = () => {
   return (
     <section className="bg-plum-dark py-section-mobile md:py-section-desktop">
       <div ref={ref} className="mx-auto px-5 md:px-10 text-center" style={{ maxWidth: 680 }}>
+        <SectionLabel text="O CUSTO DA INAÇÃO" dark />
         <div
           className="transition-all duration-[600ms] ease-out"
           style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)" }}
         >
-          <h2 className="font-headline font-bold text-[22px] md:text-[28px] text-white leading-[1.3] mb-6">
+          <h2 className="font-headline font-bold text-[22px] md:text-[28px] text-white leading-[1.3] mb-2">
             Cada vez que você manda o cavalo pra doma sem saber o que estão fazendo com ele, são{" "}
             <span className="text-sand-light">R$3.000</span>, <span className="text-sand-light">R$5.000</span> de risco.
           </h2>
+          <HeadlineUnderline />
 
-          <p className="font-headline font-bold text-[22px] md:text-[28px] text-white leading-[1.3] mb-6">
+          <p className="font-headline font-bold text-[22px] md:text-[28px] text-white leading-[1.3] mt-6 mb-6">
             Em 2 domas? São <span className="text-sand-light">R$10 mil</span> jogados na incerteza.
           </p>
 

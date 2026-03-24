@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import logoDoma from "@/assets/logo-doma.png";
 import { useCheckout } from "@/contexts/CheckoutContext";
+import SectionLabel from "./SectionLabel";
+import SectionOrnament from "./SectionOrnament";
 
 function AnimatedPrice({ visible }: { visible: boolean }) {
   const [count, setCount] = useState(0);
@@ -63,6 +65,9 @@ const SectionOferta = () => {
       `}</style>
 
       <div ref={ref} className="mx-auto px-5 md:px-10" style={{ maxWidth: 600 }}>
+        <div className="text-center">
+          <SectionLabel text="SEU INVESTIMENTO" dark />
+        </div>
         <div
           className="text-center mb-8 transition-all duration-500 ease-out"
           style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(15px)" }}

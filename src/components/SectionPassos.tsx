@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import SectionLabel from "./SectionLabel";
+import HeadlineUnderline from "./HeadlineUnderline";
 
 const milestones = [
   { title: "HOJE", text: "Você se inscreve e recebe acesso à plataforma, à comunidade e a todos os módulos gravados. Liberado na hora." },
@@ -31,8 +33,11 @@ const SectionPassos = () => {
 
       <div className="bg-plum-dark py-section-mobile md:py-section-desktop">
         <div ref={ref} className="mx-auto px-5 md:px-10" style={{ maxWidth: 800 }}>
+          <div className="text-center">
+            <SectionLabel text="SEUS PRÓXIMOS PASSOS" dark />
+          </div>
           <div
-            className="flex justify-center mb-12 transition-all duration-500 ease-out"
+            className="flex justify-center mb-4 transition-all duration-500 ease-out"
             style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)" }}
           >
             <div className="bg-sand-default rounded-[8px] px-8 py-4">
@@ -41,6 +46,8 @@ const SectionPassos = () => {
               </h2>
             </div>
           </div>
+          <HeadlineUnderline />
+          <div style={{ marginBottom: 48 }} />
 
           <div className="relative">
             <div
@@ -74,7 +81,7 @@ const SectionPassos = () => {
                         className={`md:w-1/2 ${isLeft ? "md:pr-10" : "md:pl-10"}`}
                       >
                         <div
-                          className="rounded-[8px] p-5 transition-all duration-500 ease-out hover:bg-[rgba(66,34,76,0.5)]"
+                          className="rounded-[8px] p-5 transition-all duration-300 ease-in-out hover:bg-[rgba(66,34,76,0.5)]"
                           style={{
                             background: "rgba(66,34,76,0.3)",
                             maxWidth: 340,

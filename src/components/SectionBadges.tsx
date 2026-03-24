@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { X, Check } from "lucide-react";
+import SectionLabel from "./SectionLabel";
+import HeadlineUnderline from "./HeadlineUnderline";
 
 const badgesNegativos = [
   "Não é curso tradicional",
@@ -44,6 +46,8 @@ const SectionBadges = () => {
 
       <section ref={ref} className="bg-neutral-50 py-section-mobile md:py-section-desktop">
         <div className="mx-auto px-5 md:px-10 text-center" style={{ maxWidth: 800 }}>
+          <SectionLabel text="O QUE NOS DIFERENCIA" />
+
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-3">
             {badgesNegativos.map((b, i) => (
               <span
@@ -64,7 +68,7 @@ const SectionBadges = () => {
             </span>
           </div>
 
-          <div {...anim(700, 500, "fade-scale-sm")} className={`${anim(700, 500, "fade-scale-sm").className} mx-auto bg-sand-default rounded-[12px]`} style={{ ...anim(700, 500, "fade-scale-sm").style, maxWidth: 800, padding: "16px 32px", marginTop: 32 }}>
+          <div {...anim(700, 500, "fade-scale-sm")} className={`${anim(700, 500, "fade-scale-sm").className} mx-auto bg-sand-default rounded-[8px]`} style={{ ...anim(700, 500, "fade-scale-sm").style, maxWidth: 800, padding: "16px 32px", marginTop: 32 }}>
             <p className="font-headline font-bold text-[18px] md:text-[22px] uppercase text-plum-dark" style={{ letterSpacing: "1px" }}>
               A única formação em doma comportamental do Brasil baseada em ciência, não em achismo.
             </p>
