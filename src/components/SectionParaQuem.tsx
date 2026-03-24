@@ -12,6 +12,7 @@ const profiles = [
 ];
 
 const SectionParaQuem = () => {
+  const { openCheckout } = useCheckout();
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
