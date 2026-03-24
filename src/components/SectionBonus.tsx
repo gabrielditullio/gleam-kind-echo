@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { BookOpen, Percent, Tag, RefreshCw } from "lucide-react";
 import SectionLabel from "./SectionLabel";
 import HeadlineUnderline from "./HeadlineUnderline";
-import SectionOrnament from "./SectionOrnament";
+
 
 const bonuses = [
   {
