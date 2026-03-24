@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import logoDoma from "@/assets/logo-doma.png";
 import { useCheckout } from "@/contexts/CheckoutContext";
+import CornerOrnaments from "./CornerOrnaments";
 
 const SectionFechamento = () => {
   const { openCheckout } = useCheckout();
