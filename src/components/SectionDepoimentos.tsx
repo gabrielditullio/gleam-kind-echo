@@ -35,56 +35,55 @@ const SectionDepoimentos = () => {
     <section>
       <div
         className="h-[200px] pointer-events-none"
-        style={{ background: "linear-gradient(to bottom, hsl(var(--roxo-profundo)), hsl(var(--off-white)))" }}
+        style={{ background: "linear-gradient(to bottom, hsl(var(--plum-dark)), hsl(var(--neutral-50)))" }}
       />
 
-      <div className="bg-off-white py-section-mobile md:py-section-desktop">
+      <div className="bg-neutral-50 py-section-mobile md:py-section-desktop">
         <div ref={ref} className="mx-auto px-5 md:px-10" style={{ maxWidth: 1080 }}>
-          {/* Headline */}
           <div className="text-center mb-10">
             <h2
-              className="font-headline font-bold text-[28px] md:text-[36px] text-roxo-profundo transition-all duration-500 ease-out"
+              className="font-headline font-bold text-[28px] md:text-[36px] text-plum-dark transition-all duration-500 ease-out"
               style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(15px)" }}
             >
               600+ cavalos. E contando.
             </h2>
             <p
-              className="font-body text-[18px] text-texto-secundario mt-2 transition-all duration-500 ease-out"
+              className="font-body text-[17px] text-neutral-600 mt-2 transition-all duration-500 ease-out"
               style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(15px)", transitionDelay: "150ms" }}
             >
               Quem já aplicou, comprova.
             </p>
           </div>
 
-          {/* Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 mb-6">
             {testimonials.map((t, i) => (
               <div
                 key={i}
-                className="bg-white rounded-xl p-6 transition-all duration-500 ease-out"
+                className="bg-white rounded-[12px] p-6 transition-all duration-500 ease-out"
                 style={{
-                  border: "1px solid hsl(var(--creme-roxo))",
+                  border: "1px solid hsl(var(--neutral-200))",
+                  boxShadow: "0 2px 8px rgba(42,21,48,0.06)",
                   transitionDelay: `${300 + i * 100}ms`,
                   opacity: visible ? 1 : 0,
                   transform: visible ? "translateY(0)" : "translateY(15px)",
                 }}
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-creme-roxo flex items-center justify-center flex-shrink-0">
-                    <span className="font-body font-bold text-[14px] text-roxo-claro">
+                  <div className="w-12 h-12 rounded-full bg-neutral-100 flex items-center justify-center flex-shrink-0">
+                    <span className="font-body font-semibold text-[14px] text-plum-light">
                       {t.name.charAt(0)}
                     </span>
                   </div>
                   <div>
-                    <p className="font-body font-bold text-[16px] text-roxo-profundo">{t.name}</p>
+                    <p className="font-body font-semibold text-[16px] text-plum-dark">{t.name}</p>
                     <div className="flex gap-0.5">
                       {[...Array(5)].map((_, s) => (
-                        <Star key={s} size={12} className="text-dourado fill-dourado" />
+                        <Star key={s} size={12} className="text-sand-default fill-sand-default" />
                       ))}
                     </div>
                   </div>
                 </div>
-                <p className="font-body text-[15px] text-texto-secundario leading-relaxed">
+                <p className="font-body text-[15px] text-neutral-600 leading-relaxed">
                   {t.text}
                 </p>
               </div>
@@ -92,7 +91,7 @@ const SectionDepoimentos = () => {
           </div>
 
           <p className="text-center">
-            <a href="#prova" className="font-body font-medium text-[14px] text-dourado underline hover:brightness-90 transition-all duration-150">
+            <a href="#prova" className="font-body font-medium text-[14px] text-sand-default underline hover:brightness-90 transition-all duration-150">
               Casos reais de participantes do Workshop
             </a>
           </p>

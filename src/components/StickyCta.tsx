@@ -24,7 +24,7 @@ const StickyCta = () => {
     <div
       className="fixed bottom-0 left-0 right-0 z-[9998] transition-transform duration-300 ease-out"
       style={{
-        background: "rgba(45,27,61,0.95)",
+        background: "rgba(42,21,48,0.95)",
         backdropFilter: "blur(8px)",
         transform: show ? "translateY(0)" : "translateY(100%)",
       }}
@@ -36,14 +36,14 @@ const StickyCta = () => {
         <div className="flex items-center gap-4">
           <button
             onClick={openCheckout}
-            className="inline-flex items-center gap-2 font-body font-bold text-[14px] text-white uppercase bg-verde-cta px-6 py-2.5 rounded-lg transition-all duration-150 hover:brightness-90 cursor-pointer"
+            className="inline-flex items-center gap-2 font-body font-semibold text-[14px] text-white uppercase tracking-[0.05em] bg-coral-default px-6 py-2.5 rounded-[8px] transition-all duration-150 hover:bg-coral-dark cursor-pointer"
           >
             Quero minha vaga
             <span className="inline-block transition-transform duration-150 group-hover:translate-x-1">→</span>
           </button>
           <button
             onClick={() => setDismissed(true)}
-            className="text-texto-cinza hover:text-white transition-colors duration-150 cursor-pointer"
+            className="text-neutral-400 hover:text-white transition-colors duration-150 cursor-pointer"
           >
             <X size={14} />
           </button>
@@ -53,13 +53,13 @@ const StickyCta = () => {
       <div className="flex md:hidden items-center px-4 py-3">
         <button
           onClick={openCheckout}
-          className="flex-1 flex items-center justify-center gap-2 font-body font-bold text-[14px] text-white uppercase bg-verde-cta py-3 rounded-lg transition-all duration-150 hover:brightness-90 cursor-pointer"
+          className="flex-1 flex items-center justify-center gap-2 font-body font-semibold text-[14px] text-white uppercase tracking-[0.05em] bg-coral-default py-3 rounded-[8px] transition-all duration-150 hover:bg-coral-dark cursor-pointer"
         >
           Quero minha vaga →
         </button>
         <button
           onClick={() => setDismissed(true)}
-          className="ml-3 text-texto-cinza hover:text-white transition-colors duration-150 cursor-pointer"
+          className="ml-3 text-neutral-400 hover:text-white transition-colors duration-150 cursor-pointer"
         >
           <X size={14} />
         </button>

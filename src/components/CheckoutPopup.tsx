@@ -32,7 +32,6 @@ const CheckoutPopup = ({ isOpen, onClose }: CheckoutPopupProps) => {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
 
-  // Lock body scroll
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -65,7 +64,6 @@ const CheckoutPopup = ({ isOpen, onClose }: CheckoutPopupProps) => {
     const utms = getUtms();
     const formData = { nome: nome.trim(), email: email.trim(), telefone: telefone.trim() };
 
-    // Send to Google Sheets webhook
     const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwnww7tmI4svmJW6kAeoSIZmKPl3dqYUJ0mXne7E0f2uZu6FqkgNF9R4LLuJHOO-HZN5w/exec';
     try {
       fetch(WEBHOOK_URL, {
@@ -90,7 +88,6 @@ const CheckoutPopup = ({ isOpen, onClose }: CheckoutPopupProps) => {
       });
     } catch { /* silent */ }
 
-    // postMessage to parent (iframe)
     if (window.parent !== window) {
       window.parent.postMessage({
         type: 'checkout_lead',
@@ -99,15 +96,11 @@ const CheckoutPopup = ({ isOpen, onClose }: CheckoutPopupProps) => {
       }, '*');
     }
 
-    // Redirect to Kiwify checkout
     const checkoutURL = new URL('https://pay.kiwify.com.br/M2zq3fO');
-
-    // Pré-preenche os campos do checkout da Kiwify
     checkoutURL.searchParams.set('name', formData.nome);
     checkoutURL.searchParams.set('email', formData.email);
     checkoutURL.searchParams.set('phone', formData.telefone.replace(/\D/g, ''));
 
-    // Passa as UTMs para rastreamento
     Object.keys(utms).forEach(key => {
       checkoutURL.searchParams.set(key, utms[key]);
     });
@@ -124,31 +117,28 @@ const CheckoutPopup = ({ isOpen, onClose }: CheckoutPopupProps) => {
       onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
     >
       <div
-        className="relative w-[90vw] rounded-2xl p-6 md:p-8 animate-in fade-in zoom-in-95 duration-300"
+        className="relative w-[90vw] rounded-[12px] p-6 md:p-8 animate-in fade-in zoom-in-95 duration-300"
         style={{
           maxWidth: 480,
-          background: "hsl(var(--roxo-profundo))",
+          background: "hsl(var(--plum-dark))",
           border: "1px solid rgba(255,255,255,0.1)",
         }}
       >
-        {/* Close */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-texto-cinza hover:text-white transition-colors cursor-pointer"
+          className="absolute top-4 right-4 text-neutral-400 hover:text-white transition-colors cursor-pointer"
         >
           <X size={20} />
         </button>
 
-        {/* Title */}
         <h3 className="font-headline font-bold text-[22px] md:text-[26px] text-white text-center mb-1">
           Complete seus dados para garantir sua vaga
         </h3>
-        <p className="font-body text-[14px] text-texto-cinza text-center mb-6">
+        <p className="font-body text-[14px] text-neutral-400 text-center mb-6">
           Você será redirecionado para o checkout seguro
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          {/* Nome */}
           <div>
             <label className="font-body font-medium text-[13px] text-white/70 mb-1 block">Nome completo</label>
             <input
@@ -156,13 +146,12 @@ const CheckoutPopup = ({ isOpen, onClose }: CheckoutPopupProps) => {
               value={nome}
               onChange={(e) => setNome(e.target.value)}
               placeholder="Seu nome completo"
-              className="w-full rounded-lg px-4 py-3 font-body text-[15px] text-white placeholder:text-white/30 outline-none focus:ring-2 focus:ring-dourado transition-all"
+              className="w-full rounded-[8px] px-4 py-3 font-body text-[15px] text-white placeholder:text-white/30 outline-none focus:ring-2 focus:ring-sand-default transition-all"
               style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)" }}
             />
-            {errors.nome && <p className="font-body text-[12px] text-vermelho-terroso mt-1">{errors.nome}</p>}
+            {errors.nome && <p className="font-body text-[12px] text-coral-dark mt-1">{errors.nome}</p>}
           </div>
 
-          {/* Email */}
           <div>
             <label className="font-body font-medium text-[13px] text-white/70 mb-1 block">Email</label>
             <input
@@ -170,13 +159,12 @@ const CheckoutPopup = ({ isOpen, onClose }: CheckoutPopupProps) => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="seu@email.com"
-              className="w-full rounded-lg px-4 py-3 font-body text-[15px] text-white placeholder:text-white/30 outline-none focus:ring-2 focus:ring-dourado transition-all"
+              className="w-full rounded-[8px] px-4 py-3 font-body text-[15px] text-white placeholder:text-white/30 outline-none focus:ring-2 focus:ring-sand-default transition-all"
               style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)" }}
             />
-            {errors.email && <p className="font-body text-[12px] text-vermelho-terroso mt-1">{errors.email}</p>}
+            {errors.email && <p className="font-body text-[12px] text-coral-dark mt-1">{errors.email}</p>}
           </div>
 
-          {/* Telefone */}
           <div>
             <label className="font-body font-medium text-[13px] text-white/70 mb-1 block">Telefone</label>
             <input
@@ -184,17 +172,16 @@ const CheckoutPopup = ({ isOpen, onClose }: CheckoutPopupProps) => {
               value={telefone}
               onChange={(e) => setTelefone(formatPhone(e.target.value))}
               placeholder="(11) 99999-9999"
-              className="w-full rounded-lg px-4 py-3 font-body text-[15px] text-white placeholder:text-white/30 outline-none focus:ring-2 focus:ring-dourado transition-all"
+              className="w-full rounded-[8px] px-4 py-3 font-body text-[15px] text-white placeholder:text-white/30 outline-none focus:ring-2 focus:ring-sand-default transition-all"
               style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)" }}
             />
-            {errors.telefone && <p className="font-body text-[12px] text-vermelho-terroso mt-1">{errors.telefone}</p>}
+            {errors.telefone && <p className="font-body text-[12px] text-coral-dark mt-1">{errors.telefone}</p>}
           </div>
 
-          {/* Submit */}
           <button
             type="submit"
             disabled={!isValid || submitting}
-            className="group relative w-full flex items-center justify-center gap-2 bg-verde-cta text-white font-body font-bold text-[16px] uppercase py-4 rounded-[10px] transition-all duration-150 hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden mt-2"
+            className="group relative w-full flex items-center justify-center gap-2 bg-coral-default text-white font-body font-semibold text-[15px] uppercase tracking-[0.05em] py-4 rounded-[8px] transition-all duration-150 hover:bg-coral-dark disabled:bg-neutral-200 disabled:text-neutral-400 disabled:cursor-not-allowed overflow-hidden mt-2"
           >
             <span
               className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[600ms] ease-in-out pointer-events-none"

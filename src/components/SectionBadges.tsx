@@ -37,21 +37,19 @@ const SectionBadges = () => {
 
   return (
     <>
-      {/* Gradient transition */}
       <div
         className="h-[200px] pointer-events-none"
-        style={{ background: "linear-gradient(to bottom, hsl(var(--roxo-profundo)), hsl(var(--off-white)))" }}
+        style={{ background: "linear-gradient(to bottom, hsl(var(--plum-dark)), hsl(var(--neutral-50)))" }}
       />
 
-      <section ref={ref} className="bg-off-white py-section-mobile md:py-section-desktop">
+      <section ref={ref} className="bg-neutral-50 py-section-mobile md:py-section-desktop">
         <div className="mx-auto px-5 md:px-10 text-center" style={{ maxWidth: 800 }}>
-          {/* 3 negative badges */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-3">
             {badgesNegativos.map((b, i) => (
               <span
                 key={i}
                 {...anim(i * 100, 400, "fade-up")}
-                className={`${anim(i * 100, 400, "fade-up").className} inline-flex items-center gap-2 font-body font-bold text-[14px] text-white px-6 py-2.5 rounded-full bg-vermelho-terroso`}
+                className={`${anim(i * 100, 400, "fade-up").className} inline-flex items-center gap-2 font-body font-semibold text-[14px] text-white px-6 py-2.5 rounded-full bg-coral-dark`}
               >
                 <X size={14} className="flex-shrink-0" />
                 {b}
@@ -59,23 +57,20 @@ const SectionBadges = () => {
             ))}
           </div>
 
-          {/* Positive badge */}
           <div {...anim(400, 400, "fade-scale")} className={`${anim(400, 400, "fade-scale").className} flex justify-center`} style={{ ...anim(400, 400, "fade-scale").style, marginTop: 12 }}>
-            <span className="inline-flex items-center gap-2 font-body font-bold text-[14px] text-roxo-profundo px-6 py-2.5 rounded-full bg-dourado">
+            <span className="inline-flex items-center gap-2 font-body font-semibold text-[14px] text-plum-default px-6 py-2.5 rounded-full bg-sand-default">
               <Check size={14} className="flex-shrink-0" />
               600+ cavalos trabalhados com sucesso
             </span>
           </div>
 
-          {/* Highlight strip */}
-          <div {...anim(700, 500, "fade-scale-sm")} className={`${anim(700, 500, "fade-scale-sm").className} mx-auto bg-dourado rounded-lg`} style={{ ...anim(700, 500, "fade-scale-sm").style, maxWidth: 800, padding: "16px 32px", marginTop: 32 }}>
-            <p className="font-headline font-bold text-[18px] md:text-[22px] uppercase text-roxo-profundo" style={{ letterSpacing: "1px" }}>
+          <div {...anim(700, 500, "fade-scale-sm")} className={`${anim(700, 500, "fade-scale-sm").className} mx-auto bg-sand-default rounded-[12px]`} style={{ ...anim(700, 500, "fade-scale-sm").style, maxWidth: 800, padding: "16px 32px", marginTop: 32 }}>
+            <p className="font-headline font-bold text-[18px] md:text-[22px] uppercase text-plum-dark" style={{ letterSpacing: "1px" }}>
               A única formação em doma comportamental do Brasil baseada em ciência, não em achismo.
             </p>
           </div>
 
-          {/* Support paragraph */}
-          <p {...anim(900, 500, "fade")} className={`${anim(900, 500, "fade").className} font-body text-[17px] text-texto-corpo mx-auto leading-relaxed`} style={{ ...anim(900, 500, "fade").style, maxWidth: 640, marginTop: 24 }}>
+          <p {...anim(900, 500, "fade")} className={`${anim(900, 500, "fade").className} font-body text-[17px] text-neutral-800 mx-auto leading-relaxed`} style={{ ...anim(900, 500, "fade").style, maxWidth: 640, marginTop: 24 }}>
             Você vai aprender a ler o seu cavalo. Entender o que cada expressão facial, cada contração muscular, cada reação significa. E vai aplicar isso no dia a dia — com método, com lógica, com acompanhamento.
           </p>
         </div>

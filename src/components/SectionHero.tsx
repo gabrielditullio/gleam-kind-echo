@@ -36,16 +36,11 @@ const SectionHero = () => {
   ];
 
   return (
-    <section className="bg-roxo-profundo">
+    <section className="bg-plum-dark">
       <div className="mx-auto px-5 md:px-10 py-12 md:py-20" style={{ maxWidth: 1200 }}>
         <div className="flex flex-col md:flex-row items-center gap-10 md:gap-14">
-          {/* Photo placeholder — left on desktop, bottom on mobile */}
           <div
             {...anim(0, 600, "fade")}
-            style={{
-              ...anim(0, 600, "fade").style,
-              order: undefined,
-            }}
             className={`${anim(0, 600, "fade").className} w-full md:w-[45%] flex-shrink-0 order-2 md:order-1`}
           >
             <div className="w-full rounded-xl overflow-hidden" style={{ aspectRatio: "3/4" }}>
@@ -53,32 +48,28 @@ const SectionHero = () => {
             </div>
           </div>
 
-          {/* Text content — right on desktop, top on mobile */}
           <div className="w-full md:w-[55%] order-1 md:order-2">
-            {/* Logo placeholder */}
             <div {...anim(200, 400, "fade-down")}>
               <img src={logoDoma} alt="Formação em Doma Comportamental" className="w-[260px] md:w-[340px] h-auto" />
             </div>
 
-            {/* Headline */}
             <div {...anim(400, 600, "fade-up")} style={{ ...anim(400, 600, "fade-up").style, marginTop: 32 }}>
-              <h1 className="font-headline font-bold text-[30px] md:text-[44px] leading-[1.2] text-white">
+              <h1 className="font-headline font-bold text-[36px] md:text-[48px] leading-[1.2] md:leading-[1.15] text-white">
                 O método que já transformou{" "}
                 a vida de mais de{" "}
-                <span className="text-dourado-claro">600 cavalos</span>{" "}
+                <span className="text-sand-light">600 cavalos</span>{" "}
                 — e vai transformar a do seu.
               </h1>
             </div>
 
-            {/* Checks / X */}
             <div {...anim(800, 400, "fade")} style={{ ...anim(800, 400, "fade").style, marginTop: 24 }}>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {checks.map((c) => (
                   <div key={c.text} className="flex items-center gap-2">
                     {c.icon === "x" ? (
-                      <XCircle size={16} className="text-vermelho-terroso flex-shrink-0" />
+                      <XCircle size={16} className="text-coral-dark flex-shrink-0" />
                     ) : (
-                      <CheckCircle size={16} className="text-verde-musgo flex-shrink-0" />
+                      <CheckCircle size={16} className="text-sage-default flex-shrink-0" />
                     )}
                     <span className="font-body text-[14px] text-white">{c.text}</span>
                   </div>
@@ -86,13 +77,11 @@ const SectionHero = () => {
               </div>
             </div>
 
-            {/* CTA Button */}
             <div {...anim(1000, 400, "fade-scale")} style={{ ...anim(1000, 400, "fade-scale").style, marginTop: 32 }}>
               <button
                 onClick={openCheckout}
-                className="group relative inline-flex items-center justify-center gap-2 bg-verde-cta text-white font-body font-bold text-[16px] uppercase px-10 py-4 rounded-[10px] transition-all duration-150 hover:brightness-90 w-full md:w-auto overflow-hidden cursor-pointer"
+                className="group relative inline-flex items-center justify-center gap-2 bg-coral-default text-white font-body font-semibold text-[15px] uppercase tracking-[0.05em] px-7 py-3.5 rounded-[8px] transition-all duration-150 hover:bg-coral-dark w-full md:w-auto overflow-hidden cursor-pointer"
               >
-                {/* Shiny hover effect */}
                 <span
                   className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[600ms] ease-in-out pointer-events-none"
                   style={{
@@ -106,7 +95,6 @@ const SectionHero = () => {
               </button>
             </div>
 
-            {/* Payment icons */}
             <div {...anim(1200, 300, "fade")} style={{ ...anim(1200, 300, "fade").style, marginTop: 14 }}>
               <img src={paymentIcons} alt="Formas de pagamento: Kiwify, Mastercard, Visa, Elo, PayPal" className="w-[300px] h-auto opacity-35 grayscale brightness-200 mx-auto block" />
             </div>

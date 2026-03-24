@@ -16,7 +16,7 @@ const SectionAncoragem = () => {
   }, []);
 
   return (
-    <section className="bg-roxo-profundo py-section-mobile md:py-section-desktop">
+    <section className="bg-plum-dark py-section-mobile md:py-section-desktop">
       <div ref={ref} className="mx-auto px-5 md:px-10 text-center" style={{ maxWidth: 680 }}>
         <div
           className="transition-all duration-[600ms] ease-out"
@@ -24,11 +24,11 @@ const SectionAncoragem = () => {
         >
           <h2 className="font-headline font-bold text-[22px] md:text-[28px] text-white leading-[1.3] mb-6">
             Cada vez que você manda o cavalo pra doma sem saber o que estão fazendo com ele, são{" "}
-            <span className="text-dourado-claro">R$3.000</span>, <span className="text-dourado-claro">R$5.000</span> de risco.
+            <span className="text-sand-light">R$3.000</span>, <span className="text-sand-light">R$5.000</span> de risco.
           </h2>
 
           <p className="font-headline font-bold text-[22px] md:text-[28px] text-white leading-[1.3] mb-6">
-            Em 2 domas? São <span className="text-dourado-claro">R$10 mil</span> jogados na incerteza.
+            Em 2 domas? São <span className="text-sand-light">R$10 mil</span> jogados na incerteza.
           </p>
 
           <p className="font-headline font-bold text-[22px] md:text-[28px] text-white leading-[1.3] mb-8">
@@ -36,7 +36,7 @@ const SectionAncoragem = () => {
           </p>
 
           <p
-            className="font-body font-bold text-[20px] md:text-[24px] text-vermelho-terroso transition-all duration-500 ease-out"
+            className="font-body font-semibold text-[20px] md:text-[24px] text-coral-dark transition-all duration-500 ease-out"
             style={{ transitionDelay: "400ms", opacity: visible ? 1 : 0 }}
           >
             Você tem coragem de deixar isso continuar?

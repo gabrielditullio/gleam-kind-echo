@@ -37,23 +37,23 @@ const TopBar = () => {
   const TimeBox = ({ value, label }: { value: string; label: string }) => (
     <div className="flex flex-col items-center">
       <span
-        className="font-body font-bold text-[14px] text-white px-2 py-1 rounded text-center"
+        className="font-body font-semibold text-[14px] text-white px-2 py-1 rounded text-center"
         style={{ background: "rgba(255,255,255,0.1)", minWidth: "36px" }}
       >
         {value}
       </span>
-      <span className="font-body text-[9px] text-texto-cinza mt-0.5">{label}</span>
+      <span className="font-body text-[9px] text-neutral-400 mt-0.5">{label}</span>
     </div>
   );
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-[9999] bg-roxo-profundo flex items-center px-4 md:px-8 h-[40px] md:h-[44px]">
+    <div className="fixed top-0 left-0 right-0 z-[9999] bg-plum-dark flex items-center px-4 md:px-8 h-[40px] md:h-[44px]">
       <div className="hidden md:flex items-center justify-between w-full">
-        <p className="font-body font-bold text-[13px] text-white tracking-wide uppercase flex-shrink-0">
+        <p className="font-body font-semibold text-[13px] text-white tracking-wide uppercase flex-shrink-0">
           PRIMEIRAS 24H COM R$500 DE DESCONTO
         </p>
         <div className="flex items-center gap-1.5">
-          <span className="font-body text-[10px] text-texto-cinza mr-1 uppercase">Acaba em...</span>
+          <span className="font-body text-[10px] text-neutral-400 mr-1 uppercase">Acaba em...</span>
           <TimeBox value={pad(timeLeft.days)} label="DIAS" />
           <span className="text-white/40 text-[12px]">:</span>
           <TimeBox value={pad(timeLeft.hours)} label="HRS" />
@@ -64,7 +64,7 @@ const TopBar = () => {
         </div>
         <button
           onClick={openCheckout}
-          className="flex-shrink-0 inline-flex items-center font-body font-bold text-[12px] text-white uppercase bg-verde-cta px-4 py-1.5 rounded-md transition-all duration-150 hover:brightness-90 cursor-pointer"
+          className="flex-shrink-0 inline-flex items-center font-body font-semibold text-[12px] text-white uppercase tracking-[0.05em] bg-coral-default px-4 py-1.5 rounded-lg transition-all duration-150 hover:bg-coral-dark cursor-pointer"
         >
           Garantir Desconto →
         </button>
@@ -72,7 +72,7 @@ const TopBar = () => {
 
       <div className="flex md:hidden items-center justify-between w-full">
         <div className="flex items-center gap-2">
-          <p className="font-body font-bold text-[11px] text-white tracking-wide uppercase">
+          <p className="font-body font-semibold text-[11px] text-white tracking-wide uppercase">
             R$500 OFF · 24H
           </p>
           <div className="flex items-center gap-1">
@@ -85,7 +85,7 @@ const TopBar = () => {
         </div>
         <button
           onClick={openCheckout}
-          className="inline-flex items-center font-body font-bold text-[10px] text-white uppercase bg-verde-cta px-3 py-1 rounded-md transition-all duration-150 hover:brightness-90 cursor-pointer"
+          className="inline-flex items-center font-body font-semibold text-[10px] text-white uppercase tracking-[0.05em] bg-coral-default px-3 py-1 rounded-lg transition-all duration-150 hover:bg-coral-dark cursor-pointer"
         >
           Desconto →
         </button>

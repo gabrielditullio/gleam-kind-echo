@@ -11,7 +11,6 @@ const GlobalFloats = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Watch sticky CTA visibility by checking if #cta is out of view
   useEffect(() => {
     const target = document.getElementById("cta");
     if (!target) return;
@@ -27,7 +26,6 @@ const GlobalFloats = () => {
 
   return (
     <>
-      {/* WhatsApp float — hide when sticky bar is visible */}
       {!stickyVisible && (
         <a
           href="#whatsapp"
@@ -38,7 +36,6 @@ const GlobalFloats = () => {
         </a>
       )}
 
-      {/* Back to top */}
       {scrolled && (
         <button
           onClick={scrollToTop}
@@ -46,7 +43,7 @@ const GlobalFloats = () => {
           style={{
             width: 40, height: 40,
             bottom: stickyVisible ? 80 : 148,
-            background: "rgba(45,27,61,0.8)",
+            background: "rgba(42,21,48,0.8)",
             opacity: 0.7,
           }}
         >

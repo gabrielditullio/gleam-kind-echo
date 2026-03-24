@@ -26,28 +26,25 @@ const SectionPassos = () => {
     <section>
       <div
         className="h-[200px] pointer-events-none"
-        style={{ background: "linear-gradient(to bottom, hsl(var(--off-white)), hsl(var(--roxo-profundo)))" }}
+        style={{ background: "linear-gradient(to bottom, hsl(var(--neutral-50)), hsl(var(--plum-dark)))" }}
       />
 
-      <div className="bg-roxo-profundo py-section-mobile md:py-section-desktop">
+      <div className="bg-plum-dark py-section-mobile md:py-section-desktop">
         <div ref={ref} className="mx-auto px-5 md:px-10" style={{ maxWidth: 800 }}>
-          {/* Headline strip */}
           <div
             className="flex justify-center mb-12 transition-all duration-500 ease-out"
             style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)" }}
           >
-            <div className="bg-dourado rounded-lg px-8 py-4">
-              <h2 className="font-headline font-bold text-[18px] md:text-[22px] text-roxo-profundo uppercase text-center">
+            <div className="bg-sand-default rounded-[8px] px-8 py-4">
+              <h2 className="font-headline font-bold text-[18px] md:text-[22px] text-plum-dark uppercase text-center">
                 Seus Próximos Passos Dentro da Formação
               </h2>
             </div>
           </div>
 
-          {/* Timeline */}
           <div className="relative">
-            {/* Vertical line — center on desktop, left on mobile */}
             <div
-              className="absolute top-0 bottom-0 w-[2px] bg-dourado left-[18px] md:left-1/2 md:-translate-x-px"
+              className="absolute top-0 bottom-0 w-[2px] bg-sand-default left-[18px] md:left-1/2 md:-translate-x-px"
             />
 
             <div className="flex flex-col gap-10">
@@ -58,9 +55,8 @@ const SectionPassos = () => {
                     key={i}
                     className="relative flex items-start md:items-center"
                   >
-                    {/* Dot */}
                     <div
-                      className="absolute left-[13px] md:left-1/2 md:-translate-x-1/2 w-3 h-3 rounded-full bg-dourado z-10 transition-all duration-500 ease-out"
+                      className="absolute left-[13px] md:left-1/2 md:-translate-x-1/2 w-3 h-3 rounded-full bg-sand-default z-10 transition-all duration-500 ease-out"
                       style={{
                         border: "2px solid white",
                         top: "24px",
@@ -72,17 +68,15 @@ const SectionPassos = () => {
                       }}
                     />
 
-                    {/* Desktop layout: alternating sides */}
-                    {/* Mobile: always right of line */}
                     <div className={`w-full pl-10 md:pl-0 md:flex ${isLeft ? "md:flex-row-reverse" : ""}`}>
                       <div className="md:w-1/2" />
                       <div
                         className={`md:w-1/2 ${isLeft ? "md:pr-10" : "md:pl-10"}`}
                       >
                         <div
-                          className="rounded-[10px] p-5 transition-all duration-500 ease-out hover:bg-[rgba(74,45,94,0.5)]"
+                          className="rounded-[8px] p-5 transition-all duration-500 ease-out hover:bg-[rgba(66,34,76,0.5)]"
                           style={{
-                            background: "rgba(74,45,94,0.3)",
+                            background: "rgba(66,34,76,0.3)",
                             maxWidth: 340,
                             transitionDelay: `${300 + i * 200}ms`,
                             opacity: visible ? 1 : 0,
@@ -91,7 +85,7 @@ const SectionPassos = () => {
                               : `translateX(${isLeft ? "-30px" : "30px"})`,
                           }}
                         >
-                          <p className="font-body font-bold text-[16px] text-dourado-claro mb-2">{m.title}</p>
+                          <p className="font-body font-semibold text-[16px] text-sand-light mb-2">{m.title}</p>
                           <p className="font-body text-[15px] leading-[1.65]" style={{ color: "#CCC" }}>
                             {m.text}
                           </p>

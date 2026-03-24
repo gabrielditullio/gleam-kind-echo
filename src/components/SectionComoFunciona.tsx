@@ -40,34 +40,31 @@ const SectionComoFunciona = () => {
 
   return (
     <section>
-      {/* Transition gradient */}
       <div
         className="h-[200px] pointer-events-none"
-        style={{ background: "linear-gradient(to bottom, hsl(var(--off-white)), hsl(var(--roxo-profundo)))" }}
+        style={{ background: "linear-gradient(to bottom, hsl(var(--neutral-50)), hsl(var(--plum-dark)))" }}
       />
 
-      <div className="bg-roxo-profundo py-section-mobile md:py-section-desktop">
+      <div className="bg-plum-dark py-section-mobile md:py-section-desktop">
         <div ref={ref} className="mx-auto px-5 md:px-10" style={{ maxWidth: 1200 }}>
-          {/* Headline strip */}
           <div
             className="flex justify-center mb-12 transition-all duration-500 ease-out"
             style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)" }}
           >
-            <div className="bg-dourado rounded-lg px-8 py-4">
-              <h2 className="font-headline font-bold text-[18px] md:text-[22px] text-roxo-profundo uppercase text-center">
+            <div className="bg-sand-default rounded-[8px] px-8 py-4">
+              <h2 className="font-headline font-bold text-[18px] md:text-[22px] text-plum-dark uppercase text-center">
                 Como Funciona a Formação na Prática
               </h2>
             </div>
           </div>
 
-          {/* 2x2 Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 max-w-cards mx-auto">
             {steps.map((step, i) => (
               <div
                 key={i}
-                className="rounded-xl p-7 transition-all duration-500 ease-out hover:-translate-y-1"
+                className="rounded-[12px] p-7 transition-all duration-500 ease-out hover:-translate-y-1"
                 style={{
-                  background: "rgba(74,45,94,0.5)",
+                  background: "rgba(66,34,76,0.5)",
                   border: "1px solid rgba(255,255,255,0.1)",
                   transitionDelay: `${200 + i * 150}ms`,
                   opacity: visible ? 1 : 0,
@@ -76,15 +73,15 @@ const SectionComoFunciona = () => {
                 onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.2)"; }}
                 onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.1)"; }}
               >
-                <span className="inline-block font-body font-bold text-[11px] px-3 py-1 rounded-full mb-4 bg-dourado text-roxo-profundo">
+                <span className="inline-block font-body font-semibold text-[11px] px-3 py-1 rounded-full mb-4 bg-sand-default text-plum-dark">
                   Passo {i + 1}
                 </span>
-                <h3 className="font-body font-bold text-[20px] text-white mb-3">{step.title}</h3>
+                <h3 className="font-body font-semibold text-[20px] text-white mb-3">{step.title}</h3>
                 <p className="font-body text-[15px] leading-[1.65]" style={{ color: "#CCC" }}>
                   {step.text}
                 </p>
                 {step.italic && (
-                  <p className="font-body italic text-[14px] mt-3 text-dourado-claro">{step.italic}</p>
+                  <p className="font-body italic text-[14px] mt-3 text-sand-light">{step.italic}</p>
                 )}
               </div>
             ))}
