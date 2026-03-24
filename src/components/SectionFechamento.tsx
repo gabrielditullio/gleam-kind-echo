@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import logoDoma from "@/assets/logo-doma.png";
+import { useCheckout } from "@/contexts/CheckoutContext";
 
 const SectionFechamento = () => {
   const ref = useRef<HTMLDivElement>(null);
