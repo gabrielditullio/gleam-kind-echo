@@ -5,6 +5,7 @@ import heroPhoto from "@/assets/hero-paolla.jpg";
 import { useCheckout } from "@/contexts/CheckoutContext";
 
 const SectionHero = () => {
+  const { openCheckout } = useCheckout();
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
