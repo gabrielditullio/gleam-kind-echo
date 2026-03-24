@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import paymentIcons from "@/assets/payment-icons.png";
+import logoDoma from "@/assets/logo-doma.png";
 import { useCheckout } from "@/contexts/CheckoutContext";
 import SectionDivider from "./SectionDivider";
+import CornerOrnaments from "./CornerOrnaments";
 
 const SectionOferta = () => {
   const { openCheckout } = useCheckout();
