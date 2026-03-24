@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { XCircle, CheckCircle } from "lucide-react";
+import logoDoma from "@/assets/logo-doma.png";
 
 const SectionHero = () => {
   const [loaded, setLoaded] = useState(false);
