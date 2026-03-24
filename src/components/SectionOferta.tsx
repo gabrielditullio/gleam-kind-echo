@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import logoDoma from "@/assets/logo-doma.png";
 import { useCheckout } from "@/contexts/CheckoutContext";
 import SectionLabel from "./SectionLabel";
-import SectionOrnament from "./SectionOrnament";
+
 
 function AnimatedPrice({ visible }: { visible: boolean }) {
   const [count, setCount] = useState(0);

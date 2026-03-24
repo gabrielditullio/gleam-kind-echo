@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { X, Check } from "lucide-react";
 import SectionLabel from "./SectionLabel";
-import HeadlineUnderline from "./HeadlineUnderline";
+
 
 const badgesNegativos = [
   "Não é curso tradicional",

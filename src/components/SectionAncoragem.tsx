@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import SectionLabel from "./SectionLabel";
 import HeadlineUnderline from "./HeadlineUnderline";
-import SectionOrnament from "./SectionOrnament";
+
 
 const SectionAncoragem = () => {
   const ref = useRef<HTMLDivElement>(null);
