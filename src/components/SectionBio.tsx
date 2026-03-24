@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import bioPhoto from "@/assets/bio-paolla.jpg";
 import SectionLabel from "./SectionLabel";
-import SectionOrnament from "./SectionOrnament";
+
 
 const SectionBio = () => {
   const ref = useRef<HTMLDivElement>(null);
