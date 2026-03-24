@@ -57,7 +57,6 @@ const SectionProblema = () => {
 
   return (
     <>
-      <SectionOrnament />
       <section className="bg-neutral-50 py-section-mobile md:py-section-desktop">
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 860 }}>
           <div

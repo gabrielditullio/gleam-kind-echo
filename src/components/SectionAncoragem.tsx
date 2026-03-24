@@ -26,7 +26,9 @@ const SectionAncoragem = () => {
   }, []);
 
   return (
-    <section className="bg-plum-dark py-section-mobile md:py-section-desktop">
+    <section className="bg-plum-dark py-section-mobile md:py-section-desktop relative">
+      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-sand/[0.03] to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-sand/[0.03] to-transparent pointer-events-none" />
       <div ref={ref} className="mx-auto px-5 md:px-10 text-center" style={{ maxWidth: 700 }}>
         <SectionLabel text="SEU INVESTIMENTO" dark />
 
