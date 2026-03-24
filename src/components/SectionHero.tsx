@@ -102,7 +102,7 @@ const SectionHero = () => {
                   Quero proteger meu cavalo
                   <span className="inline-block transition-transform duration-150 ease-in-out group-hover:translate-x-1">→</span>
                 </span>
-              </a>
+              </button>
             </div>
 
             {/* Payment icons */}
