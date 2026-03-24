@@ -75,7 +75,7 @@ const SectionFechamento = () => {
                 style={{ background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%)" }}
               />
               <span className="relative z-10 flex items-center gap-2">
-                Garantir minha vaga por R$ 997
+                Quero entrar na formação
                 <span className="inline-block transition-transform duration-150 ease-in-out group-hover:translate-x-1">→</span>
               </span>
             </button>
