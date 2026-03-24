@@ -1,25 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import logoDoma from "@/assets/logo-doma.png";
+import { Sparkles, Check } from "lucide-react";
+import paymentIcons from "@/assets/payment-icons.png";
 import { useCheckout } from "@/contexts/CheckoutContext";
 import SectionLabel from "./SectionLabel";
-
-
-function AnimatedPrice({ visible }: { visible: boolean }) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!visible) return;
-    const duration = 1500;
-    const start = performance.now();
-    const step = (now: number) => {
-      const p = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - p, 3);
-      setCount(Math.round(eased * 997));
-      if (p < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [visible]);
-  return <>{count}</>;
-}
+import SectionOrnament from "./SectionOrnament";
 
 const SectionOferta = () => {
   const { openCheckout } = useCheckout();
@@ -51,8 +35,14 @@ const SectionOferta = () => {
     return () => clearTimeout(t);
   }, [visible, shaken]);
 
+  const badges = [
+    "Acesso imediato",
+    "Pagamento seguro",
+    "12 meses de acesso",
+  ];
+
   return (
-    <section className="bg-plum-dark py-section-mobile md:py-section-desktop" id="cta">
+    <section id="cta" style={{ background: "linear-gradient(180deg, hsl(var(--plum-dark)) 0%, rgba(66,34,76,0.6) 100%)" }}>
       <style>{`
         @keyframes micro-shake {
           0% { transform: translateX(0); }
@@ -64,110 +54,90 @@ const SectionOferta = () => {
         }
       `}</style>
 
-      <div ref={ref} className="mx-auto px-5 md:px-10" style={{ maxWidth: 600 }}>
-        <div className="text-center">
-          <SectionLabel text="SEU INVESTIMENTO" dark />
-        </div>
+      {/* Gradient transition from ancoragem */}
+      <div className="h-[200px] pointer-events-none" style={{ background: "linear-gradient(to bottom, hsl(var(--plum-dark)), transparent)" }} />
+
+      <div ref={ref} className="mx-auto px-5 md:px-10 pb-section-mobile md:pb-section-desktop text-center" style={{ maxWidth: 600 }}>
+        <SectionLabel text="SEU INVESTIMENTO" dark />
+        <SectionOrnament />
+
+        {/* Price block */}
         <div
-          className="text-center mb-8 transition-all duration-500 ease-out"
-          style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(15px)" }}
+          className="transition-all duration-[600ms] ease-out"
+          style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)" }}
         >
-          <img src={logoDoma} alt="Formação em Doma Comportamental" className="mx-auto mb-4 w-[280px] h-auto" />
-          <p className="font-body font-medium text-[16px] text-sand-light">
-            Criado por quem já trabalhou 600+ cavalos.
+          <p className="font-body text-[18px] text-coral-default line-through">De R$ 2.058</p>
+          <p className="font-body font-semibold text-[14px] uppercase tracking-[0.1em] text-neutral-400 mt-4">
+            Por apenas 12x de
           </p>
-          <p className="font-body font-medium text-[16px] text-sand-light">
-            Esse conhecimento não existe em nenhum outro lugar do Brasil.
+
+          <p className="mt-2">
+            <span className="font-body font-semibold text-[28px] text-neutral-50 align-top leading-none">R$</span>
+            <span className="font-headline font-bold text-[80px] text-neutral-50 leading-none">83</span>
+            <span className="font-body font-semibold text-[28px] text-neutral-50 align-super leading-none">,08</span>
           </p>
+
+          <p className="font-body text-[16px] text-neutral-400 mt-2">ou R$ 997 à vista</p>
         </div>
 
-        <div
-          className="relative bg-white rounded-[12px] p-8 md:p-10 mx-auto transition-all duration-[600ms] ease-out"
-          style={{
-            maxWidth: 520,
-            border: "2px solid hsl(var(--sand-default))",
-            boxShadow: "0 8px 40px rgba(42,21,48,0.25)",
-            opacity: visible ? 1 : 0,
-            transform: visible ? "translateY(0) scale(1)" : "translateY(20px) scale(0.97)",
-            transitionDelay: "200ms",
-          }}
-        >
-          <div
-            className="absolute flex flex-col items-center justify-center rounded-full bg-coral-dark"
-            style={{
-              width: 80, height: 80,
-              top: -20, right: -20,
-              transform: "rotate(-15deg)",
-              boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
-            }}
-          >
-            <span className="font-body font-semibold text-[18px] text-white leading-none">R$500</span>
-            <span className="font-body font-semibold text-[10px] text-white uppercase">Desconto</span>
-          </div>
+        <SectionOrnament />
 
-          <h3 className="font-headline font-bold text-[24px] text-plum-dark text-center mb-4">
-            Então, qual vai ser o seu investimento?
-          </h3>
-
-          <p className="font-body text-[16px] text-neutral-800 text-center">
-            Com tudo que está incluso — módulos completos, cases reais em tempo real, encontros ao vivo mensais, comunidade com minha participação — o valor justo seria, no mínimo, R$ 1.497.
-          </p>
-
-          <p className="font-body font-medium text-[16px] text-neutral-800 text-center mt-2">
-            Mas eu quero que o máximo de pessoas tenha acesso a esse conhecimento.
-          </p>
-
-          <p className="font-body font-semibold text-[16px] text-plum-dark text-center mt-6">
-            Entrando hoje, você paga apenas...
-          </p>
-
-          <div className="text-center mt-4">
-            <p className="font-body text-[18px] text-neutral-400 line-through">DE R$ 1.497</p>
-            <p className="font-body text-[14px] text-neutral-400 mt-1">POR</p>
-            <p className="mt-1">
-              <span className="font-body font-semibold text-[28px] text-plum-dark align-top leading-none">R$</span>
-              <span className="font-headline font-bold text-[64px] text-plum-dark leading-none">
-                <AnimatedPrice visible={visible} />
-              </span>
-            </p>
-            <p className="font-body text-[14px] text-neutral-400 mt-1">à vista no boleto ou PIX</p>
-            <p className="font-body font-semibold text-[16px] text-plum-dark mt-1">ou 12x de R$ 96,06</p>
-          </div>
-
+        {/* CTA Button */}
+        <div className="flex justify-center">
           <button
             ref={btnRef}
             onClick={openCheckout}
-            className="group relative flex items-center justify-center gap-2 bg-coral-default text-white font-body font-semibold text-[15px] uppercase tracking-[0.05em] py-[18px] rounded-[8px] transition-all duration-150 hover:bg-coral-dark w-full mt-6 overflow-hidden cursor-pointer"
+            className="group relative flex items-center justify-center gap-2 bg-coral-default text-white font-body font-semibold text-[15px] uppercase tracking-[0.05em] py-4 px-10 rounded-[8px] transition-all duration-150 hover:bg-coral-dark overflow-hidden cursor-pointer w-full"
+            style={{ maxWidth: 420 }}
           >
             <span
               className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[600ms] ease-in-out pointer-events-none"
               style={{ background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%)" }}
             />
             <span className="relative z-10 flex items-center gap-2">
-              Quero entrar na formação
+              <Sparkles size={16} />
+              Quero me inscrever agora
               <span className="inline-block transition-transform duration-150 ease-in-out group-hover:translate-x-1">→</span>
             </span>
           </button>
+        </div>
 
-          <div className="flex items-center justify-center gap-4 mt-4">
-            {["Kiwify", "Mastercard", "Visa", "PayPal"].map((name) => (
-              <span key={name} className="font-body text-[11px] uppercase tracking-wider" style={{ color: "rgba(0,0,0,0.3)" }}>
-                {name}
-              </span>
-            ))}
-          </div>
-
-          <div className="border-t mt-6 mb-6" style={{ borderColor: "hsl(var(--neutral-200))" }} />
-
-          <div className="text-center">
-            <span className="inline-block font-body font-semibold text-[12px] text-white bg-sage-default rounded-full px-3 py-1">
-              🎓 ALUNO
+        {/* Trust badges */}
+        <div className="flex items-center justify-center gap-4 flex-wrap mt-3">
+          {badges.map((b) => (
+            <span key={b} className="flex items-center gap-1.5 font-body text-[13px] text-neutral-400">
+              <Check size={14} className="text-sage-default" />
+              {b}
             </span>
-            <p className="font-body font-semibold text-[16px] text-plum-dark mt-2">Já é meu aluno?</p>
-            <p className="font-body text-[14px] text-neutral-600">Você tem desconto especial.</p>
+          ))}
+        </div>
+
+        {/* Payment icons */}
+        <img
+          src={paymentIcons}
+          alt="Meios de pagamento: Kiwify, Mastercard, Visa, Elo, PayPal"
+          className="mx-auto mt-4 w-[300px] h-auto opacity-40 grayscale brightness-200"
+        />
+
+        {/* Alumni section */}
+        <div
+          className="mt-10 pt-8 text-center transition-all duration-500 ease-out"
+          style={{
+            borderTop: "1px solid rgba(255,255,255,0.1)",
+            opacity: visible ? 1 : 0,
+            transitionDelay: "400ms",
+          }}
+        >
+          <span className="inline-block font-body font-semibold text-[12px] text-white bg-sage-default rounded-full px-3 py-1">
+            🎓 ALUNO
+          </span>
+          <p className="font-body font-semibold text-[16px] text-neutral-50 mt-2">Já é meu aluno?</p>
+          <p className="font-body text-[14px] text-neutral-400">Você tem desconto especial.</p>
+          <div className="flex justify-center mt-3">
             <button
               onClick={openCheckout}
-              className="flex items-center justify-center gap-2 font-body font-semibold text-[14px] text-sage-default border-2 border-sage-default rounded-[8px] py-3 px-6 mt-3 w-full transition-all duration-150 hover:bg-sage-default hover:text-white cursor-pointer"
+              className="group flex items-center justify-center gap-2 font-body font-semibold text-[14px] text-sage-default border-2 border-sage-default rounded-[8px] py-3 px-6 transition-all duration-150 hover:bg-sage-default hover:text-white cursor-pointer w-full"
+              style={{ maxWidth: 420 }}
             >
               Garantir meu desconto de aluno
               <span className="inline-block transition-transform duration-150 group-hover:translate-x-1">→</span>
