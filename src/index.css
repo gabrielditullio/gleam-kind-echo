@@ -1,0 +1,124 @@
+#lovable-badge {
+  display: none !important;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* FDC Sales Page — Design System */
+    --marrom-escuro: 24 50% 15%;
+    --marrom-medio: 24 38% 25%;
+    --terroso: 24 40% 39%;
+    --dourado: 43 85% 38%;
+    --dourado-claro: 40 60% 55%;
+    --bege-areia: 38 24% 74%;
+    --bege-claro: 38 33% 93%;
+    --off-white: 50 20% 97%;
+    --branco: 0 0% 100%;
+    --fundo-escuro: 24 60% 6%;
+    --fundo-escuro-2: 24 48% 11%;
+    --verde-musgo: 94 36% 35%;
+    --vermelho-terroso: 0 40% 39%;
+    --texto-corpo: 0 0% 18%;
+    --texto-secundario: 0 0% 33%;
+    --texto-cinza: 0 0% 60%;
+
+    /* Shadcn mappings */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 18%;
+    --card: 50 20% 97%;
+    --card-foreground: 0 0% 18%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 18%;
+    --primary: 43 85% 38%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 38 33% 93%;
+    --secondary-foreground: 24 50% 15%;
+    --muted: 38 33% 93%;
+    --muted-foreground: 0 0% 33%;
+    --accent: 24 40% 39%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 40% 39%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 38 24% 74%;
+    --input: 38 24% 74%;
+    --ring: 43 85% 38%;
+    --radius: 0rem;
+    --sidebar-background: 24 60% 6%;
+    --sidebar-foreground: 38 33% 93%;
+    --sidebar-primary: 43 85% 38%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 24 48% 11%;
+    --sidebar-accent-foreground: 38 33% 93%;
+    --sidebar-border: 24 48% 11%;
+    --sidebar-ring: 43 85% 38%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 768px) {
+    body {
+      font-size: 16px;
+      line-height: 1.65;
+    }
+  }
+
+  h1, h2, h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+@layer utilities {
+  .font-headline {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  .font-body {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays */
+.stagger-1 { transition-delay: 100ms; }
+.stagger-2 { transition-delay: 200ms; }
+.stagger-3 { transition-delay: 300ms; }
+.stagger-4 { transition-delay: 400ms; }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    transition-duration: 0.01ms;
+    transform: none;
+  }
+  .stagger-1, .stagger-2, .stagger-3, .stagger-4 {
+    transition-delay: 0ms;
+  }
+}
