@@ -68,11 +68,11 @@ const SectionAncoragem = () => {
                 <span className="font-body text-[16px] text-neutral-50">{item.name}</span>
               </div>
               {item.strike ? (
-                <span className="font-body text-[16px] text-coral-default line-through flex-shrink-0 ml-4">
+                <span className="font-body text-[16px] text-coral line-through flex-shrink-0 ml-4">
                   {item.value}
                 </span>
               ) : (
-                <span className="font-body font-semibold text-[16px] text-sand-default flex-shrink-0 ml-4">
+                <span className="font-body font-semibold text-[16px] text-sand flex-shrink-0 ml-4">
                   {item.value}
                 </span>
               )}
@@ -89,10 +89,10 @@ const SectionAncoragem = () => {
             }}
           >
             <span className="font-body font-semibold text-[16px] text-neutral-50">Total percebido</span>
-            <span className="font-headline font-bold text-[24px] text-coral-default line-through">R$ 2.058</span>
+            <span className="font-headline font-bold text-[24px] text-coral line-through">R$ 2.058</span>
           </div>
           <p
-            className="text-center font-body font-semibold text-[12px] uppercase tracking-[0.1em] text-sand-default mt-3 transition-all duration-500 ease-out"
+            className="text-center font-body font-semibold text-[12px] uppercase tracking-[0.1em] text-sand mt-3 transition-all duration-500 ease-out"
             style={{ transitionDelay: "900ms", opacity: visible ? 1 : 0 }}
           >
             Incluso na formação

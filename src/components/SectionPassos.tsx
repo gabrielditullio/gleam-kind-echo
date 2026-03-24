@@ -40,7 +40,7 @@ const SectionPassos = () => {
             className="flex justify-center mb-4 transition-all duration-500 ease-out"
             style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)" }}
           >
-            <div className="bg-sand-default rounded-[8px] px-8 py-4">
+            <div className="bg-sand rounded-[8px] px-8 py-4">
               <h2 className="font-headline font-bold text-[18px] md:text-[22px] text-plum-dark uppercase text-center">
                 Seus Próximos Passos Dentro da Formação
               </h2>
@@ -51,7 +51,7 @@ const SectionPassos = () => {
 
           <div className="relative">
             <div
-              className="absolute top-0 bottom-0 w-[2px] bg-sand-default left-[18px] md:left-1/2 md:-translate-x-px"
+              className="absolute top-0 bottom-0 w-[2px] bg-sand left-[18px] md:left-1/2 md:-translate-x-px"
             />
 
             <div className="flex flex-col gap-10">
@@ -63,7 +63,7 @@ const SectionPassos = () => {
                     className="relative flex items-start md:items-center"
                   >
                     <div
-                      className="absolute left-[13px] md:left-1/2 md:-translate-x-1/2 w-3 h-3 rounded-full bg-sand-default z-10 transition-all duration-500 ease-out"
+                      className="absolute left-[13px] md:left-1/2 md:-translate-x-1/2 w-3 h-3 rounded-full bg-sand z-10 transition-all duration-500 ease-out"
                       style={{
                         border: "2px solid white",
                         top: "24px",

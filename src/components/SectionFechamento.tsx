@@ -66,7 +66,7 @@ const SectionFechamento = () => {
           >
             <button
               onClick={openCheckout}
-              className="group relative inline-flex items-center justify-center gap-2 bg-coral-default text-white font-body font-semibold text-[15px] uppercase tracking-[0.05em] px-12 py-5 rounded-[8px] transition-all duration-150 hover:bg-coral-dark w-full md:w-auto overflow-hidden cursor-pointer"
+              className="group relative inline-flex items-center justify-center gap-2 bg-coral text-white font-body font-semibold text-[15px] uppercase tracking-[0.05em] px-12 py-5 rounded-[8px] transition-all duration-150 hover:bg-coral-dark w-full md:w-auto overflow-hidden cursor-pointer"
             >
               <span
                 className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[600ms] ease-in-out pointer-events-none"

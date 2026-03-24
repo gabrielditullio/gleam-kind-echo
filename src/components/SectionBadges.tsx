@@ -62,13 +62,13 @@ const SectionBadges = () => {
           </div>
 
           <div {...anim(400, 400, "fade-scale")} className={`${anim(400, 400, "fade-scale").className} flex justify-center`} style={{ ...anim(400, 400, "fade-scale").style, marginTop: 12 }}>
-            <span className="inline-flex items-center gap-2 font-body font-semibold text-[14px] text-plum-default px-6 py-2.5 rounded-full bg-sand-default">
+            <span className="inline-flex items-center gap-2 font-body font-semibold text-[14px] text-plum px-6 py-2.5 rounded-full bg-sand">
               <Check size={14} className="flex-shrink-0" />
               600+ cavalos trabalhados com sucesso
             </span>
           </div>
 
-          <div {...anim(700, 500, "fade-scale-sm")} className={`${anim(700, 500, "fade-scale-sm").className} mx-auto bg-sand-default rounded-[8px]`} style={{ ...anim(700, 500, "fade-scale-sm").style, maxWidth: 800, padding: "16px 32px", marginTop: 32 }}>
+          <div {...anim(700, 500, "fade-scale-sm")} className={`${anim(700, 500, "fade-scale-sm").className} mx-auto bg-sand rounded-[8px]`} style={{ ...anim(700, 500, "fade-scale-sm").style, maxWidth: 800, padding: "16px 32px", marginTop: 32 }}>
             <p className="font-headline font-bold text-[18px] md:text-[22px] uppercase text-plum-dark" style={{ letterSpacing: "1px" }}>
               A única formação em doma comportamental do Brasil baseada em ciência, não em achismo.
             </p>

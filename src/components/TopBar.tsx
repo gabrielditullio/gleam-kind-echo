@@ -64,7 +64,7 @@ const TopBar = () => {
         </div>
         <button
           onClick={openCheckout}
-          className="flex-shrink-0 inline-flex items-center font-body font-semibold text-[12px] text-white uppercase tracking-[0.05em] bg-coral-default px-4 py-1.5 rounded-lg transition-all duration-150 hover:bg-coral-dark cursor-pointer"
+          className="flex-shrink-0 inline-flex items-center font-body font-semibold text-[12px] text-white uppercase tracking-[0.05em] bg-coral px-4 py-1.5 rounded-lg transition-all duration-150 hover:bg-coral-dark cursor-pointer"
         >
           Garantir Desconto →
         </button>
@@ -85,7 +85,7 @@ const TopBar = () => {
         </div>
         <button
           onClick={openCheckout}
-          className="inline-flex items-center font-body font-semibold text-[10px] text-white uppercase tracking-[0.05em] bg-coral-default px-3 py-1 rounded-lg transition-all duration-150 hover:bg-coral-dark cursor-pointer"
+          className="inline-flex items-center font-body font-semibold text-[10px] text-white uppercase tracking-[0.05em] bg-coral px-3 py-1 rounded-lg transition-all duration-150 hover:bg-coral-dark cursor-pointer"
         >
           Desconto →
         </button>

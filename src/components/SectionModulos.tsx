@@ -77,7 +77,7 @@ const SectionModulos = () => {
                     onClick={() => setOpenIndex(isOpen ? -1 : i)}
                     className="w-full flex items-center gap-3 px-6 py-5 text-left cursor-pointer"
                   >
-                    <span className="font-body font-semibold text-[14px] text-sand-default flex-shrink-0">
+                    <span className="font-body font-semibold text-[14px] text-sand flex-shrink-0">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <span className="font-body font-semibold text-[18px] text-plum-dark flex-1">

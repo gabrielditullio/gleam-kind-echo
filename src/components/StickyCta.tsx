@@ -36,7 +36,7 @@ const StickyCta = () => {
         <div className="flex items-center gap-4">
           <button
             onClick={openCheckout}
-            className="inline-flex items-center gap-2 font-body font-semibold text-[14px] text-white uppercase tracking-[0.05em] bg-coral-default px-6 py-2.5 rounded-[8px] transition-all duration-150 hover:bg-coral-dark cursor-pointer"
+            className="inline-flex items-center gap-2 font-body font-semibold text-[14px] text-white uppercase tracking-[0.05em] bg-coral px-6 py-2.5 rounded-[8px] transition-all duration-150 hover:bg-coral-dark cursor-pointer"
           >
             Quero minha vaga
             <span className="inline-block transition-transform duration-150 group-hover:translate-x-1">→</span>
@@ -53,7 +53,7 @@ const StickyCta = () => {
       <div className="flex md:hidden items-center px-4 py-3">
         <button
           onClick={openCheckout}
-          className="flex-1 flex items-center justify-center gap-2 font-body font-semibold text-[14px] text-white uppercase tracking-[0.05em] bg-coral-default py-3 rounded-[8px] transition-all duration-150 hover:bg-coral-dark cursor-pointer"
+          className="flex-1 flex items-center justify-center gap-2 font-body font-semibold text-[14px] text-white uppercase tracking-[0.05em] bg-coral py-3 rounded-[8px] transition-all duration-150 hover:bg-coral-dark cursor-pointer"
         >
           Quero minha vaga →
         </button>

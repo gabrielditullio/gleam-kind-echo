@@ -48,7 +48,7 @@ const SectionParaQuem = () => {
             Essa formação foi feita pra você que:
           </h2>
           <div className="flex justify-center mb-8">
-            <div className="h-[3px] bg-sand-default" style={{ width: 60 }} />
+            <div className="h-[3px] bg-sand" style={{ width: 60 }} />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mx-auto" style={{ maxWidth: 800 }}>
@@ -62,7 +62,7 @@ const SectionParaQuem = () => {
                   transform: visible ? "translateX(0)" : "translateX(-10px)",
                 }}
               >
-                <CheckCircle size={20} className="text-sage-default flex-shrink-0 mt-0.5" />
+                <CheckCircle size={20} className="text-sage flex-shrink-0 mt-0.5" />
                 <span className="font-body text-[16px] text-white">{p}</span>
               </div>
             ))}
@@ -103,7 +103,7 @@ const SectionParaQuem = () => {
           >
             <button
               onClick={openCheckout}
-              className="group relative inline-flex items-center justify-center gap-2 bg-coral-default text-white font-body font-semibold text-[15px] uppercase tracking-[0.05em] px-7 py-3.5 rounded-[8px] transition-all duration-150 hover:bg-coral-dark w-full md:w-auto overflow-hidden cursor-pointer"
+              className="group relative inline-flex items-center justify-center gap-2 bg-coral text-white font-body font-semibold text-[15px] uppercase tracking-[0.05em] px-7 py-3.5 rounded-[8px] transition-all duration-150 hover:bg-coral-dark w-full md:w-auto overflow-hidden cursor-pointer"
             >
               <span
                 className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[600ms] ease-in-out pointer-events-none"

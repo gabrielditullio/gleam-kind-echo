@@ -107,7 +107,7 @@ const SectionProblema = () => {
                 {cycleSteps.map((step, i) => (
                   <div key={i} className="flex items-center gap-2">
                     <div
-                      className="bg-plum-default text-white font-body text-[13px] font-medium px-4 py-3 rounded-[8px] text-center min-w-[120px] transition-all duration-500 ease-out"
+                      className="bg-plum text-white font-body text-[13px] font-medium px-4 py-3 rounded-[8px] text-center min-w-[120px] transition-all duration-500 ease-out"
                       style={{
                         transitionDelay: `${i * 120}ms`,
                         opacity: cycle.visible ? 1 : 0,
@@ -133,7 +133,7 @@ const SectionProblema = () => {
                 {cycleSteps.map((step, i) => (
                   <div key={i} className="flex flex-col items-center gap-3">
                     <div
-                      className="bg-plum-default text-white font-body text-[13px] font-medium px-5 py-3 rounded-[8px] text-center w-full max-w-[220px] transition-all duration-500 ease-out"
+                      className="bg-plum text-white font-body text-[13px] font-medium px-5 py-3 rounded-[8px] text-center w-full max-w-[220px] transition-all duration-500 ease-out"
                       style={{
                         transitionDelay: `${i * 120}ms`,
                         opacity: cycle.visible ? 1 : 0,
@@ -173,7 +173,7 @@ const SectionProblema = () => {
 
             <div ref={calma.ref} style={{ marginTop: 32 }}>
               <h2
-                className="text-center font-headline font-bold text-[40px] md:text-[56px] text-sand-default mb-4 transition-all duration-[800ms] ease-out"
+                className="text-center font-headline font-bold text-[40px] md:text-[56px] text-sand mb-4 transition-all duration-[800ms] ease-out"
                 style={{
                   opacity: calma.visible ? 1 : 0,
                   transform: calma.visible ? "scale(1)" : "scale(0.8)",

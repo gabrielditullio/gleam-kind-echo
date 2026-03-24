@@ -146,7 +146,7 @@ const CheckoutPopup = ({ isOpen, onClose }: CheckoutPopupProps) => {
               value={nome}
               onChange={(e) => setNome(e.target.value)}
               placeholder="Seu nome completo"
-              className="w-full rounded-[8px] px-4 py-3 font-body text-[15px] text-white placeholder:text-white/30 outline-none focus:ring-2 focus:ring-sand-default transition-all"
+              className="w-full rounded-[8px] px-4 py-3 font-body text-[15px] text-white placeholder:text-white/30 outline-none focus:ring-2 focus:ring-sand transition-all"
               style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)" }}
             />
             {errors.nome && <p className="font-body text-[12px] text-coral-dark mt-1">{errors.nome}</p>}
@@ -159,7 +159,7 @@ const CheckoutPopup = ({ isOpen, onClose }: CheckoutPopupProps) => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="seu@email.com"
-              className="w-full rounded-[8px] px-4 py-3 font-body text-[15px] text-white placeholder:text-white/30 outline-none focus:ring-2 focus:ring-sand-default transition-all"
+              className="w-full rounded-[8px] px-4 py-3 font-body text-[15px] text-white placeholder:text-white/30 outline-none focus:ring-2 focus:ring-sand transition-all"
               style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)" }}
             />
             {errors.email && <p className="font-body text-[12px] text-coral-dark mt-1">{errors.email}</p>}
@@ -172,7 +172,7 @@ const CheckoutPopup = ({ isOpen, onClose }: CheckoutPopupProps) => {
               value={telefone}
               onChange={(e) => setTelefone(formatPhone(e.target.value))}
               placeholder="(11) 99999-9999"
-              className="w-full rounded-[8px] px-4 py-3 font-body text-[15px] text-white placeholder:text-white/30 outline-none focus:ring-2 focus:ring-sand-default transition-all"
+              className="w-full rounded-[8px] px-4 py-3 font-body text-[15px] text-white placeholder:text-white/30 outline-none focus:ring-2 focus:ring-sand transition-all"
               style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)" }}
             />
             {errors.telefone && <p className="font-body text-[12px] text-coral-dark mt-1">{errors.telefone}</p>}
@@ -181,7 +181,7 @@ const CheckoutPopup = ({ isOpen, onClose }: CheckoutPopupProps) => {
           <button
             type="submit"
             disabled={!isValid || submitting}
-            className="group relative w-full flex items-center justify-center gap-2 bg-coral-default text-white font-body font-semibold text-[15px] uppercase tracking-[0.05em] py-4 rounded-[8px] transition-all duration-150 hover:bg-coral-dark disabled:bg-neutral-200 disabled:text-neutral-400 disabled:cursor-not-allowed overflow-hidden mt-2"
+            className="group relative w-full flex items-center justify-center gap-2 bg-coral text-white font-body font-semibold text-[15px] uppercase tracking-[0.05em] py-4 rounded-[8px] transition-all duration-150 hover:bg-coral-dark disabled:bg-neutral-200 disabled:text-neutral-400 disabled:cursor-not-allowed overflow-hidden mt-2"
           >
             <span
               className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[600ms] ease-in-out pointer-events-none"

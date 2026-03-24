@@ -77,7 +77,7 @@ const SectionBonus = () => {
                   onMouseEnter={(e) => { e.currentTarget.style.boxShadow = "0 4px 16px rgba(42,21,48,0.12)"; e.currentTarget.style.borderColor = "rgba(196,168,130,0.5)"; }}
                   onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "0 2px 8px rgba(42,21,48,0.06)"; e.currentTarget.style.borderColor = "hsl(var(--neutral-200))"; }}
                 >
-                  <Icon size={32} className="text-plum-default mb-4" />
+                  <Icon size={32} className="text-plum mb-4" />
                   <h3 className="font-body font-semibold text-[18px] text-plum-dark mb-2">{b.title}</h3>
                   <p className="font-body text-[15px] text-neutral-600 leading-relaxed">{b.text}</p>
                   {b.value && (
@@ -85,7 +85,7 @@ const SectionBonus = () => {
                       <span className="text-neutral-400">Valor: </span>
                       <span className="line-through text-neutral-400">{b.value}</span>
                       {" "}
-                      <span className="font-semibold text-sage-default">Incluído</span>
+                      <span className="font-semibold text-sage">Incluído</span>
                     </p>
                   )}
                 </div>

@@ -76,7 +76,7 @@ const SectionDepoimentos = () => {
               >
                 {/* Decorative quote */}
                 <span
-                  className="absolute font-headline text-[48px] text-sand-default leading-none select-none"
+                  className="absolute font-headline text-[48px] text-sand leading-none select-none"
                   style={{ top: 12, left: 16, opacity: 0.6 }}
                 >
                   "
@@ -92,7 +92,7 @@ const SectionDepoimentos = () => {
                     <p className="font-body font-semibold text-[16px] text-plum-dark">{t.name}</p>
                     <div className="flex gap-0.5">
                       {[...Array(5)].map((_, s) => (
-                        <Star key={s} size={12} className="text-sand-default fill-sand-default" />
+                        <Star key={s} size={12} className="text-sand fill-sand" />
                       ))}
                     </div>
                   </div>
@@ -105,7 +105,7 @@ const SectionDepoimentos = () => {
           </div>
 
           <p className="text-center">
-            <a href="#prova" className="font-body font-medium text-[14px] text-sand-default underline hover:brightness-90 transition-all duration-150">
+            <a href="#prova" className="font-body font-medium text-[14px] text-sand underline hover:brightness-90 transition-all duration-150">
               Casos reais de participantes do Workshop
             </a>
           </p>

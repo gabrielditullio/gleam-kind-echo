@@ -34,7 +34,7 @@ const SectionBio = () => {
           >
             <div className="flex flex-col md:flex-row gap-8 md:gap-10">
               <div className="w-full md:w-[40%] flex-shrink-0">
-                <div className="w-full rounded-[12px] overflow-hidden" style={{ aspectRatio: "3/4", border: "3px solid hsl(var(--sand-default))" }}>
+                <div className="w-full rounded-[12px] overflow-hidden" style={{ aspectRatio: "3/4", border: "3px solid hsl(var(--sand))" }}>
                   <img src={bioPhoto} alt="Dra. Paolla com cavalo" className="w-full h-full object-cover rounded-[12px]" />
                 </div>
               </div>
@@ -49,12 +49,12 @@ const SectionBio = () => {
                   Dra. Paolla
                 </h2>
                 <div
-                  className="h-[3px] bg-sand-default mt-3 mb-4 transition-all duration-500 ease-out"
+                  className="h-[3px] bg-sand mt-3 mb-4 transition-all duration-500 ease-out"
                   style={{ width: 60, transitionDelay: "360ms", opacity: visible ? 1 : 0 }}
                 />
 
                 <span
-                  className="inline-block font-body font-semibold text-[12px] text-plum-dark uppercase bg-sand-default rounded-full px-5 py-1.5 mb-6 transition-all duration-500 ease-out"
+                  className="inline-block font-body font-semibold text-[12px] text-plum-dark uppercase bg-sand rounded-full px-5 py-1.5 mb-6 transition-all duration-500 ease-out"
                   style={{ letterSpacing: "1px", transitionDelay: "440ms", opacity: visible ? 1 : 0 }}
                 >
                   Única especialista em doma comportamental do Brasil
