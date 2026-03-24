@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { XCircle, CheckCircle } from "lucide-react";
 import logoDoma from "@/assets/logo-doma.png";
 import heroPhoto from "@/assets/hero-paolla.jpg";
+import paymentIcons from "@/assets/payment-icons.png";
 import { useCheckout } from "@/contexts/CheckoutContext";
 
 const SectionHero = () => {
@@ -107,17 +108,7 @@ const SectionHero = () => {
 
             {/* Payment icons */}
             <div {...anim(1200, 300, "fade")} style={{ ...anim(1200, 300, "fade").style, marginTop: 16 }}>
-              <div className="flex items-center gap-4">
-                {["Hotmart", "Mastercard", "Visa", "PayPal"].map((name) => (
-                  <span
-                    key={name}
-                    className="font-body text-[11px] uppercase tracking-wider"
-                    style={{ color: "rgba(255,255,255,0.4)", lineHeight: "28px" }}
-                  >
-                    {name}
-                  </span>
-                ))}
-              </div>
+              <img src={paymentIcons} alt="Formas de pagamento: Kiwify, Pix, Visa, Mastercard, American Express, Hipercard, Boleto, PayPal" className="h-[28px] md:h-[32px] w-auto opacity-60" />
             </div>
           </div>
         </div>
