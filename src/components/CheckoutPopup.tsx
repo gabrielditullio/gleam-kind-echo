@@ -113,7 +113,7 @@ const CheckoutPopup = ({ isOpen, onClose }: CheckoutPopupProps) => {
   return (
     <div
       className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
-      style={{ background: "rgba(0,0,0,0.6)" }}
+      style={{ background: "rgba(42,21,48,0.6)" }}
       onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
     >
       <div

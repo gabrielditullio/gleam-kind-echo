@@ -79,7 +79,7 @@ const SectionFaq = () => {
                     className="overflow-hidden transition-all duration-300 ease-out"
                     style={{ maxHeight: isOpen ? "200px" : "0px", opacity: isOpen ? 1 : 0 }}
                   >
-                    <p className="px-6 pb-5 font-body text-[15px] leading-[1.65]" style={{ color: "#CCC" }}>
+                    <p className="px-6 pb-5 font-body text-[15px] leading-[1.65]" style={{ color: "#DDD7D0" }}>
                       {faq.a}
                     </p>
                   </div>

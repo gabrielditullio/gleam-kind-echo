@@ -93,7 +93,7 @@ const SectionPassos = () => {
                           }}
                         >
                           <p className="font-body font-semibold text-[16px] text-sand-light mb-2">{m.title}</p>
-                          <p className="font-body text-[15px] leading-[1.65]" style={{ color: "#CCC" }}>
+                          <p className="font-body text-[15px] leading-[1.65]" style={{ color: "#DDD7D0" }}>
                             {m.text}
                           </p>
                         </div>
