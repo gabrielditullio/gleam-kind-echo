@@ -98,7 +98,7 @@ const SectionHero = () => {
             </div>
 
             <div {...anim(1200, 300, "fade")} className={`${anim(1200, 300, "fade").className}`} style={{ ...anim(1200, 300, "fade").style, marginTop: 14 }}>
-              <img src={paymentIcons} alt="Formas de pagamento: Kiwify, Mastercard, Visa, Elo, PayPal" style={{ width: 300, height: "auto", opacity: 0.35, display: "block", marginLeft: "auto", marginRight: "auto", filter: "grayscale(100%) brightness(2)" }} />
+              <img src={paymentIcons} alt="Formas de pagamento: Kiwify, Mastercard, Visa, Elo, PayPal" className="mx-auto md:mx-0" style={{ width: 300, height: "auto", opacity: 0.35, display: "block", filter: "grayscale(100%) brightness(2)" }} />
             </div>
           </div>
         </div>
