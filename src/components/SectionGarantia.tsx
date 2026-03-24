@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { CheckCircle } from "lucide-react";
+import { useCheckout } from "@/contexts/CheckoutContext";
 
 const checks = [
   "Libere acesso a todos os módulos",
