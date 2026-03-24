@@ -16,6 +16,7 @@ import SectionFaq from "@/components/SectionFaq";
 import SectionWhatsapp from "@/components/SectionWhatsapp";
 import SectionFechamento from "@/components/SectionFechamento";
 import SectionDivider from "@/components/SectionDivider";
+import SectionTransition from "@/components/SectionTransition";
 import StickyCta from "@/components/StickyCta";
 import GlobalFloats from "@/components/GlobalFloats";
 import CheckoutPopup from "@/components/CheckoutPopup";
@@ -29,34 +30,49 @@ const IndexContent = () => {
       <TopBar />
       <div className="pt-[40px] md:pt-[44px]">
         <SectionHero />
-        {/* Hero→Badges: gradient transition built into SectionBadges */}
+        {/* Hero (dark) → Badges (light) */}
+        <SectionTransition from="dark" to="light" />
         <SectionBadges />
+        {/* Badges (light) → Problema (light) */}
         <SectionDivider light />
         <SectionProblema />
-        {/* Problema→ComoFunciona: gradient transition built into SectionComoFunciona */}
+        {/* Problema (light) → ComoFunciona (dark) */}
+        <SectionTransition from="light" to="dark" />
         <SectionComoFunciona />
-        {/* ComoFunciona→Depoimentos: gradient transition built into SectionDepoimentos */}
+        {/* ComoFunciona (dark) → Depoimentos (light) */}
+        <SectionTransition from="dark" to="light" />
         <SectionDepoimentos />
-        <SectionDivider light />
+        {/* Depoimentos (light) → ParaQuem (dark) */}
+        <SectionTransition from="light" to="dark" />
         <SectionParaQuem />
-        {/* ParaQuem→Modulos: gradient transition built into SectionModulos */}
+        {/* ParaQuem (dark) → Modulos (light) */}
+        <SectionTransition from="dark" to="light" />
         <SectionModulos />
+        {/* Modulos (light) → Bonus (light) */}
         <SectionDivider light />
         <SectionBonus />
+        {/* Bonus (light) → Bio (light) */}
         <SectionDivider light />
         <SectionBio />
-        {/* Bio→Passos: gradient transition built into SectionPassos */}
+        {/* Bio (light) → Passos (dark) */}
+        <SectionTransition from="light" to="dark" />
         <SectionPassos />
+        {/* Passos (dark) → Ancoragem (dark) */}
         <SectionDivider />
         <SectionAncoragem />
+        {/* Ancoragem (dark) → Oferta (dark) */}
         <SectionOferta />
-        {/* Oferta→Garantia: gradient transition built into SectionGarantia */}
+        {/* Oferta (dark) → Garantia (light) */}
+        <SectionTransition from="dark" to="light" />
         <SectionGarantia />
-        <SectionDivider light />
+        {/* Garantia (light) → FAQ (dark) */}
+        <SectionTransition from="light" to="dark" />
         <SectionFaq />
-        <SectionDivider />
+        {/* FAQ (dark) → WhatsApp (light) */}
+        <SectionTransition from="dark" to="light" />
         <SectionWhatsapp />
-        {/* Whatsapp→Fechamento: gradient transition built into SectionFechamento */}
+        {/* WhatsApp (light) → Fechamento (dark) */}
+        <SectionTransition from="light" to="dark" />
         <SectionFechamento />
       </div>
       <StickyCta />
