@@ -71,7 +71,7 @@ const SectionHero = () => {
                     ) : (
                       <CheckCircle size={16} className="text-sage flex-shrink-0" />
                     )}
-                    <span className="font-body text-[14px] text-white">{c.text}</span>
+                    <span className="font-body text-[14px] text-neutral-200">{c.text}</span>
                   </div>
                 ))}
               </div>
