@@ -107,8 +107,8 @@ const SectionHero = () => {
             </div>
 
             {/* Payment icons */}
-            <div {...anim(1200, 300, "fade")} style={{ ...anim(1200, 300, "fade").style, marginTop: 16 }}>
-              <img src={paymentIcons} alt="Formas de pagamento: Pix, Boleto, Visa, Mastercard" className="w-[280px] md:w-[320px] h-auto opacity-35 grayscale brightness-200 mx-auto block" />
+            <div {...anim(1200, 300, "fade")} style={{ ...anim(1200, 300, "fade").style, marginTop: 14 }}>
+              <img src={paymentIcons} alt="Formas de pagamento: Kiwify, Mastercard, Visa, Elo, PayPal" className="w-[300px] h-auto opacity-35 grayscale brightness-200 mx-auto block" />
             </div>
           </div>
         </div>
