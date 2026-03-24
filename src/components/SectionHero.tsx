@@ -61,12 +61,7 @@ const SectionHero = () => {
           <div className="w-full md:w-[55%] order-1 md:order-2">
             {/* Logo placeholder */}
             <div {...anim(200, 400, "fade-down")}>
-              <div
-                className="flex items-center justify-center rounded-lg w-[160px] md:w-[200px] h-[80px]"
-                style={{ background: "rgba(255,255,255,0.1)" }}
-              >
-                <span className="font-body text-[14px] text-white">LOGO DOMA</span>
-              </div>
+              <img src={logoDoma} alt="Formação em Doma Comportamental" className="w-[160px] md:w-[200px] h-auto" />
             </div>
 
             {/* Headline */}
