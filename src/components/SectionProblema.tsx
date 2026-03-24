@@ -194,18 +194,28 @@ const SectionProblema = () => {
               </p>
             </div>
 
-            <div ref={stats.ref} style={{ marginTop: 24 }}>
-              <p
-                className="font-body text-[17px] text-neutral-800 text-center max-w-text mx-auto leading-relaxed transition-all duration-500 ease-out"
+            <div ref={stats.ref} style={{ marginTop: 32 }}>
+              <div
+                className="grid grid-cols-3 gap-6 max-w-lg mx-auto transition-all duration-500 ease-out"
                 style={{ opacity: stats.visible ? 1 : 0, transform: stats.visible ? "translateY(0)" : "translateY(20px)" }}
               >
-                <span className="font-semibold text-plum-light"><AnimatedCounter target={77} visible={stats.visible} /></span>{" "}
-                das pessoas que pesquisei têm medo de violência e trauma na doma.{" "}
-                <span className="font-semibold text-plum-light"><AnimatedCounter target={64} visible={stats.visible} /></span>{" "}
-                são iniciantes totais.{" "}
-                <span className="font-semibold text-plum-light"><AnimatedCounter target={43} visible={stats.visible} /></span>{" "}
-                dependem completamente de terceiros.
-              </p>
+                {[
+                  { value: 77, label: "Têm medo de violência na doma" },
+                  { value: 64, label: "São iniciantes totais" },
+                  { value: 43, label: "Dependem de terceiros" },
+                ].map((stat, i) => (
+                  <div
+                    key={i}
+                    className="text-center transition-all duration-500 ease-out"
+                    style={{ transitionDelay: `${i * 150}ms`, opacity: stats.visible ? 1 : 0, transform: stats.visible ? "translateY(0)" : "translateY(10px)" }}
+                  >
+                    <span className="font-display text-4xl md:text-5xl font-bold text-plum block">
+                      <AnimatedCounter target={stat.value} visible={stats.visible} />
+                    </span>
+                    <span className="font-body text-xs uppercase tracking-[0.1em] text-neutral-400 mt-2 block">{stat.label}</span>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <div {...fade(stats.visible, 400)} style={{ ...fade(stats.visible, 400).style, marginTop: 24 }}>
