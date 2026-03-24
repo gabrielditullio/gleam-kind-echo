@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import bioPhoto from "@/assets/bio-paolla.jpg";
 import SectionLabel from "./SectionLabel";
-import SectionOrnament from "./SectionOrnament";
+
 
 const SectionBio = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -20,7 +20,6 @@ const SectionBio = () => {
 
   return (
     <>
-      <SectionOrnament />
       <section className="bg-neutral-50 py-section-mobile md:py-section-desktop">
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 900 }}>
           <div

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import { ArrowRight, ArrowDown, RotateCcw } from "lucide-react";
 import SectionLabel from "./SectionLabel";
 import HeadlineUnderline from "./HeadlineUnderline";
-import SectionOrnament from "./SectionOrnament";
+
 
 const cycleSteps = [
   "Não entende o cavalo",
@@ -57,7 +57,6 @@ const SectionProblema = () => {
 
   return (
     <>
-      <SectionOrnament />
       <section className="bg-neutral-50 py-section-mobile md:py-section-desktop">
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 860 }}>
           <div

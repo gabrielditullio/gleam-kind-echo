@@ -39,11 +39,6 @@ const SectionBadges = () => {
 
   return (
     <>
-      <div
-        className="h-[200px] pointer-events-none"
-        style={{ background: "linear-gradient(to bottom, #2A1530, #FAF8F6)" }}
-      />
-
       <section ref={ref} className="bg-neutral-50 py-section-mobile md:py-section-desktop">
         <div className="mx-auto px-5 md:px-10 text-center" style={{ maxWidth: 800 }}>
           <SectionLabel text="O QUE NOS DIFERENCIA" />

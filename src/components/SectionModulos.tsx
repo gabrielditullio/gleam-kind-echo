@@ -34,11 +34,6 @@ const SectionModulos = () => {
 
   return (
     <section>
-      <div
-        className="h-[200px] pointer-events-none"
-        style={{ background: "linear-gradient(to bottom, #2A1530, #FAF8F6)" }}
-      />
-
       <div className="bg-neutral-50 py-section-mobile md:py-section-desktop">
         <div ref={ref} className="mx-auto px-5 md:px-10" style={{ maxWidth: 860 }}>
           <div className="text-center mb-12">

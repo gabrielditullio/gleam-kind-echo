@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { BookOpen, Percent, Tag, RefreshCw } from "lucide-react";
 import SectionLabel from "./SectionLabel";
 import HeadlineUnderline from "./HeadlineUnderline";
-import SectionOrnament from "./SectionOrnament";
+
 
 const bonuses = [
   {
@@ -45,7 +45,6 @@ const SectionBonus = () => {
 
   return (
     <>
-      <SectionOrnament />
       <section className="bg-neutral-100 py-section-mobile md:py-section-desktop">
         <div ref={ref} className="mx-auto px-5 md:px-10" style={{ maxWidth: 1080 }}>
           <div className="text-center">
