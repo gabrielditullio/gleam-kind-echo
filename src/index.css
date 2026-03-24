@@ -119,4 +119,9 @@
   .stagger-1, .stagger-2, .stagger-3, .stagger-4 {
     transition-delay: 0ms;
   }
+  * {
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }
