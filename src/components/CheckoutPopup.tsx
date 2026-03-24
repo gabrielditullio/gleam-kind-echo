@@ -66,7 +66,7 @@ const CheckoutPopup = ({ isOpen, onClose }: CheckoutPopupProps) => {
     const formData = { nome: nome.trim(), email: email.trim(), telefone: telefone.trim() };
 
     // Send to Google Sheets webhook
-    const WEBHOOK_URL = 'GOOGLE_SHEETS_WEBHOOK_URL';
+    const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwnww7tmI4svmJW6kAeoSIZmKPl3dqYUJ0mXne7E0f2uZu6FqkgNF9R4LLuJHOO-HZN5w/exec';
     try {
       fetch(WEBHOOK_URL, {
         method: 'POST',
