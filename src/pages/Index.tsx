@@ -9,6 +9,8 @@ import SectionModulos from "@/components/SectionModulos";
 import SectionBonus from "@/components/SectionBonus";
 import SectionBio from "@/components/SectionBio";
 import SectionPassos from "@/components/SectionPassos";
+import SectionAncoragem from "@/components/SectionAncoragem";
+import SectionOferta from "@/components/SectionOferta";
 
 const Index = () => {
   return (
@@ -25,6 +27,8 @@ const Index = () => {
         <SectionBonus />
         <SectionBio />
         <SectionPassos />
+        <SectionAncoragem />
+        <SectionOferta />
       </div>
     </div>
   );
