@@ -4,6 +4,7 @@ import logoDoma from "@/assets/logo-doma.png";
 import heroPhoto from "@/assets/hero-paolla.jpg";
 import paymentIcons from "@/assets/payment-icons.png";
 import { useCheckout } from "@/contexts/CheckoutContext";
+import CornerOrnaments from "./CornerOrnaments";
 
 const SectionHero = () => {
   const { openCheckout } = useCheckout();
