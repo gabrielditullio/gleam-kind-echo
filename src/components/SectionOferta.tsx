@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import logoDoma from "@/assets/logo-doma.png";
 
 function AnimatedPrice({ visible }: { visible: boolean }) {
   const [count, setCount] = useState(0);
@@ -66,12 +67,7 @@ const SectionOferta = () => {
           className="text-center mb-8 transition-all duration-500 ease-out"
           style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(15px)" }}
         >
-          <div
-            className="mx-auto flex items-center justify-center rounded-lg mb-4"
-            style={{ width: 180, height: 70, background: "rgba(255,255,255,0.1)" }}
-          >
-            <span className="font-body text-[14px] text-white">LOGO DOMA</span>
-          </div>
+          <img src={logoDoma} alt="Formação em Doma Comportamental" className="mx-auto mb-4 w-[180px] h-auto" />
           <p className="font-body font-medium text-[16px] text-dourado-claro">
             Criado por quem já trabalhou 600+ cavalos.
           </p>

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import logoDoma from "@/assets/logo-doma.png";
 
 const SectionFechamento = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -82,12 +83,7 @@ const SectionFechamento = () => {
 
           {/* Footer */}
           <div className="mt-20 pt-10" style={{ borderTop: "1px solid rgba(255,255,255,0.1)" }}>
-            <div
-              className="mx-auto flex items-center justify-center rounded-lg mb-4"
-              style={{ width: 140, height: 50, background: "rgba(255,255,255,0.1)" }}
-            >
-              <span className="font-body text-[12px] text-white">LOGO DOMA</span>
-            </div>
+            <img src={logoDoma} alt="Formação em Doma Comportamental" className="mx-auto mb-4 w-[140px] h-auto" />
             <p className="font-body text-[14px]" style={{ color: "rgba(255,255,255,0.6)" }}>
               Formação em Doma Comportamental · Dra. Paolla
             </p>
