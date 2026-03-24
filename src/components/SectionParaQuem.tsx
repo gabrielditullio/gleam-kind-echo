@@ -31,12 +31,9 @@ const SectionParaQuem = () => {
 
   return (
     <section>
-      <div
-        className="h-[200px] pointer-events-none"
-        style={{ background: "linear-gradient(to bottom, #FAF8F6, #2A1530)" }}
-      />
-
-      <div className="bg-plum-dark py-section-mobile md:py-section-desktop">
+      <div className="bg-plum-dark py-section-mobile md:py-section-desktop relative">
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-sand/[0.03] to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-sand/[0.03] to-transparent pointer-events-none" />
         <div ref={ref} className="mx-auto px-5 md:px-10" style={{ maxWidth: 860 }}>
           <div className="text-center">
             <SectionLabel text="PARA QUEM É" dark />
