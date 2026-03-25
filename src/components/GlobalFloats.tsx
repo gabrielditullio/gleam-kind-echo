@@ -43,7 +43,7 @@ const GlobalFloats = () => {
           className="fixed z-[9997] right-5 rounded-full flex items-center justify-center transition-all duration-200 hover:opacity-100 cursor-pointer"
           style={{
             width: 40, height: 40,
-            bottom: stickyVisible ? 80 : 148,
+            bottom: 148,
             background: "rgba(42,21,48,0.8)",
             opacity: 0.7,
           }}
