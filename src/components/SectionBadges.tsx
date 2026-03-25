@@ -48,7 +48,7 @@ const SectionBadges = () => {
               <span
                 key={i}
                 {...anim(i * 100, 400, "fade-up")}
-                className={`${anim(i * 100, 400, "fade-up").className} inline-flex items-center gap-2 font-body font-semibold text-[14px] text-white px-6 py-2.5 rounded-full bg-coral-dark`}
+                className={`${anim(i * 100, 400, "fade-up").className} badge-negativo inline-flex items-center gap-2 font-body font-semibold text-[14px] text-white px-6 py-2.5 rounded-full bg-coral-dark`}
               >
                 <X size={14} className="flex-shrink-0" />
                 {b}
