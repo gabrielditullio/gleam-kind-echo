@@ -1,4 +1,4 @@
-import { MessageCircle } from "lucide-react";
+import whatsappIcon from "@/assets/whatsapp-icon.png";
 
 const SectionWhatsapp = () => (
   <section>
