@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { MessageCircle, ChevronUp } from "lucide-react";
+import { ChevronUp } from "lucide-react";
+import whatsappIcon from "@/assets/whatsapp-icon.png";
 
 const GlobalFloats = () => {
   const [scrolled, setScrolled] = useState(false);
