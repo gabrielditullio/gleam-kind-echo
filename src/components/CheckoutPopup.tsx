@@ -96,7 +96,7 @@ const CheckoutPopup = ({ isOpen, onClose }: CheckoutPopupProps) => {
       }, '*');
     }
 
-    const checkoutURL = new URL('https://pay.kiwify.com.br/M2zq3fO');
+    const checkoutURL = new URL('https://pay.kiwify.com.br/DzaXdxY');
     checkoutURL.searchParams.set('name', formData.nome);
     checkoutURL.searchParams.set('email', formData.email);
     checkoutURL.searchParams.set('phone', formData.telefone.replace(/\D/g, ''));
