@@ -66,7 +66,7 @@ const SectionOferta = () => {
           className="transition-all duration-[600ms] ease-out"
           style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)" }}
         >
-          <p className="font-body text-lg text-coral line-through">De R$ 1.997,00</p>
+          <p className="font-body text-lg text-coral line-through">De R$ 2.497,00</p>
 
           <p className="font-body font-semibold text-sm uppercase tracking-[0.1em] text-neutral-400 mt-4">
             Por apenas 12x de
@@ -74,11 +74,11 @@ const SectionOferta = () => {
 
           <div className="flex items-start justify-center mt-2">
             <span className="font-display text-3xl text-sand mt-3">R$</span>
-            <span className="font-display font-bold text-[80px] md:text-[96px] leading-none text-sand">154</span>
-            <span className="font-display text-3xl text-sand mt-3">,82</span>
+            <span className="font-display font-bold text-[80px] md:text-[96px] leading-none text-sand">165</span>
+            <span className="font-display text-3xl text-sand mt-3">,17</span>
           </div>
 
-          <p className="font-body text-sm text-neutral-400 mt-2">ou R$ 1.497 à vista no boleto ou PIX</p>
+          <p className="font-body text-sm text-neutral-400 mt-2">ou R$ 1.597,00 à vista no boleto ou PIX</p>
         </div>
 
         <SectionDivider />
