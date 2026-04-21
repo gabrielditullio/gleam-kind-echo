@@ -86,10 +86,10 @@ html, body, #root { background: var(--paper); }
 /*  Small atomic SVGs                                                  */
 /* ------------------------------------------------------------------ */
 
-function HorseMark({ className = "" }) {
+function HorseMark({ className = "", style }: { className?: string; style?: React.CSSProperties }) {
   // tiny emblem — stylized horse head
   return (
-    <svg viewBox="0 0 64 64" className={className} aria-hidden>
+    <svg viewBox="0 0 64 64" className={className} style={style} aria-hidden>
       <g fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
         <path d="M18 52 C 18 40, 14 36, 14 30 C 14 22, 20 18, 24 16 C 22 13, 22 10, 25 9 C 27 11, 28 13, 30 14 C 36 12, 44 14, 48 20 C 52 26, 50 34, 46 40 L 46 52" />
         <path d="M26 20 C 28 22, 32 22, 34 20" />
