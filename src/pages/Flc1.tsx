@@ -100,9 +100,9 @@ function HorseMark({ className = "", style }: { className?: string; style?: Reac
   );
 }
 
-function Shield({ className = "" }) {
+function Shield({ className = "", style }: { className?: string; style?: React.CSSProperties }) {
   return (
-    <svg viewBox="0 0 24 24" className={className} aria-hidden>
+    <svg viewBox="0 0 24 24" className={className} style={style} aria-hidden>
       <path d="M12 2 L 20 5 V 11 C 20 16, 16 20, 12 22 C 8 20, 4 16, 4 11 V 5 Z" fill="none" stroke="currentColor" strokeWidth="1.4" />
       <path d="M8.5 12 L 11 14.5 L 15.5 9.5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
@@ -126,9 +126,9 @@ function Lock({ className = "" }) {
   );
 }
 
-function Sparkle({ className = "" }) {
+function Sparkle({ className = "", style }: { className?: string; style?: React.CSSProperties }) {
   return (
-    <svg viewBox="0 0 24 24" className={className} aria-hidden>
+    <svg viewBox="0 0 24 24" className={className} style={style} aria-hidden>
       <path d="M12 2 L 13.5 10.5 L 22 12 L 13.5 13.5 L 12 22 L 10.5 13.5 L 2 12 L 10.5 10.5 Z" fill="currentColor" />
     </svg>
   );
