@@ -900,6 +900,7 @@ function Flc1V3Content() {
         headline={FLC_CONFIG.popupHeadline}
         subheadline={FLC_CONFIG.popupSubheadline}
         ctaLabel={FLC_CONFIG.popupCta}
+        theme="flc"
       />
     </div>
   );
