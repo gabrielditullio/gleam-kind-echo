@@ -62,7 +62,12 @@ const IndexV2Content = () => {
       </div>
       <StickyCta />
       <GlobalFloats />
-      <CheckoutPopup isOpen={isOpen} onClose={closeCheckout} />
+      <CheckoutPopup
+        isOpen={isOpen}
+        onClose={closeCheckout}
+        source="doma"
+        product="formacao-doma"
+      />
     </div>
   );
 };
