@@ -736,7 +736,6 @@ function Testimonials() {
                 src={p.img}
                 alt={`Depoimento de ${p.name}`}
                 loading="lazy"
-                onError={(e) => { (e.currentTarget as HTMLImageElement).style.visibility = "hidden"; }}
               />
               <figcaption className="test-meta">
                 <span className="name">{p.name}</span>
