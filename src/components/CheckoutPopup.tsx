@@ -134,7 +134,13 @@ const CheckoutPopup = ({
   headline = DOMA_DEFAULTS.headline,
   subheadline = DOMA_DEFAULTS.subheadline,
   ctaLabel = DOMA_DEFAULTS.ctaLabel,
+  theme,
 }: CheckoutPopupProps) => {
+  // Resolve theme: explicit prop wins; otherwise auto-detect FLC by source/product.
+  const resolvedTheme: CheckoutTheme =
+    theme ??
+    (source === "flc1_v3" || product === "entenda-seu-cavalo" ? "flc" : "doma");
+  const t = THEMES[resolvedTheme];
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [telefone, setTelefone] = useState("");
