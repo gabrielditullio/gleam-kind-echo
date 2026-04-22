@@ -10,6 +10,8 @@ import { X } from "lucide-react";
 // All new props fall back to Doma defaults.
 // ============================================================
 
+type CheckoutTheme = "doma" | "flc";
+
 interface CheckoutPopupProps {
   isOpen: boolean;
   onClose: () => void;
@@ -27,7 +29,59 @@ interface CheckoutPopupProps {
   subheadline?: string;
   /** Submit button label when not submitting */
   ctaLabel?: string;
+  /** Visual theme — defaults to 'doma' */
+  theme?: CheckoutTheme;
 }
+
+// Theme tokens — purely visual, no logic depends on these
+const THEMES = {
+  doma: {
+    overlay: "rgba(42,21,48,0.6)",
+    modalBg: "#2A1530",
+    modalBorder: "1px solid rgba(255,255,255,0.1)",
+    headline: "#FAFAFA",
+    subheadline: "rgba(255,255,255,0.6)",
+    label: "rgba(255,255,255,0.7)",
+    inputBg: "rgba(255,255,255,0.08)",
+    inputBorder: "1px solid rgba(255,255,255,0.12)",
+    inputText: "#FFFFFF",
+    inputPlaceholder: "rgba(255,255,255,0.3)",
+    inputFocusRing: "focus:ring-sand",
+    buttonBg: "#E07856",
+    buttonHoverBg: "#C25B3D",
+    buttonText: "#FFFFFF",
+    buttonDisabledBg: "#E5E5E5",
+    buttonDisabledText: "#A3A3A3",
+    closeColor: "rgba(163,163,163,1)",
+    closeHoverColor: "#FFFFFF",
+    errorColor: "#C25B3D",
+    shimmer:
+      "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%)",
+  },
+  flc: {
+    overlay: "rgba(7,30,30,0.75)",
+    modalBg: "#0d4a4a",
+    modalBorder: "1px solid rgba(232,240,0,0.45)",
+    headline: "#f3f6f2",
+    subheadline: "rgba(243,246,242,0.72)",
+    label: "rgba(243,246,242,0.78)",
+    inputBg: "rgba(243,246,242,0.94)",
+    inputBorder: "1px solid rgba(232,240,0,0.25)",
+    inputText: "#071e1e",
+    inputPlaceholder: "rgba(7,30,30,0.45)",
+    inputFocusRing: "focus:ring-[#e8f000]",
+    buttonBg: "#e8f000",
+    buttonHoverBg: "#b8c000",
+    buttonText: "#071e1e",
+    buttonDisabledBg: "rgba(243,246,242,0.2)",
+    buttonDisabledText: "rgba(243,246,242,0.4)",
+    closeColor: "rgba(243,246,242,0.7)",
+    closeHoverColor: "#e8f000",
+    errorColor: "#ff5a4d",
+    shimmer:
+      "linear-gradient(90deg, transparent 0%, rgba(7,30,30,0.18) 50%, transparent 100%)",
+  },
+} as const;
 
 const DOMA_DEFAULTS = {
   source: "doma",
