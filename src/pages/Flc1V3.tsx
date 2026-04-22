@@ -1,4 +1,6 @@
 import { useEffect, useState, useRef } from "react";
+import CheckoutPopup from "@/components/CheckoutPopup";
+import { CheckoutProvider, useCheckout } from "@/contexts/CheckoutContext";
 
 /**
  * FLC1 V3 — Paolla Luchin · Fale a Língua do Cavalo (VSL)
@@ -23,6 +25,16 @@ const KIWIFY_URL = "https://pay.kiwify.com.br/DzaXdxY";
 const REVEAL_AFTER_MS = 527_000;
 const VTURB_PLAYER_ID = "ab-69e675b0d9a2e678cbc9362a";
 const VTURB_SCRIPT_SRC = `https://scripts.converteai.net/b792ccfe-b151-4538-84c6-42bb48a19ba4/players/${VTURB_PLAYER_ID}/player.js`;
+
+const FLC_CONFIG = {
+  source: "flc1_v3",
+  product: "entenda-seu-cavalo",
+  kiwifyCheckoutId: "Kc9MOhe",
+  leadValue: 197,
+  popupHeadline: "Falta pouco para garantir sua vaga",
+  popupSubheadline: "Preencha seus dados e prossiga para o checkout seguro",
+  popupCta: "Continuar para o Checkout",
+};
 
 /* ------------------------------------------------------------------ */
 /*  Styles                                                             */
@@ -522,13 +534,88 @@ function UrgencyBar() {
 /* ------------------------------------------------------------------ */
 
 function VTurbPlayer() {
+  const firedRef = useRef<Set<number>>(new Set());
+
   useEffect(() => {
-    if (document.querySelector(`script[src="${VTURB_SCRIPT_SRC}"]`)) return;
-    const s = document.createElement("script");
-    s.src = VTURB_SCRIPT_SRC;
-    s.async = true;
-    document.head.appendChild(s);
+    if (!document.querySelector(`script[src="${VTURB_SCRIPT_SRC}"]`)) {
+      const s = document.createElement("script");
+      s.src = VTURB_SCRIPT_SRC;
+      s.async = true;
+      document.head.appendChild(s);
+    }
+
+    let attached = false;
+    let attempts = 0;
+    const MAX_ATTEMPTS = 15;
+    let pollId: number | undefined;
+    let cleanupListener: (() => void) | undefined;
+
+    const tryAttach = () => {
+      try {
+        const w = window as unknown as {
+          smartplayer?: { instances?: Array<{ smartAutoPlay?: boolean; on?: (ev: string, cb: () => void) => void; video?: HTMLVideoElement }> };
+        };
+        const player = w.smartplayer?.instances?.[0];
+        if (!player) {
+          attempts += 1;
+          if (attempts >= MAX_ATTEMPTS) {
+            if (pollId) window.clearInterval(pollId);
+          }
+          return;
+        }
+        if (pollId) window.clearInterval(pollId);
+        if (player.smartAutoPlay) return; // muted warmup — skip
+
+        const handler = () => {
+          try {
+            const video = player.video;
+            if (!video || !video.duration || !isFinite(video.duration)) return;
+            const pct = (video.currentTime / video.duration) * 100;
+            const quartiles = [25, 50, 75, 100];
+            for (const q of quartiles) {
+              if (pct >= q && !firedRef.current.has(q)) {
+                firedRef.current.add(q);
+                if (window.parent !== window) {
+                  window.parent.postMessage(
+                    {
+                      type: "vturb_progress",
+                      progress_pct: q,
+                      video_id: VTURB_PLAYER_ID,
+                      source: FLC_CONFIG.source,
+                    },
+                    "*"
+                  );
+                }
+              }
+            }
+          } catch { /* never break playback */ }
+        };
+
+        if (player.on) {
+          player.on("timeupdate", handler);
+          attached = true;
+          cleanupListener = () => {
+            // smartplayer typically lacks .off — best-effort
+          };
+        } else if (player.video) {
+          player.video.addEventListener("timeupdate", handler);
+          attached = true;
+          const v = player.video;
+          cleanupListener = () => v.removeEventListener("timeupdate", handler);
+        }
+      } catch { /* swallow */ }
+    };
+
+    pollId = window.setInterval(tryAttach, 1000);
+    tryAttach();
+
+    return () => {
+      if (pollId) window.clearInterval(pollId);
+      if (cleanupListener) cleanupListener();
+      void attached;
+    };
   }, []);
+
   return (
     <div className="video-inner">
       <vturb-smartplayer id={VTURB_PLAYER_ID} style={{ display: "block", width: "100%", height: "100%" }}>
@@ -586,13 +673,14 @@ function Hero() {
 /* ------------------------------------------------------------------ */
 
 function PrimaryCTA() {
+  const { openCheckout } = useCheckout();
   return (
     <div className="cta-wrap">
-      <a className="cta kiwify-link" href={KIWIFY_URL}>
+      <button type="button" className="cta" onClick={openCheckout}>
         <Spark style={{ width: 20, height: 20 }} />
         Quero garantir minha vaga agora
         <Lock style={{ width: 16, height: 16 }} />
-      </a>
+      </button>
       <div className="cta-sub">
         <Lock style={{ width: 12, height: 12 }} /> Pagamento 100% seguro · Kiwify
       </div>
@@ -701,6 +789,7 @@ function Modules() {
 /* ------------------------------------------------------------------ */
 
 function Offer() {
+  const { openCheckout } = useCheckout();
   return (
     <section id="checkout" className="offer">
       <div className="section-head">
@@ -725,11 +814,11 @@ function Offer() {
           <span className="pay-chip">Cartão · 12×</span>
         </div>
 
-        <a className="cta kiwify-link" href={KIWIFY_URL}>
+        <button type="button" className="cta" onClick={openCheckout}>
           <Spark style={{ width: 20, height: 20 }} />
           Quero garantir minha vaga agora
           <Lock style={{ width: 16, height: 16 }} />
-        </a>
+        </button>
 
         <div className="guarantee">
           <span className="icon"><Shield style={{ width: 18, height: 18 }} /></span>
@@ -756,9 +845,10 @@ function FlcFooter() {
 /*  Root                                                               */
 /* ------------------------------------------------------------------ */
 
-export default function Flc1V3() {
+function Flc1V3Content() {
   const [revealed, setRevealed] = useState(false);
   const rootRef = useRef<HTMLDivElement | null>(null);
+  const { isOpen, closeCheckout } = useCheckout();
 
   useEffect(() => {
     const t = setTimeout(() => setRevealed(true), REVEAL_AFTER_MS);
@@ -799,6 +889,26 @@ export default function Flc1V3() {
         <Offer />
         <FlcFooter />
       </section>
+
+      <CheckoutPopup
+        isOpen={isOpen}
+        onClose={closeCheckout}
+        source={FLC_CONFIG.source}
+        product={FLC_CONFIG.product}
+        kiwifyCheckoutId={FLC_CONFIG.kiwifyCheckoutId}
+        leadValue={FLC_CONFIG.leadValue}
+        headline={FLC_CONFIG.popupHeadline}
+        subheadline={FLC_CONFIG.popupSubheadline}
+        ctaLabel={FLC_CONFIG.popupCta}
+      />
     </div>
+  );
+}
+
+export default function Flc1V3() {
+  return (
+    <CheckoutProvider>
+      <Flc1V3Content />
+    </CheckoutProvider>
   );
 }
