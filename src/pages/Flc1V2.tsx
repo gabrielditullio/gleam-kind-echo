@@ -432,8 +432,8 @@ function Sparkle({ className = "", style }: IconProps) {
 /** Splits `text` into <span.letter> nodes with a per-letter animation-delay.
  *  `start` is the starting delay (ms) and the function returns the next start
  *  (so delays chain naturally across multiple Word calls). */
-function renderLetters(text, startMs, step = 28, italic = false) {
-  const nodes = [];
+function renderLetters(text: string, startMs: number, step = 28, italic = false) {
+  const nodes: React.ReactNode[] = [];
   let t = startMs;
   // Iterate by code point so accented characters (á, ú) stay intact.
   const chars = Array.from(text);
