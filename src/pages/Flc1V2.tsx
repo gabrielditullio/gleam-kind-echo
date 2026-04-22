@@ -376,7 +376,9 @@ html, body, #root { background: var(--paper); }
 /*  Small atomic SVGs                                                  */
 /* ------------------------------------------------------------------ */
 
-function HorseMark({ className = "", style }) {
+type IconProps = { className?: string; style?: React.CSSProperties };
+
+function HorseMark({ className = "", style }: IconProps) {
   return (
     <svg viewBox="0 0 64 64" className={className} style={style} aria-hidden>
       <g fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
@@ -389,7 +391,7 @@ function HorseMark({ className = "", style }) {
   );
 }
 
-function Shield({ className = "", style }) {
+function Shield({ className = "", style }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" className={className} style={style} aria-hidden>
       <path d="M12 2 L 20 5 V 11 C 20 16, 16 20, 12 22 C 8 20, 4 16, 4 11 V 5 Z" fill="none" stroke="currentColor" strokeWidth="1.4" />
@@ -398,7 +400,7 @@ function Shield({ className = "", style }) {
   );
 }
 
-function Play({ className = "", style }) {
+function Play({ className = "", style }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" className={className} style={style} aria-hidden>
       <path d="M7 5 V 19 L 19 12 Z" fill="currentColor" />
@@ -406,7 +408,7 @@ function Play({ className = "", style }) {
   );
 }
 
-function Lock({ className = "", style }) {
+function Lock({ className = "", style }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" className={className} style={style} aria-hidden>
       <rect x="5" y="10" width="14" height="10" rx="1.5" fill="none" stroke="currentColor" strokeWidth="1.5" />
@@ -415,7 +417,7 @@ function Lock({ className = "", style }) {
   );
 }
 
-function Sparkle({ className = "", style }) {
+function Sparkle({ className = "", style }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" className={className} style={style} aria-hidden>
       <path d="M12 2 L 13.5 10.5 L 22 12 L 13.5 13.5 L 12 22 L 10.5 13.5 L 2 12 L 10.5 10.5 Z" fill="currentColor" />
