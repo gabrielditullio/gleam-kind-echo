@@ -789,6 +789,7 @@ function Modules() {
 /* ------------------------------------------------------------------ */
 
 function Offer() {
+  const { openCheckout } = useCheckout();
   return (
     <section id="checkout" className="offer">
       <div className="section-head">
@@ -813,11 +814,11 @@ function Offer() {
           <span className="pay-chip">Cartão · 12×</span>
         </div>
 
-        <a className="cta kiwify-link" href={KIWIFY_URL}>
+        <button type="button" className="cta" onClick={openCheckout}>
           <Spark style={{ width: 20, height: 20 }} />
           Quero garantir minha vaga agora
           <Lock style={{ width: 16, height: 16 }} />
-        </a>
+        </button>
 
         <div className="guarantee">
           <span className="icon"><Shield style={{ width: 18, height: 18 }} /></span>
