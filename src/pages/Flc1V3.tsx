@@ -714,10 +714,10 @@ function TrustRow() {
 
 function Testimonials() {
   const people = [
-    { name: "Amanda Bacil",           img: "https://paollaluchin.com.br/wp-content/uploads/amanda-bacil.jpg" },
-    { name: "Luciana Meguerditchian", img: "https://paollaluchin.com.br/wp-content/uploads/luciana-meguerditchian.jpg" },
-    { name: "Dany Baraldi",           img: "https://paollaluchin.com.br/wp-content/uploads/dany-baraldi.jpg" },
-    { name: "Ana Castro",             img: "https://paollaluchin.com.br/wp-content/uploads/ana-castro.jpg" },
+    { name: "Amanda Bacil",           img: "https://paollaluchin.com.br/wp-content/uploads/2026/04/dp01.webp" },
+    { name: "Luciana Meguerditchian", img: "https://paollaluchin.com.br/wp-content/uploads/2026/04/dp02.webp" },
+    { name: "Dany Baraldi",           img: "https://paollaluchin.com.br/wp-content/uploads/2026/04/dp03.webp" },
+    { name: "Ana Castro",             img: "https://paollaluchin.com.br/wp-content/uploads/2026/04/dp04.webp" },
   ];
   return (
     <section className="testimonials">
