@@ -1,4 +1,6 @@
 import { useEffect, useState, useRef } from "react";
+import CheckoutPopup from "@/components/CheckoutPopup";
+import { CheckoutProvider, useCheckout } from "@/contexts/CheckoutContext";
 
 /**
  * FLC1 V3 — Paolla Luchin · Fale a Língua do Cavalo (VSL)
