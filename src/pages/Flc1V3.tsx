@@ -845,9 +845,10 @@ function FlcFooter() {
 /*  Root                                                               */
 /* ------------------------------------------------------------------ */
 
-export default function Flc1V3() {
+function Flc1V3Content() {
   const [revealed, setRevealed] = useState(false);
   const rootRef = useRef<HTMLDivElement | null>(null);
+  const { isOpen, closeCheckout } = useCheckout();
 
   useEffect(() => {
     const t = setTimeout(() => setRevealed(true), REVEAL_AFTER_MS);
@@ -888,6 +889,26 @@ export default function Flc1V3() {
         <Offer />
         <FlcFooter />
       </section>
+
+      <CheckoutPopup
+        isOpen={isOpen}
+        onClose={closeCheckout}
+        source={FLC_CONFIG.source}
+        product={FLC_CONFIG.product}
+        kiwifyCheckoutId={FLC_CONFIG.kiwifyCheckoutId}
+        leadValue={FLC_CONFIG.leadValue}
+        headline={FLC_CONFIG.popupHeadline}
+        subheadline={FLC_CONFIG.popupSubheadline}
+        ctaLabel={FLC_CONFIG.popupCta}
+      />
     </div>
+  );
+}
+
+export default function Flc1V3() {
+  return (
+    <CheckoutProvider>
+      <Flc1V3Content />
+    </CheckoutProvider>
   );
 }
