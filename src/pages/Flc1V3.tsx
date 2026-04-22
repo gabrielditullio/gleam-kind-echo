@@ -34,7 +34,7 @@ const FLC_CONFIG = {
   leadValue: 197,
   popupHeadline: "Falta pouco para garantir sua vaga",
   popupSubheadline: "Preencha seus dados e prossiga para o checkout seguro",
-  popupCta: "Continuar para o Checkout",
+  popupCta: "QUERO GARANTIR MINHA VAGA AGORA",
 };
 
 /* ------------------------------------------------------------------ */
