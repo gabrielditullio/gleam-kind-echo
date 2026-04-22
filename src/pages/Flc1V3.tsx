@@ -673,13 +673,14 @@ function Hero() {
 /* ------------------------------------------------------------------ */
 
 function PrimaryCTA() {
+  const { openCheckout } = useCheckout();
   return (
     <div className="cta-wrap">
-      <a className="cta kiwify-link" href={KIWIFY_URL}>
+      <button type="button" className="cta" onClick={openCheckout}>
         <Spark style={{ width: 20, height: 20 }} />
         Quero garantir minha vaga agora
         <Lock style={{ width: 16, height: 16 }} />
-      </a>
+      </button>
       <div className="cta-sub">
         <Lock style={{ width: 12, height: 12 }} /> Pagamento 100% seguro · Kiwify
       </div>
