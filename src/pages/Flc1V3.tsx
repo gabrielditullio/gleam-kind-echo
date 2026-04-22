@@ -26,6 +26,16 @@ const REVEAL_AFTER_MS = 527_000;
 const VTURB_PLAYER_ID = "ab-69e675b0d9a2e678cbc9362a";
 const VTURB_SCRIPT_SRC = `https://scripts.converteai.net/b792ccfe-b151-4538-84c6-42bb48a19ba4/players/${VTURB_PLAYER_ID}/player.js`;
 
+const FLC_CONFIG = {
+  source: "flc1_v3",
+  product: "entenda-seu-cavalo",
+  kiwifyCheckoutId: "Kc9MOhe",
+  leadValue: 197,
+  popupHeadline: "Falta pouco para garantir sua vaga",
+  popupSubheadline: "Preencha seus dados e prossiga para o checkout seguro",
+  popupCta: "Continuar para o Checkout",
+};
+
 /* ------------------------------------------------------------------ */
 /*  Styles                                                             */
 /* ------------------------------------------------------------------ */
