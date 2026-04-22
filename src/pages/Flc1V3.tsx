@@ -21,10 +21,11 @@ declare global {
 /*  Config                                                             */
 /* ------------------------------------------------------------------ */
 
-const KIWIFY_URL = "https://pay.kiwify.com.br/DzaXdxY";
 const REVEAL_AFTER_MS = 527_000;
-const VTURB_PLAYER_ID = "ab-69e675b0d9a2e678cbc9362a";
-const VTURB_SCRIPT_SRC = `https://scripts.converteai.net/b792ccfe-b151-4538-84c6-42bb48a19ba4/players/${VTURB_PLAYER_ID}/player.js`;
+const VTURB_PLAYER_ID = "ab-69e670b33a084e4af1262344";
+const VTURB_VIDEO_ID = "69e670b33a084e4af1262344";
+const VTURB_ACCOUNT = "4aa0a2f6-6a95-415f-bc8d-01ede94868bc";
+const VTURB_SCRIPT_SRC = `https://scripts.converteai.net/${VTURB_ACCOUNT}/ab-test/${VTURB_VIDEO_ID}/player.js`;
 
 const FLC_CONFIG = {
   source: "flc1_v3",
