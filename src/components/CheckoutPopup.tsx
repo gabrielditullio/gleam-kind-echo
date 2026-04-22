@@ -253,10 +253,136 @@ const CheckoutPopup = ({
     }, 500);
   }
 
+  // Doma keeps its original markup verbatim — no behavioral or visual changes.
+  if (resolvedTheme === "doma") {
+    return (
+      <div
+        className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
+        style={{ background: "rgba(42,21,48,0.6)" }}
+        onClick={(e) => {
+          if (e.target === e.currentTarget) onClose();
+        }}
+      >
+        <div
+          className="relative w-[90vw] rounded-[12px] p-6 md:p-8 animate-in fade-in zoom-in-95 duration-300"
+          style={{
+            maxWidth: 480,
+            background: "#2A1530",
+            border: "1px solid rgba(255,255,255,0.1)",
+          }}
+        >
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 text-neutral-400 hover:text-white transition-colors cursor-pointer"
+            aria-label="Fechar"
+          >
+            <X size={20} />
+          </button>
+
+          <h3 className="font-display font-bold text-[22px] md:text-[26px] text-neutral-50 text-center mb-1">
+            {headline}
+          </h3>
+          <p className="font-body text-[14px] text-neutral-400 text-center mb-6">
+            {subheadline}
+          </p>
+
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div>
+              <label className="font-body font-medium text-[13px] text-white/70 mb-1 block">
+                Nome completo
+              </label>
+              <input
+                type="text"
+                value={nome}
+                onChange={(e) => setNome(e.target.value)}
+                placeholder="Seu nome completo"
+                className="w-full rounded-[8px] px-4 py-3 font-body text-[15px] text-white placeholder:text-white/30 outline-none focus:ring-2 focus:ring-sand transition-all"
+                style={{
+                  background: "rgba(255,255,255,0.08)",
+                  border: "1px solid rgba(255,255,255,0.12)",
+                }}
+              />
+              {errors.nome && (
+                <p className="font-body text-[12px] text-coral-dark mt-1">
+                  {errors.nome}
+                </p>
+              )}
+            </div>
+
+            <div>
+              <label className="font-body font-medium text-[13px] text-white/70 mb-1 block">
+                Email
+              </label>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="seu@email.com"
+                className="w-full rounded-[8px] px-4 py-3 font-body text-[15px] text-white placeholder:text-white/30 outline-none focus:ring-2 focus:ring-sand transition-all"
+                style={{
+                  background: "rgba(255,255,255,0.08)",
+                  border: "1px solid rgba(255,255,255,0.12)",
+                }}
+              />
+              {errors.email && (
+                <p className="font-body text-[12px] text-coral-dark mt-1">
+                  {errors.email}
+                </p>
+              )}
+            </div>
+
+            <div>
+              <label className="font-body font-medium text-[13px] text-white/70 mb-1 block">
+                Telefone
+              </label>
+              <input
+                type="tel"
+                value={telefone}
+                onChange={(e) => setTelefone(formatPhone(e.target.value))}
+                placeholder="(11) 99999-9999"
+                className="w-full rounded-[8px] px-4 py-3 font-body text-[15px] text-white placeholder:text-white/30 outline-none focus:ring-2 focus:ring-sand transition-all"
+                style={{
+                  background: "rgba(255,255,255,0.08)",
+                  border: "1px solid rgba(255,255,255,0.12)",
+                }}
+              />
+              {errors.telefone && (
+                <p className="font-body text-[12px] text-coral-dark mt-1">
+                  {errors.telefone}
+                </p>
+              )}
+            </div>
+
+            <button
+              type="submit"
+              disabled={!isValid || submitting}
+              className="group relative w-full flex items-center justify-center gap-2 bg-coral text-white font-body font-semibold text-[15px] uppercase tracking-[0.05em] py-4 rounded-[8px] transition-all duration-150 hover:bg-coral-dark disabled:bg-neutral-200 disabled:text-neutral-400 disabled:cursor-not-allowed overflow-hidden mt-2"
+            >
+              <span
+                className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[600ms] ease-in-out pointer-events-none"
+                style={{
+                  background:
+                    "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%)",
+                }}
+              />
+              <span className="relative z-10 flex items-center gap-2">
+                {submitting ? "Redirecionando..." : ctaLabel}
+                <span className="inline-block transition-transform duration-150 ease-in-out group-hover:translate-x-1">
+                  →
+                </span>
+              </span>
+            </button>
+          </form>
+        </div>
+      </div>
+    );
+  }
+
+  // Themed render (currently used for FLC) — same structure, theme-driven colors.
   return (
     <div
       className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
-      style={{ background: "rgba(42,21,48,0.6)" }}
+      style={{ background: t.overlay }}
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
@@ -265,103 +391,117 @@ const CheckoutPopup = ({
         className="relative w-[90vw] rounded-[12px] p-6 md:p-8 animate-in fade-in zoom-in-95 duration-300"
         style={{
           maxWidth: 480,
-          background: "#2A1530",
-          border: "1px solid rgba(255,255,255,0.1)",
+          background: t.modalBg,
+          border: t.modalBorder,
+          boxShadow: "0 30px 80px -20px rgba(0,0,0,0.55)",
         }}
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-neutral-400 hover:text-white transition-colors cursor-pointer"
+          className="absolute top-4 right-4 transition-colors cursor-pointer"
+          style={{ color: t.closeColor }}
+          onMouseEnter={(e) => (e.currentTarget.style.color = t.closeHoverColor)}
+          onMouseLeave={(e) => (e.currentTarget.style.color = t.closeColor)}
           aria-label="Fechar"
         >
           <X size={20} />
         </button>
 
-        <h3 className="font-display font-bold text-[22px] md:text-[26px] text-neutral-50 text-center mb-1">
+        <h3
+          className="font-display font-bold text-[22px] md:text-[26px] text-center mb-1"
+          style={{ color: t.headline }}
+        >
           {headline}
         </h3>
-        <p className="font-body text-[14px] text-neutral-400 text-center mb-6">
+        <p
+          className="font-body text-[14px] text-center mb-6"
+          style={{ color: t.subheadline }}
+        >
           {subheadline}
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label className="font-body font-medium text-[13px] text-white/70 mb-1 block">
-              Nome completo
-            </label>
-            <input
-              type="text"
-              value={nome}
-              onChange={(e) => setNome(e.target.value)}
-              placeholder="Seu nome completo"
-              className="w-full rounded-[8px] px-4 py-3 font-body text-[15px] text-white placeholder:text-white/30 outline-none focus:ring-2 focus:ring-sand transition-all"
-              style={{
-                background: "rgba(255,255,255,0.08)",
-                border: "1px solid rgba(255,255,255,0.12)",
-              }}
-            />
-            {errors.nome && (
-              <p className="font-body text-[12px] text-coral-dark mt-1">
-                {errors.nome}
-              </p>
-            )}
-          </div>
-
-          <div>
-            <label className="font-body font-medium text-[13px] text-white/70 mb-1 block">
-              Email
-            </label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="seu@email.com"
-              className="w-full rounded-[8px] px-4 py-3 font-body text-[15px] text-white placeholder:text-white/30 outline-none focus:ring-2 focus:ring-sand transition-all"
-              style={{
-                background: "rgba(255,255,255,0.08)",
-                border: "1px solid rgba(255,255,255,0.12)",
-              }}
-            />
-            {errors.email && (
-              <p className="font-body text-[12px] text-coral-dark mt-1">
-                {errors.email}
-              </p>
-            )}
-          </div>
-
-          <div>
-            <label className="font-body font-medium text-[13px] text-white/70 mb-1 block">
-              Telefone
-            </label>
-            <input
-              type="tel"
-              value={telefone}
-              onChange={(e) => setTelefone(formatPhone(e.target.value))}
-              placeholder="(11) 99999-9999"
-              className="w-full rounded-[8px] px-4 py-3 font-body text-[15px] text-white placeholder:text-white/30 outline-none focus:ring-2 focus:ring-sand transition-all"
-              style={{
-                background: "rgba(255,255,255,0.08)",
-                border: "1px solid rgba(255,255,255,0.12)",
-              }}
-            />
-            {errors.telefone && (
-              <p className="font-body text-[12px] text-coral-dark mt-1">
-                {errors.telefone}
-              </p>
-            )}
-          </div>
+          {[
+            {
+              key: "nome",
+              label: "Nome completo",
+              type: "text",
+              value: nome,
+              placeholder: "Seu nome completo",
+              onChange: (v: string) => setNome(v),
+            },
+            {
+              key: "email",
+              label: "Email",
+              type: "email",
+              value: email,
+              placeholder: "seu@email.com",
+              onChange: (v: string) => setEmail(v),
+            },
+            {
+              key: "telefone",
+              label: "Telefone",
+              type: "tel",
+              value: telefone,
+              placeholder: "(11) 99999-9999",
+              onChange: (v: string) => setTelefone(formatPhone(v)),
+            },
+          ].map((field) => (
+            <div key={field.key}>
+              <label
+                className="font-body font-medium text-[13px] mb-1 block"
+                style={{ color: t.label }}
+              >
+                {field.label}
+              </label>
+              <input
+                type={field.type}
+                value={field.value}
+                onChange={(e) => field.onChange(e.target.value)}
+                placeholder={field.placeholder}
+                className={`w-full rounded-[8px] px-4 py-3 font-body text-[15px] outline-none focus:ring-2 ${t.inputFocusRing} transition-all`}
+                style={{
+                  background: t.inputBg,
+                  border: t.inputBorder,
+                  color: t.inputText,
+                  ["--tw-placeholder-color" as never]: t.inputPlaceholder,
+                }}
+              />
+              {errors[field.key] && (
+                <p
+                  className="font-body text-[12px] mt-1"
+                  style={{ color: t.errorColor }}
+                >
+                  {errors[field.key]}
+                </p>
+              )}
+            </div>
+          ))}
 
           <button
             type="submit"
             disabled={!isValid || submitting}
-            className="group relative w-full flex items-center justify-center gap-2 bg-coral text-white font-body font-semibold text-[15px] uppercase tracking-[0.05em] py-4 rounded-[8px] transition-all duration-150 hover:bg-coral-dark disabled:bg-neutral-200 disabled:text-neutral-400 disabled:cursor-not-allowed overflow-hidden mt-2"
+            className="group relative w-full flex items-center justify-center gap-2 font-body font-semibold text-[15px] uppercase tracking-[0.05em] py-4 rounded-[8px] transition-all duration-150 disabled:cursor-not-allowed overflow-hidden mt-2"
+            style={{
+              background: !isValid || submitting ? t.buttonDisabledBg : t.buttonBg,
+              color: !isValid || submitting ? t.buttonDisabledText : t.buttonText,
+              boxShadow:
+                !isValid || submitting
+                  ? "none"
+                  : "0 10px 30px -12px rgba(232,240,0,0.55)",
+            }}
+            onMouseEnter={(e) => {
+              if (!isValid || submitting) return;
+              e.currentTarget.style.background = t.buttonHoverBg;
+            }}
+            onMouseLeave={(e) => {
+              if (!isValid || submitting) return;
+              e.currentTarget.style.background = t.buttonBg;
+            }}
           >
             <span
               className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[600ms] ease-in-out pointer-events-none"
-              style={{
-                background:
-                  "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%)",
-              }}
+              style={{ background: t.shimmer }}
             />
             <span className="relative z-10 flex items-center gap-2">
               {submitting ? "Redirecionando..." : ctaLabel}
