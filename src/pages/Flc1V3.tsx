@@ -534,13 +534,88 @@ function UrgencyBar() {
 /* ------------------------------------------------------------------ */
 
 function VTurbPlayer() {
+  const firedRef = useRef<Set<number>>(new Set());
+
   useEffect(() => {
-    if (document.querySelector(`script[src="${VTURB_SCRIPT_SRC}"]`)) return;
-    const s = document.createElement("script");
-    s.src = VTURB_SCRIPT_SRC;
-    s.async = true;
-    document.head.appendChild(s);
+    if (!document.querySelector(`script[src="${VTURB_SCRIPT_SRC}"]`)) {
+      const s = document.createElement("script");
+      s.src = VTURB_SCRIPT_SRC;
+      s.async = true;
+      document.head.appendChild(s);
+    }
+
+    let attached = false;
+    let attempts = 0;
+    const MAX_ATTEMPTS = 15;
+    let pollId: number | undefined;
+    let cleanupListener: (() => void) | undefined;
+
+    const tryAttach = () => {
+      try {
+        const w = window as unknown as {
+          smartplayer?: { instances?: Array<{ smartAutoPlay?: boolean; on?: (ev: string, cb: () => void) => void; video?: HTMLVideoElement }> };
+        };
+        const player = w.smartplayer?.instances?.[0];
+        if (!player) {
+          attempts += 1;
+          if (attempts >= MAX_ATTEMPTS) {
+            if (pollId) window.clearInterval(pollId);
+          }
+          return;
+        }
+        if (pollId) window.clearInterval(pollId);
+        if (player.smartAutoPlay) return; // muted warmup — skip
+
+        const handler = () => {
+          try {
+            const video = player.video;
+            if (!video || !video.duration || !isFinite(video.duration)) return;
+            const pct = (video.currentTime / video.duration) * 100;
+            const quartiles = [25, 50, 75, 100];
+            for (const q of quartiles) {
+              if (pct >= q && !firedRef.current.has(q)) {
+                firedRef.current.add(q);
+                if (window.parent !== window) {
+                  window.parent.postMessage(
+                    {
+                      type: "vturb_progress",
+                      progress_pct: q,
+                      video_id: VTURB_PLAYER_ID,
+                      source: FLC_CONFIG.source,
+                    },
+                    "*"
+                  );
+                }
+              }
+            }
+          } catch { /* never break playback */ }
+        };
+
+        if (player.on) {
+          player.on("timeupdate", handler);
+          attached = true;
+          cleanupListener = () => {
+            // smartplayer typically lacks .off — best-effort
+          };
+        } else if (player.video) {
+          player.video.addEventListener("timeupdate", handler);
+          attached = true;
+          const v = player.video;
+          cleanupListener = () => v.removeEventListener("timeupdate", handler);
+        }
+      } catch { /* swallow */ }
+    };
+
+    pollId = window.setInterval(tryAttach, 1000);
+    tryAttach();
+
+    return () => {
+      if (pollId) window.clearInterval(pollId);
+      if (cleanupListener) cleanupListener();
+      void attached;
+    };
   }, []);
+
   return (
     <div className="video-inner">
       <vturb-smartplayer id={VTURB_PLAYER_ID} style={{ display: "block", width: "100%", height: "100%" }}>
