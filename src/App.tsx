@@ -20,10 +20,10 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/v2" element={<IndexV2 />} />
-          <Route path="/flc1" element={<Flc1 />} />
-          <Route path="/flc1_v2" element={<Flc1V2 />} />
-          <Route path="/flc1_v3" element={<Flc1V3 />} />
+          <Route path="/deletar_v2" element={<IndexV2 />} />
+          <Route path="/deletar_flc1" element={<Flc1 />} />
+          <Route path="/deletar_flc1_v2" element={<Flc1V2 />} />
+          <Route path="/deletar_flc1_v3" element={<Flc1V3 />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
